@@ -11,14 +11,15 @@
 
 <hr>
 
-<h2>① ヤング率Eとポアソン比から横弾性係数Gを計算</h2>
+<h2>G = E / (2 * (1 + ν))</h2>
+<h2>E:ヤング率,ν:ポアソン比,G:せん断弾性係数</h2>
 
-<p>E (ヤング率): <input type="number" id="E"></p>
-<p>ポアソン比 ν: <input type="number" id="nu" step="0.01"></p>
+<p>E: <input type="number" id="E"></p>
+<p>ν: <input type="number" id="nu" step="0.01"></p>
 
 <button onclick="calcG()">Gを計算</button>
 
-<p>横弾性係数 G = <span id="resultG"></span></p>
+<p>せん断弾性係数 G = <span id="resultG"></span></p>
 
 <hr>
 
