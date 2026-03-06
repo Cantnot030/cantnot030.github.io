@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CAEツール</title>
+</head>
+
+<body>
+
+<h1>CAE 簡易ツール</h1>
+
+<hr>
+
+<h2>① ヤング率Eとポアソン比から横弾性係数Gを計算</h2>
+
+<p>E (ヤング率): <input type="number" id="E"></p>
+<p>ポアソン比 ν: <input type="number" id="nu" step="0.01"></p>
+
+<button onclick="calcG()">Gを計算</button>
+
+<p>横弾性係数 G = <span id="resultG"></span></p>
+
+<hr>
+
+<h2>② kN → tf 変換</h2>
+
+<p>kN: <input type="number" id="kN"></p>
+
+<button onclick="convert()">tfに変換</button>
+
+<p>tf = <span id="resulttf"></span></p>
+
+<script>
+
+function calcG() {
+
+let E = parseFloat(document.getElementById("E").value);
+let nu = parseFloat(document.getElementById("nu").value);
+
+let G = E / (2 * (1 + nu));
+
+document.getElementById("resultG").innerText = G;
+
+}
+
+function convert() {
+
+let kN = parseFloat(document.getElementById("kN").value);
+
+let tf = kN / 9.80665;
+
+document.getElementById("resulttf").innerText = tf;
+
+}
+
+</script>
+
+</body>
+</html>
