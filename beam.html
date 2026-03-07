@@ -8,28 +8,31 @@
   <h1>梁計算ツール</h1>
 
   <label>支点タイプ:</label>
-  <select id="supportType">
-    <option value="cantilever">片持ち</option>
-    <option value="simply">両端支点</option>
-    <option value="fixed">完全固定</option>
-    <option value="pinned">ピン留め</option>
-  </select>
+<select id="supportType">
+  <option value="cantilever">片持ち</option>
+  <option value="simply">両端支点</option>
+  <option value="fixed">完全固定</option>
+  <option value="pinned">ピン留め</option>
+</select>
 
   <label>荷重タイプ:</label>
-  <select id="loadType">
-    <option value="point">集中荷重</option>
-    <option value="distributed">分布荷重</option>
-  </select>
+<select id="loadType">
+  <option value="point">集中荷重</option>
+  <option value="distributed">分布荷重</option>
+</select>
 
   <label>荷重値:</label>
-  <input type="number" id="loadValue">
-
-  <button id="calcBtn">計算</button>
+<input id="beamLength" type="number" placeholder="梁長 m">
+<input id="loadValue" type="number" placeholder="荷重 kN">
+<button id="calcBtn">計算</button>
 
   <h2>結果</h2>
-  <div id="results"></div>
-  <canvas id="diagram" width="600" height="200"></canvas>
+<div id="results"></div>
+<canvas id="diagram" width="600" height="200"></canvas>
+<script src="/js/beam.js"></script>
 
-  <script src="/js/beam.js"></script>
+
+
+
 </body>
 </html>
