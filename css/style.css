@@ -43,3 +43,14 @@ canvas{
 .row input{
   width:100px;
 }
+
+.row2{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.row2 input{
+  width:50px;
+}
+  
