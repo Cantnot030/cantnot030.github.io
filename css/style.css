@@ -33,3 +33,13 @@ canvas{
   margin-top:30px;
   border:1px solid #ccc;
 }
+
+.row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.row input{
+  width:100px;
+}
