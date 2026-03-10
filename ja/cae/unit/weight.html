@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weight Converter</title>
+</head>
+
+<body>
+
+<h1>Weight Converter</h1>
+
+<p>
+kg <input type="number" id="kg">
+</p>
+
+<p>
+g <input type="number" id="g">
+</p>
+
+<p>
+mg <input type="number" id="mg">
+</p>
+
+<p>
+lb <input type="number" id="lb">
+</p>
+
+<p>
+oz <input type="number" id="oz">
+</p>
+
+<button onclick="convert()">Convert</button>
+
+<script>
+
+function convert(){
+
+let kg = document.getElementById("kg").value;
+
+if(kg !== ""){
+document.getElementById("g").value = kg * 1000;
+document.getElementById("mg").value = kg * 1000000;
+document.getElementById("lb").value = kg * 2.20462;
+document.getElementById("oz").value = kg * 35.274;
+}
+
+}
+
+</script>
+
+</body>
+</html>
