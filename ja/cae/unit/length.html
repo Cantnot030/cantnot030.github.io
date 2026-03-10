@@ -35,13 +35,13 @@ background:#f5f5f5;
 <input type="number" id="value" placeholder="数値">
 
 <select id="unit">
+<option value="A">Å</option>
 <option value="nm">nm</option>
 <option value="microm">μm</option>
 <option value="mm">mm</option>
 <option value="cm">cm</option>
 <option value="m">m</option>
 <option value="km">km</option>
-<option value="A">Å</option>
 <option value="yard">yard</option>
 <option value="mile">mile</option>
 <option value="inch">inch</option>
@@ -69,15 +69,15 @@ let meter;
 switch(unit){
 
 case "A":
-meter = A / 10000000000;
+meter = value / 10000000000;
 break;
 
 case "nm":
-meter = nm / 1000000000;
+meter = value / 1000000000;
 break;
 
-case "mocrom":
-meter = microm / 1000000;
+case "microm":
+meter = value / 1000000;
 break;
 
 case "mm":
@@ -97,11 +97,11 @@ meter = value * 1000;
 break;
 
 case = "yard":
-meter = yard * 0.9144;
+meter = value * 0.9144;
 break;
 
 case = "mile":
-meter = mile * 1609.344;
+meter = value * 1609.344;
 break;
 
 case "inch":
@@ -130,7 +130,7 @@ document.getElementById("result").innerHTML = `
 
 Å : ${A.toFixed(4)} <br>
 nm : ${nm.toFixed(4)} <br>
-μm : ${μm.toFixed(4)} <br>
+μm : ${microm.toFixed(4)} <br>
 mm : ${mm.toFixed(4)} <br>
 cm : ${cm.toFixed(4)} <br>
 m : ${meter.toFixed(4)} <br>
