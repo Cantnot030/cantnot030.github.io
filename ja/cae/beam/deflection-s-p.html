@@ -1,1 +1,61 @@
-y
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>単純梁（中央集中荷重）</title>
+
+<style>
+body{
+font-family:Arial;
+margin:40px;
+}
+
+input{
+margin:5px;
+padding:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>単純梁（中央集中荷重）</h2>
+
+<label>荷重 P (N)</label><br>
+<input id="P" type="number"><br>
+
+<label>梁長さ L (m)</label><br>
+<input id="L" type="number"><br>
+
+<label>ヤング率 E (Pa)</label><br>
+<input id="E" type="number"><br>
+
+<label>断面2次モーメント I (m⁴)</label><br>
+<input id="I" type="number"><br>
+
+<button onclick="calc()">計算</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function calc(){
+
+let P = parseFloat(document.getElementById("P").value);
+let L = parseFloat(document.getElementById("L").value);
+let E = parseFloat(document.getElementById("E").value);
+let I = parseFloat(document.getElementById("I").value);
+
+let delta = (P*Math.pow(L,3))/(48*E*I);
+
+document.getElementById("result").innerHTML =
+"最大たわみ = " + delta.toExponential(3) + " m";
+
+}
+
+</script>
+
+</body>
+</html>
