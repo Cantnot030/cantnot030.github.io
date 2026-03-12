@@ -23,21 +23,37 @@ padding:5px;
 
 <h2>断面特性計算ツール</h2>
 
-<select id="shape">
+
+
+<h2>断面形状</h2>
+
+<select id="shape" onchange="changeShape()">
 <option value="rect">矩形</option>
 <option value="circle">円</option>
 <option value="pipe">中空円</option>
 <option value="hbeam">H鋼</option>
 </select>
 
-<div>
+
+<!-- 矩形 -->
+<div id="rectInputs">
 b <input type="number" id="b">
 h <input type="number" id="h">
 </div>
 
-<div>
+
+<!-- 円 -->
+<div id="circleInputs" style="display:none;">
 d <input type="number" id="d">
 </div>
+
+
+<!-- 中空円 -->
+<div id="pipeInputs" style="display:none;">
+D <input type="number" id="D">
+d <input type="number" id="d2">
+</div>
+
 
 
 <button onclick="calculate()">計算</button>
