@@ -96,24 +96,13 @@ let tw = parseFloat(document.getElementById("tw").value);
 
 let A = 2*(B*tf) + (H-2*tf)*tw;
 
-let Ix =
-2*((B*Math.pow(tf,3))/12 + (B*tf)*Math.pow((H/2 - tf/2),2))
-+
-(tw*Math.pow((H-2*tf),3))/12;
+let Ix = 2*((B*Math.pow(tf,3))/12 + (B*tf)*Math.pow((H/2 - tf/2),2)) + (tw*Math.pow((H-2*tf),3))/12;
 
 let Zx = Ix/(H/2);
 
 document.getElementById("result").innerHTML =
-"A = "+A+"<br>"+
-"Ix = "+Ix+"<br>"+
-"Zx = "+Zx;
+"A = "+A+"<br>"+"Ix = "+Ix+"<br>"+"Zx = "+Zx;
 
 }
-
-
-
-
-
-
 
 }
