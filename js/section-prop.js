@@ -24,6 +24,21 @@ if(shape==="hbeam"){
 document.getElementById("hbeamInputs").style.display = "block";
 }
 
+
+
+
+function clearSVG(){
+document.getElementById("sectionSVG").innerHTML = "";
+}
+
+
+
+
+
+
+
+
+
 }
 
 function calculate(){
