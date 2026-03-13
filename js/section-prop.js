@@ -46,7 +46,7 @@ function drawCircle(){
 clearSVG()
 
 document.getElementById("sectionSVG").innerHTML =
-`<svg="../svg/circle.svg">`
+`<img src="../svg/circle.svg">`
 
 }
 
