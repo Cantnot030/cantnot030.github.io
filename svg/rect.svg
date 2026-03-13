@@ -1,2 +1,7 @@
-<rect x="80" y="60" width="140" height="180"
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg">
+　　<rect x="80" y="60" width="140" height="180"
 fill="lightblue" stroke="black"/>
+</svg>
