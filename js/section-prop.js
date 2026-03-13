@@ -44,7 +44,7 @@ fill="lightblue" stroke="black"/>
 function drawCircle(){
 clearSVG()
 let svg = document.getElementById("sectionSVG")
-svg.innerHTML = `<img src="svg/circle.svg">`
+svg.innerHTML = `<img src="/svg/circle.svg">`
 }
 
 
