@@ -42,6 +42,19 @@ fill="lightblue" stroke="black"/>
 }
 
 function drawCircle(){
+
+    fetch("../svg/circle.svg")
+    .then(response => response.text())
+    .then(svg => {
+
+        let container = document.getElementById("sectionSVG");
+        container.innerHTML = svg;
+
+    });
+
+}
+
+function drawCircleNG(){
     
 clearSVG()
 
