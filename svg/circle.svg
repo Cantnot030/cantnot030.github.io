@@ -1,2 +1,2 @@
-<circle cx="150" cy="150" r="90" fill="light blue" stroke="black"/>
+<circle cx="150" cy="150" r="90" fill="lightblue" stroke="black"/>
 <line x1="0" y1="150" x2="300" y2="150" stroke="black" stroke-width="2"/>
