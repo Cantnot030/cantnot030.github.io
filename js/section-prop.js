@@ -20,6 +20,7 @@ drawCircle()
 
 if(shape==="pipe"){
 document.getElementById("pipeInputs").style.display = "block";
+drawPipe()
 }
 
 if(shape==="hbeam"){
@@ -54,12 +55,16 @@ function drawCircle(){
 
 }
 
-function drawCircleNG(){
-    
-clearSVG()
+function drawPipe(){
 
-document.getElementById("sectionSVG").innerHTML =
-`<img src="../svg/circle.svg">`
+    fetch("/svg/pipe.svg")
+    .then(response => response.text())
+    .then(svg => {
+
+        let container = document.getElementById("sectionSVG");
+        container.innerHTML = svg;
+
+    });
 
 }
 
