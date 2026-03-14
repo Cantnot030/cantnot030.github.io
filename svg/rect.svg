@@ -1,6 +1,8 @@
 <rect x="80" y="60" width="140" height="180" fill="lightblue" stroke="black"/>
+
 <line x1="80" y1="45" x2="220" y2="45" stroke="black" stroke-width="2"/>
 <polygon points="90,40 80,45 90,50" fill="black"/>
 <polygon points="210,40 220,45 210,50" fill="black"/>
 <text x="145" y="35" class="text">b</text>
 
+<line x1="235" y1="80 x2="235" y2="240" stroke="black" stroke-width="2"/>
