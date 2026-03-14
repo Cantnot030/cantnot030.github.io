@@ -1,2 +1,5 @@
 <rect x="80" y="60" width="140" height="180" fill="lightblue" stroke="black"/>
-<line x1="80" y1="50" x2="220" y2="50" stroke="black" stroke-width="2"/>
+<line x1="80" y1="45" x2="220" y2="45" stroke=F"black" stroke-width="2"/>
+<polygon points="90,40 80,45 90,50" fill="black"/>
+
+
