@@ -16,16 +16,16 @@
 <polygon points="460,80 445,105 475,105" fill="none" stroke="black" stroke-width="2"/>
 
 <line x1="180" y1="50" x2="180" y2="80" class="thin"/>
-<polygon points="175,80 185,80 180,95" fill="black"/>
+<polygon points="175,65 185,65 180,80" fill="black"/>
 
 <line x1="260" y1="50" x2="260" y2="80" class="thin"/>
-<polygon points="255,80 265,80 260,95" fill="black"/>
+<polygon points="255,65 265,65 260,80" fill="black"/>
 
 <line x1="340" y1="50" x2="340" y2="80" class="thin"/>
-<polygon points="335,80 345,80 340,95" fill="black"/>
+<polygon points="335,65 345,65 340,80" fill="black"/>
 
 <line x1="420" y1="50" x2="420" y2="80" class="thin"/>
-<polygon points="415,80 425,80 420,95" fill="black"/>
+<polygon points="415,65 425,65 420,80" fill="black"/>
 
 <text x="470" y="60" class="text">w</text>
 
