@@ -10,9 +10,20 @@
 
 <text x="20" y="15" class="text">Cantilever Beam with Uniformly Distributed Load</text>
 
+<!-- wall -->
 <line x1="120" y1="50" x2="120" y2="110" class="line"/>
+<line x1="120" y1="50" x2="105" y2="65" class="thin"/>
+<line x1="120" y1="65" x2="105" y2="80" class="thin"/>
+<line x1="120" y1="80" x2="105" y2="95" class="thin"/>
 
+<!-- beam -->
 <line x1="120" y1="80" x2="520" y2="80" class="line"/>
+
+<!-- load -->
+<line x1="520" y1="50" x2="520" y2="80" class="line"/>
+<polygon points="515,70 525,70 520,80" fill="black"/>
+
+<text x="525" y="40" class="text">P</text>
 
 <g>
 <line x1="140" y1="50" x2="140" y2="80" class="thin"/>
