@@ -15,17 +15,17 @@
 <line x1="120" y1="80" x2="520" y2="80" class="line"/>
 
 <g>
-<line x1="160" y1="50" x2="160" y2="80" class="thin"/>
-<polygon points="155,80 165,80 160,95" fill="black"/>
+<line x1="140" y1="50" x2="140" y2="80" class="thin"/>
+<polygon points="135,65 145,65 140,80" fill="black"/>
 
-<line x1="240" y1="50" x2="240" y2="80" class="thin"/>
-<polygon points="235,80 245,80 240,95" fill="black"/>
+<line x1="245" y1="50" x2="245" y2="80" class="thin"/>
+<polygon points="240,65 250,65 245,80" fill="black"/>
 
-<line x1="320" y1="50" x2="320" y2="80" class="thin"/>
-<polygon points="315,80 325,80 320,95" fill="black"/>
+<line x1="355" y1="50" x2="355" y2="80" class="thin"/>
+<polygon points="350,65 360,65 355,80" fill="black"/>
 
-<line x1="400" y1="50" x2="400" y2="80" class="thin"/>
-<polygon points="395,80 405,80 400,95" fill="black"/>
+<line x1="460" y1="50" x2="460" y2="80" class="thin"/>
+<polygon points="455,65 465,65 460,80" fill="black"/>
 
 <line x1="480" y1="50" x2="480" y2="80" class="thin"/>
 <polygon points="475,80 485,80 480,95" fill="black"/>
