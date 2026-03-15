@@ -16,19 +16,19 @@
 <polygon points="460,80 445,105 475,105" fill="none" stroke="black" stroke-width="2"/>
 
 <line x1="140" y1="40" x2="140" y2="80" class="thin"/>
-<polygon points="175,65 185,65 180,80" fill="black"/>
+<polygon points="135,65 140,65 145,80" fill="black"/>
 
 <line x1="245" y1="40" x2="245" y2="80" class="thin"/>
-<polygon points="255,65 265,65 260,80" fill="black"/>
+<polygon points="240,65 245,65 250,80" fill="black"/>
 
 <line x1="355" y1="40" x2="355" y2="80" class="thin"/>
-<polygon points="335,65 345,65 340,80" fill="black"/>
+<polygon points="350,65 355,65 360,80" fill="black"/>
 
 <line x1="460" y1="40" x2="460" y2="80" class="thin"/>
-<polygon points="415,65 425,65 420,80" fill="black"/>
+<polygon points="455,65 460,65 460,80" fill="black"/>
 
 <line x1="140" y1="40" x2="460" y2="40" class="line"/>
 
-<text x="470" y="60" class="text">w</text>
+<text x="295" y="60" class="text">w</text>
 
 </svg>
