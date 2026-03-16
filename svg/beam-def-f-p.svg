@@ -2,6 +2,7 @@
 
 <style>
 .line{stroke:black;stroke-width:2}
+.thin{stroke:black;stroke-width:1.5;fill:none}
 .text{font-family:Arial;font-size:16px}
 </style>
 
