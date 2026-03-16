@@ -53,7 +53,7 @@ let L = parseFloat(document.getElementById("L").value);
 let E = parseFloat(document.getElementById("E").value);
 let I = parseFloat(document.getElementById("I").value);
 
-let delta = (wMath.pow(L,4))/(8E*I);
+let delta = (w*Math.pow(L,4))/(8E*I);
 
 document.getElementById("result").innerHTML =
 "最大たわみ = " + delta.toExponential(3) + " m";
