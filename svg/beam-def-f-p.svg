@@ -9,14 +9,26 @@
 
 <text x="20" y="30" class="text">Fixed-Fixed Beam with Center Point Load</text>
 
-<line x1="140" y1="50" x2="140" y2="110" class="line"/>
-<line x1="460" y1="50" x2="460" y2="110" class="line"/>
 
+
+<!-- wall -->
+<line x1="140" y1="30" x2="140" y2="110" class="line"/>
+<line x1="140" y1="50" x2="125" y2="65" class="thin"/>
+<line x1="140" y1="65" x2="125" y2="80" class="thin"/>
+<line x1="140" y1="80" x2="125" y2="95" class="thin"/>
+
+<!-- wall -->
+<line x1="460" y1="30" x2="460" y2="110" class="line"/>
+<line x1="475" y1="50" x2="460" y2="65" class="thin"/>
+<line x1="475" y1="65" x2="460" y2="80" class="thin"/>
+<line x1="475" y1="80" x2="460" y2="95" class="thin"/>
+
+<!-- beam -->
 <line x1="140" y1="80" x2="460" y2="80" class="line"/>
 
 <line x1="300" y1="40" x2="300" y2="80" class="line"/>
-<polygon points="295,80 305,80 300,95" fill="black"/>
+<polygon points="295,65 305,65 300,80" fill="black"/>
 
-<text x="305" y="50" class="text">P</text>
+<text x="295" y="40" class="text">P</text>
 
 </svg>
