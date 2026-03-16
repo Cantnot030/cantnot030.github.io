@@ -10,7 +10,7 @@
 <text x="20" y="15" class="text">Cantilever Beam with Point Load</text>
 
 <!-- wall -->
-<line x1="140" y1="50" x2="140" y2="110" class="line"/>
+<line x1="140" y1="40" x2="140" y2="110" class="line"/>
 <line x1="140" y1="50" x2="125" y2="65" class="thin"/>
 <line x1="140" y1="65" x2="125" y2="80" class="thin"/>
 <line x1="140" y1="80" x2="125" y2="95" class="thin"/>
