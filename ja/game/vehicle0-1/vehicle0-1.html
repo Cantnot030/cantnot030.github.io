@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>擬似3Dドライブ</title>
+<title>エコドライブ</title>
 <style>
-body {
-  margin: 0;
-  overflow: hidden;
-  background: skyblue;
-}
-
-canvas {
-  display: block;
-}
+body { margin:0; background:black; color:white; text-align:center;}
+#ui { position:absolute; top:10px; left:10px;}
 </style>
 </head>
 
 <body>
 <canvas id="game"></canvas>
+<div id="ui">
+  <div id="speed">Speed: 0</div>
+  <div id="rpm">RPM: 0</div>
+  <div id="fuel">Fuel: 100</div>
+  <div id="distance">Distance: 0</div>
+</div>
 
 <script>
 const canvas = document.getElementById("game");
@@ -26,47 +25,48 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let speed = 2;
-let offset = 0;
-let playerX = 0;
+let speed = 0;
+let rpm = 0;
+let fuel = 100;
+let distance = 0;
+let accel = false;
 
-// 操作（スマホ＆PC）
-document.addEventListener("touchmove", e => {
-  playerX = (e.touches[0].clientX - canvas.width / 2) / 10;
-});
-document.addEventListener("mousemove", e => {
-  playerX = (e.clientX - canvas.width / 2) / 10;
-});
+// アクセル
+document.addEventListener("touchstart", () => accel = true);
+document.addEventListener("touchend", () => accel = false);
+document.addEventListener("mousedown", () => accel = true);
+document.addEventListener("mouseup", () => accel = false);
 
-// 描画
-function drawRoad() {
-  const horizon = canvas.height * 0.4;
-
-  for (let i = 0; i < 100; i++) {
-    let z = i + offset;
-    let scale = 1 / z * 200;
-
-    let y = horizon + scale * 200;
-    let roadWidth = scale * 500;
-
-    ctx.fillStyle = i % 2 === 0 ? "#555" : "#666";
-
-    ctx.fillRect(
-      canvas.width / 2 - roadWidth / 2 + playerX,
-      y,
-      roadWidth,
-      4
-    );
+function update(){
+  if(accel){
+    speed += 0.1;
+    rpm += 50;
+    fuel -= 0.05 * (rpm / 1000); // 回転数高いほど燃費悪い
+  } else {
+    speed *= 0.98;
+    rpm *= 0.95;
   }
-}
 
-// ループ
-function update() {
-  offset += speed;
+  if(speed < 0) speed = 0;
+  if(rpm < 0) rpm = 0;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  distance += speed * 0.01;
 
-  drawRoad();
+  document.getElementById("speed").textContent = "Speed: " + speed.toFixed(1);
+  document.getElementById("rpm").textContent = "RPM: " + Math.floor(rpm);
+  document.getElementById("fuel").textContent = "Fuel: " + fuel.toFixed(1);
+  document.getElementById("distance").textContent = "Distance: " + distance.toFixed(2);
+
+  if(fuel <= 0){
+    alert("ガス欠！");
+    location.reload();
+  }
+
+  if(distance >= 5){
+    let efficiency = distance / (100 - fuel);
+    alert("到着！燃費: " + efficiency.toFixed(2));
+    location.reload();
+  }
 
   requestAnimationFrame(update);
 }
