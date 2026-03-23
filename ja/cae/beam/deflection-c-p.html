@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/breadcrumb.css">
-<title>片持ち梁（先端集中荷重）</title>
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/breadcrumb.css">
+  <title>片持ち梁（先端集中荷重）</title>
 
-<style>
+  <style>
 body{
 font-family:Arial;
 margin:40px;
@@ -17,45 +17,46 @@ input{
 margin:5px;
 padding:5px;
 }
-</style>
+  </style>
+ </head>
 
-</head>
+ <body>
+  <div class="container">
 
-<body>
+   <!-- パンくず -->
+   <nav class="breadcrumb">
+    <a href="/">Top</a> &gt;
+    <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
+    <a href="/ja/cae/beam.html">梁計算ツール</a> &gt;
+    <a href="/ja/cae/beam/deflection-list.html">梁のたわみ公式一覧</a> &gt;
+    <span>片持ち梁（先端集中荷重）</span>
+   </nav>
 
-<!-- パンくず -->
-<nav class="breadcrumb">
-  <a href="/">Top</a> &gt;
-  <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
-  <a href="/ja/cae/beam.html">梁計算ツール</a> &gt;
-  <a href="/ja/cae/beam/deflection-list.html">梁のたわみ公式一覧</a> &gt;
-  <span>片持ち梁（先端集中荷重）</span>
-</nav>
+   <h1>片持ち梁（先端集中荷重）</h1>
 
-<h1>片持ち梁（先端集中荷重）</h1>
+   <div style="text-align:center;">
+    <img src="/svg/beam-def-c-p.svg" width="600">
+    <h2>δ = PL³ / 3EI</h2>
+   </div>
 
-<div style="text-align:center;">
-<img src="/svg/beam-def-c-p.svg" width="600">
-<h2>δ = PL³ / 3EI</h2>
-</div>
+   <label>荷重 P (N)</label><br>
+   <input id="P" type="number"><br>
 
-<label>荷重 P (N)</label><br>
-<input id="P" type="number"><br>
+   <label>梁長さ L (m)</label><br>
+   <input id="L" type="number"><br>
 
-<label>梁長さ L (m)</label><br>
-<input id="L" type="number"><br>
+   <label>ヤング率 E (Pa)</label><br>
+   <input id="E" type="number"><br>
 
-<label>ヤング率 E (Pa)</label><br>
-<input id="E" type="number"><br>
+   <label>断面2次モーメント I (m⁴)</label><br>
+   <input id="I" type="number"><br>
 
-<label>断面2次モーメント I (m⁴)</label><br>
-<input id="I" type="number"><br>
+   <button onclick="calc()">計算</button>
 
-<button onclick="calc()">計算</button>
+   <h3 id="result"></h3>
+  </div>
 
-<h3 id="result"></h3>
-
-<script>
+  <script>
 
 function calc(){
 
@@ -70,18 +71,17 @@ document.getElementById("result").innerHTML =
 "最大たわみ = " + delta.toExponential(3) + " m";
 
 }
+  </script>
 
-</script>
-
-</body>
-
-<footer>
-  <hr>
-  <a href="/ja/about.html">サイト概要</a>
+  <footer>
+   <div class="container">
+    <hr>
+    <a href="/ja/about.html">サイト概要</a>
  | 
-  <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
  | 
-  <a href="/ja/contact.html">お問い合わせ</a>
-</footer>
-
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </body>
 </html>
