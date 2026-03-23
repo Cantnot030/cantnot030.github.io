@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/breadcrumb.css">
-<title>梁のたわみ公式一覧</title>
+　<head>
+　　<meta charset="UTF-8">
+　　<link rel="stylesheet" href="/css/style.css">
+　　<link rel="stylesheet" href="/css/breadcrumb.css">
+　　<title>梁のたわみ公式一覧</title>
 
-<style>
+　　<style>
 table{
   border-collapse: collapse;
   text-align:center;
@@ -21,101 +21,101 @@ svg{
   height:80px;
   cursor:pointer;
 }
-</style>
-</head>
+　　</style>
+　</head>
 
-<body>
+ <body>
+  <div class="container">
   
-<!-- パンくず -->
-<nav class="breadcrumb">
-  <a href="/">Top</a> &gt;
-  <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
-  <a href="/ja/cae/beam.html">梁計算ツール</a> &gt;
-  <span>梁のたわみ公式一覧</span>
-</nav>
+　　<!-- パンくず -->
+   <nav class="breadcrumb">
+    <a href="/">Top</a> &gt;
+    <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
+    <a href="/ja/cae/beam.html">梁計算ツール</a> &gt;
+    <span>梁のたわみ公式一覧</span>
+   </nav>
 
-<h1>梁のたわみ公式一覧</h1>
+   <h1>梁のたわみ公式一覧</h1>
 
-<p>
+   <p>
 梁のたわみ公式の基本6種類を一覧にしました。<br>
 <br>
 図をクリックすると、対応する条件の計算ページに移動します。
 <br>
-</p>
+   </p>
 
+   <table>
+    <tr>
+     <th></th>
+     <th>片持ち梁</th>
+     <th>単純支持梁</th>
+     <th>両端固定梁</th>
+    </tr>
 
-<table>
+    <tr>
+     <th>集中荷重</th>
 
-<tr>
-<th></th>
-<th>片持ち梁</th>
-<th>単純支持梁</th>
-<th>両端固定梁</th>
-</tr>
+     <td>
+      <a class="def-link" href="/ja/cae/beam/deflection-c-p.html">
+　     <img src="/svg/beam-def-c-p.svg" style="width:100%; height:auto;">
+　     <p class="formula">δ = PL³ / 3EI</p>
+      </a>
+     </td>
 
-<tr>
-<th>集中荷重</th>
+     <td>
+      <a class="def-link" href="/ja/cae/beam/deflection-s-p.html">
+       <img src="/svg/beam-def-s-p.svg" style="width:100%; height:auto;">
+       <p class="formula">δ = PL³ / 48EI</p>
+      </a>
+     </td>
 
-<td>
- <a class="def-link" href="/ja/cae/beam/deflection-c-p.html">
-　 <img src="/svg/beam-def-c-p.svg" style="width:100%; height:auto;">
-　 <p class="formula">δ = PL³ / 3EI</p>
- </a>
-</td>
+     <td>
+      <a class="def-link" href="/ja/cae/beam/deflection-f-p.html">
+       <img src="/svg/beam-def-f-p.svg" style="width:100%; height:auto;">
+       <p class="formula">δ = PL³ / 192EI</p>
+      </a>
+     </td>
 
-<td>
- <a class="def-link" href="/ja/cae/beam/deflection-s-p.html">
-  <img src="/svg/beam-def-s-p.svg" style="width:100%; height:auto;">
-　 <p class="formula">δ = PL³ / 48EI</p>
- </a>
-</td>
+    </tr>
 
-<td>
- <a class="def-link" href="/ja/cae/beam/deflection-f-p.html">
-  <img src="/svg/beam-def-f-p.svg" style="width:100%; height:auto;">
-　 <p class="formula">δ = PL³ / 192EI</p>
- </a>
-</td>
+    <tr>
+     <th>分布荷重</th>
 
-</tr>
+     <td>
+      <a class="def-link" href="/ja/cae/beam/deflection-c-w.html">
+       <img src="/svg/beam-def-c-w.svg" style="width:100%; height:auto;">
+       <p class="formula">δ = wL⁴ / 8EI</p>
+      </a>
+     </td>
 
-<tr>
-<th>分布荷重</th>
+     <td>
+      <a class="def-link" href="/ja/cae/beam/deflection-s-w.html">
+       <img src="/svg/beam-def-s-w.svg" style="width:100%; height:auto;">
+       <p class="formula">δ = 5wL⁴ / 384EI</p>
+      </a>
+     </td>
 
-<td>
- <a class="def-link" href="/ja/cae/beam/deflection-c-w.html">
-  <img src="/svg/beam-def-c-w.svg" style="width:100%; height:auto;">
-　 <p class="formula">δ = wL⁴ / 8EI</p>
- </a>
-</td>
+     <td>
+      <a class="def-link" href="/ja/cae/beam/deflection-f-w.html">
+       <img src="/svg/beam-def-f-w.svg" style="width:100%; height:auto;">
+       <p class="formula">δ = wL⁴ / 384EI</p>
+      </a>
+     </td>
 
-<td>
- <a class="def-link" href="/ja/cae/beam/deflection-s-w.html">
-  <img src="/svg/beam-def-s-w.svg" style="width:100%; height:auto;">
-　 <p class="formula">δ = 5wL⁴ / 384EI</p>
- </a>
-</td>
+    </tr>
 
-<td>
- <a class="def-link" href="/ja/cae/beam/deflection-f-w.html">
-  <img src="/svg/beam-def-f-w.svg" style="width:100%; height:auto;">
-　 <p class="formula">δ = wL⁴ / 384EI</p>
- </a>
-</td>
+   </table>
+  </div>
 
-</tr>
-
-</table>
-
-</body>
-
-<footer>
-  <hr>
-  <a href="/ja/about.html">サイト概要</a>
+  <footer>
+   <div class="container">
+<hr>
+    <a href="/ja/about.html">サイト概要</a>
  | 
-  <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
  | 
-  <a href="/ja/contact.html">お問い合わせ</a>
-</footer>
-
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </div>
 </html>
