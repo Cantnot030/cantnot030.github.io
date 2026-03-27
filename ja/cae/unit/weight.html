@@ -24,35 +24,35 @@ background:#f5f5f5;
  </head>
 
  <body>
-  
+  <div class="container">
     
-<!-- パンくず -->
-<nav class="breadcrumb">
-  <a href="/">Top</a> &gt;
-  <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
-  <a href="/ja/cae/unit/unit-converter.html">単位変換ツール</a> &gt;
-  <span>重さ単位変換</span>
-</nav>
+   <!-- パンくず -->
+   <nav class="breadcrumb">
+    <a href="/">Top</a> &gt;
+    <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
+    <a href="/ja/cae/unit/unit-converter.html">単位変換ツール</a> &gt;
+    <span>重さ単位変換</span>
+   </nav>
 
-<h1>重さ単位変換</h1>
+   <h1>重さ単位変換</h1>
 
-<p>値を入力し、単位を選択してください。</p>
+   <p>値を入力し、単位を選択してください。</p>
 
-<input type="number" id="value" placeholder="数値">
+   <input type="number" id="value" placeholder="数値">
 
-<select id="unit">
-<option value="mg">mg</option>  
-<option value="g">g</option>
-<option value="kg">kg</option>
-<option value="lb">lb</option>
-<option value="oz">oz</option>
-</select>
+   <select id="unit">
+    <option value="mg">mg</option>  
+    <option value="g">g</option>
+    <option value="kg">kg</option>
+    <option value="lb">lb</option>
+    <option value="oz">oz</option>
+   </select>
 
-<button onclick="convert()">変換</button>
+   <button onclick="convert()">変換</button>
 
-<div class="result" id="result"></div>
+   <div class="result" id="result"></div>
 
-<script>
+   <script>
 
 function convert(){
 
@@ -107,18 +107,18 @@ oz : ${oz.toFixed(4)} <br>
 `;
 
 }
+   </script>
+  </div>
 
-</script>
-
-</body>
-
-<footer>
-  <hr>
-  <a href="/ja/about.html">サイト概要</a>
+  <footer>
+   <div class="container">
+    <hr>
+    <a href="/ja/about.html">サイト概要</a>
  | 
-  <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
  | 
-  <a href="/ja/contact.html">お問い合わせ</a>
-</footer>
-
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </body>
 </html>
