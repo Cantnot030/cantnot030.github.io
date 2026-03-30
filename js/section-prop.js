@@ -107,11 +107,17 @@ let b = parseFloat(document.getElementById("b").value);
 let h = parseFloat(document.getElementById("h").value);
 
 let A = b*h;
-let I = b*Math.pow(h,3)/12;
-let Z = b*Math.pow(h,2)/6;
+let Ix = b*Math.pow(h,3)/12;
+let Zx = b*Math.pow(h,2)/6;
 
+/*
 document.getElementById("result").innerHTML =
 "A="+A+"<br>I="+I+"<br>Z="+Z;
+*/
+
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
@@ -120,11 +126,12 @@ function circleCalc(){
 let d = parseFloat(document.getElementById("d").value);
 
 let A = Math.PI*d*d/4;
-let I = Math.PI*Math.pow(d,4)/64;
-let Z = Math.PI*Math.pow(d,3)/32;
+let Ix = Math.PI*Math.pow(d,4)/64;
+let Zx = Math.PI*Math.pow(d,3)/32;
 
-document.getElementById("result").innerHTML =
-"A="+A+"<br>I="+I+"<br>Z="+Z;
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
@@ -134,11 +141,12 @@ let D = parseFloat(document.getElementById("D").value);
 let d = parseFloat(document.getElementById("d").value);
 
 let A = Math.PI*(D*D-d*d)/4;
-let I = Math.PI*(Math.pow(D,4)-Math.pow(d,4))/64;
-let Z = I/(D/2);
+let Ix = Math.PI*(Math.pow(D,4)-Math.pow(d,4))/64;
+let Zx = I/(D/2);
 
-document.getElementById("result").innerHTML =
-"A="+A+"<br>I="+I+"<br>Z="+Z;
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
@@ -155,8 +163,9 @@ let Ix = (2*tf*Math.pow(H,3) + Math.pow(tw,3)*(B - 2*tf))/12;
 
 let Zx = Ix/(H/2);
 
-document.getElementById("result").innerHTML =
-"A = "+A+"<br>"+"Ix = "+Ix+"<br>"+"Zx = "+Zx;
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
@@ -181,10 +190,9 @@ let Ix =
 
 let Zx = Ix/(H/2);
 
-document.getElementById("result").innerHTML =
-"A = "+A+"<br>"+
-"Ix = "+Ix+"<br>"+
-"Zx = "+Zx;
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
@@ -212,10 +220,9 @@ let Ix = Ix1 + Ix2;
 
 let Zx = Ix/(H-ybar);
 
-document.getElementById("result").innerHTML =
-"A = "+A+"<br>"+
-"Ix = "+Ix+"<br>"+
-"Zx = "+Zx;
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
@@ -245,10 +252,9 @@ let Ix = Ix1 + Ix2 - Ix3;
 
 let Zx = Ix/(H-ybar);
 
-document.getElementById("result").innerHTML =
-"A = "+A+"<br>"+
-"Ix = "+Ix+"<br>"+
-"Zx = "+Zx;
+document.getElementById("A_val").textContent = A;
+document.getElementById("Ix_val").textContent = Ix;
+document.getElementById("Zx_val").textContent = Zx;
 
 }
 
