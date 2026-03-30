@@ -258,11 +258,11 @@ document.getElementById("Zx_val").textContent = Zx;
 
 }
 
+}
+
 function copyText(id) {
   const text = document.getElementById(id).textContent;
   navigator.clipboard.writeText(text)
     .then(() => alert("コピーしました"))
     .catch(() => alert("コピー失敗"));
-}
-
 }
