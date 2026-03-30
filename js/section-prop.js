@@ -142,7 +142,7 @@ let d = parseFloat(document.getElementById("d").value);
 
 let A = Math.PI*(D*D-d*d)/4;
 let Ix = Math.PI*(Math.pow(D,4)-Math.pow(d,4))/64;
-let Zx = I/(D/2);
+let Zx = Ix/(D/2);
 
 document.getElementById("A_val").textContent = A;
 document.getElementById("Ix_val").textContent = Ix;
