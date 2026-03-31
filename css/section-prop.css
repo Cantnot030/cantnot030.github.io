@@ -4,6 +4,7 @@
   text-align: right;
   border: 1px solid #333;   /* ←枠 */
   padding: 5px;             /* ←余白 */
+  margin-left: 10px;
 }
 
 #rectInputs {
