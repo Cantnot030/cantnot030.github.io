@@ -1,21 +1,21 @@
 #A_val, #Ix_val, #Zx_val {
   display: inline-block;
-  width: 120px;   /* 好きな幅に調整 */
+  width: 200px;   /* 好きな幅に調整 */
   text-align: right;
 }
 
 #rectInputs {
-  min-height: 400px; /* ←最大パターンに合わせる */
+  min-height: 200px; /* ←最大パターンに合わせる */
 }
 
 #circleInputs {
-  min-height: 400px; /* ←最大パターンに合わせる */
+  min-height: 200px; /* ←最大パターンに合わせる */
 }
 
 #pipeInputs {
-  min-height: 400px; /* ←最大パターンに合わせる */
+  min-height: 200px; /* ←最大パターンに合わせる */
 }
 
 #hbeamInputs {
-  min-height: 400px; /* ←最大パターンに合わせる */
+  min-height: 200px; /* ←最大パターンに合わせる */
 }
