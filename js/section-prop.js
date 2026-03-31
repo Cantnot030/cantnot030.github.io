@@ -12,7 +12,6 @@ document.getElementById("A_val").textContent = "";
 document.getElementById("Ix_val").textContent = "";
 document.getElementById("Zx_val").textContent = "";
 
-
 if(shape==="rect"){
 document.getElementById("rectInputs").style.display = "block";
 drawRect()
