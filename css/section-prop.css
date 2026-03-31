@@ -2,6 +2,8 @@
   display: inline-block;
   width: 200px;   /* 好きな幅に調整 */
   text-align: right;
+  border: 1px solid #333;   /* ←枠 */
+  padding: 5px;             /* ←余白 */
 }
 
 #rectInputs {
