@@ -260,9 +260,42 @@ document.getElementById("Zx_val").textContent = Zx;
 
 }
 
+
+function copyText(id) {
+  const el = document.getElementById(id);
+
+  if (!el) {
+    alert("要素が見つからない");
+    return;
+  }
+
+  const text = el.textContent;
+
+  // 新方式
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text)
+      .then(() => console.log("コピー成功"))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+// 旧方式（安定）
+function fallbackCopy(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
+
+/*
 function copyText(id) {
   const text = document.getElementById(id).textContent;
   navigator.clipboard.writeText(text)
     .then(() => alert("コピーしました"))
     .catch(() => alert("コピー失敗"));
 }
+*/
