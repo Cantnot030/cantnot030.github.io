@@ -1,0 +1,15 @@
+#rectInputs {
+  min-height: 200px; /* ←最大パターンに合わせる */
+}
+
+#circleInputs {
+  min-height: 200px; /* ←最大パターンに合わせる */
+}
+
+#pipeInputs {
+  min-height: 200px; /* ←最大パターンに合わせる */
+}
+
+#hbeamInputs {
+  min-height: 200px; /* ←最大パターンに合わせる */
+}
