@@ -8,7 +8,10 @@ document.getElementById("circleInputs").style.display = "none";
 document.getElementById("pipeInputs").style.display = "none";
 document.getElementById("hbeamInputs").style.display = "none";
 
-clearResult();
+document.getElementById("A_val").textContent = "";
+document.getElementById("Ix_val").textContent = "";
+document.getElementById("Zx_val").textContent = "";
+
 
 if(shape==="rect"){
 document.getElementById("rectInputs").style.display = "block";
@@ -301,9 +304,3 @@ function copyText(id) {
     .catch(() => alert("コピー失敗"));
 }
 */
-
-function clearResult(){
-  document.getElementById("A_val").textContent = "";
-  document.getElementById("Ix_val").textContent = "";
-  document.getElementById("Zx_val").textContent = "";
-}
