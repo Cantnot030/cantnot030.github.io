@@ -10,7 +10,8 @@
 #A_unit, #Ix_unit, #Zx_unit {
   display: inline-block;
   width: 40px;   /* 好きな幅に調整 */
-  text-align: right;
+  text-align: left;
+  text-size: 40px;
 }
 
 #rectInputs {
