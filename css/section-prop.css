@@ -11,7 +11,7 @@
   display: inline-block;
   width: 40px;   /* 好きな幅に調整 */
   text-align: left;
-  text-size: 40px;
+  font-size: 40px;
 }
 
 #rectInputs {
