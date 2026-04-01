@@ -16,8 +16,6 @@ function setUnits() {
 
 function changeShape(){
 
-setUnits();
-
 let shape = document.getElementById("shape").value;
 
 document.getElementById("rectInputs").style.display = "none";
