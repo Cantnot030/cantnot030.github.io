@@ -17,6 +17,21 @@ input{
 margin:5px;
 padding:5px;
 }
+
+.bw {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 35%;
+}
+
   </style>
  </head>
 
@@ -40,7 +55,8 @@ padding:5px;
    </div>
 
 
-   <div class="row">
+   <div class="bw">
+    <div class="left">
 
    <label>荷重 P (N)</label><br>
    <input id="P" type="number"><br>
@@ -60,10 +76,10 @@ padding:5px;
   
    </div>
   
-   <div class="row2">
+   <div class="right">
     <h3>関連ツール</h3>
    </div>
-  
+  </div>
   
   
   </div>
