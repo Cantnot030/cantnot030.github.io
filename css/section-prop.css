@@ -7,6 +7,12 @@
   margin-left: 10px;
 }
 
+#A_unit, #Ix_unit, #Zx_unit {
+  display: inline-block;
+  width: 40px;   /* 好きな幅に調整 */
+  text-align: right;
+}
+
 #rectInputs {
   min-height: 200px; /* ←最大パターンに合わせる */
 }
