@@ -49,6 +49,11 @@ text-align: right;
     <option value="pipe">中空円</option>
     <option value="hbeam">H鋼</option>
    </select>
+  
+   <select id="unit">
+    <option value="mm">mm</option>
+    <option value="m">m</option>
+   </select>
 
    <svg id="sectionSVG" width="300" height="300"></svg>
 <!--   <body onload="drawRect()"> -->
@@ -99,13 +104,19 @@ text-align: right;
 <!--   <p id="result"></p> -->
   
    <p>
-    <label>A = </label><span id="A_val">-</span>
+    <label>A = </label>
+    <span id="A_val">-</span>
+    <span id="A_unit"></span>
     <button onclick="copyText('A_val')">コピー</button><br>
 
-    <label>Ix = </label><span id="Ix_val">-</span>
+    <label>Ix = </label>
+    <span id="Ix_val">-</span>
+    <span id="Ix_unit"></span>
     <button onclick="copyText('Ix_val')">コピー</button><br>
 
-    <label>Zx = </label><span id="Zx_val">-</span>
+    <label>Zx = </label>
+    <span id="Zx_val">-</span>
+    <span id="Zx_unit"></span>
     <button onclick="copyText('Zx_val')">コピー</button>
    </p>
   
