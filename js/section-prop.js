@@ -1,5 +1,22 @@
+function setUnits() {
+  const unit = document.getElementById("unit").value;
+
+  if (unit === "mm") {
+    document.getElementById("A_unit").textContent = " mm²";
+    document.getElementById("Ix_unit").textContent = " mm⁴";
+    document.getElementById("Zx_unit").textContent = " mm³";
+  }
+
+  if (unit === "m") {
+    document.getElementById("A_unit").textContent = " m²";
+    document.getElementById("Ix_unit").textContent = " m⁴";
+    document.getElementById("Zx_unit").textContent = " m³";
+  }
+}
 
 function changeShape(){
+
+setUnits();
 
 let shape = document.getElementById("shape").value;
 
