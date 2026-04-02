@@ -40,3 +40,18 @@ padding:5px;
   color: #2a5db0;
 }
 
+.right ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.right li {
+  margin-bottom: 10px;
+}
+
+.right li p {
+  margin: 2px 0 0;   /* ←これが効く */
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.3;
+}
