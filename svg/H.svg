@@ -1,8 +1,38 @@
-<rect x="50" y="50" width="200" height="30"
+<rect x="50" y="50" width="30" height="200"
 fill="lightblue" stroke="black"/>
 
-<rect x="130" y="80" width="40" height="140"
+<rect x="170" y="50" width="30" height="200"
 fill="lightblue" stroke="black"/>
 
-<rect x="50" y="220" width="200" height="30"
+<rect x="50" y="110" width="200" height="30"
 fill="lightblue" stroke="black"/>
+
+<!-- B（幅） -->
+<line x1="50" y1="210" x2="200" y2="210" stroke="black" stroke-width="2"/>
+<polygon points="50,210 60,205 60,215" fill="black"/>
+<polygon points="200,210 190,205 190,210" fill="black"/>
+<text x="145" y="220" class="text">B</text>
+
+<!-- H（高さ） -->
+<line x1="270" y1="50" x2="270" y2="250" stroke="black" stroke-width="2"/>
+<line x1="250" y1="50" x2="290" y2="50" stroke="black" stroke-width="2"/>
+<line x1="250" y1="250" x2="290" y2="250" stroke="black" stroke-width="2"/>
+<polygon points="270,50 265,60 275,60" fill="black"/>
+<polygon points="270,250 265,240 275,240" fill="black"/>
+<text x="275" y="155" class="text">H</text>
+
+<!-- tf（フランジ厚） -->
+<line x1="20" y1="50" x2="20" y2="80" stroke="black" stroke-width="2"/>
+<line x1="10" y1="50" x2="30" y2="50" stroke="black" stroke-width="2"/>
+<line x1="10" y1="80" x2="30" y2="80" stroke="black" stroke-width="2"/>
+<polygon points="20,50 15,60 25,60" fill="black"/>
+<polygon points="20,80 15,70 25,70" fill="black"/>
+<text x="5" y="70" class="text">tf</text>
+
+<!-- tw（ウェブ厚） -->
+<line x1="130" y1="30" x2="170" y2="30" stroke="black" stroke-width="2"/>
+<line x1="130" y1="20" x2="130" y2="40" stroke="black" stroke-width="2"/>
+<line x1="170" y1="20" x2="170" y2="40" stroke="black" stroke-width="2"/>
+<polygon points="130,30 140,25 140,35" fill="black"/>
+<polygon points="170,30 160,25 160,35" fill="black"/>
+<text x="145" y="20" class="text">tw</text>
