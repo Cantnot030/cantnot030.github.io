@@ -4,4 +4,4 @@
 <line x1="60" y1="250" x2="240" y2="250" stroke="black" stroke-width="2"/>
 <polygon points="60,250 70,245 70,255" fill="black"/>
 <polygon points="240,250 230,245 230,255" fill="black"/>
-<text x="145" y="265" class="text">d</text>
+<text x="145" y="270" class="text">d</text>
