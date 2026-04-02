@@ -55,3 +55,8 @@ padding:5px;
   color: #555;
   line-height: 1.3;
 }
+
+.right li p::before {
+  content: "→ ";
+  color: #888;
+}
