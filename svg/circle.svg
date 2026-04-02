@@ -1,7 +1,7 @@
 <circle cx="150" cy="150" r="90" fill="lightblue" stroke="black"/>
-<line x1="60" y1="150" x2="240" y2="150" stroke="black" stroke-width="2"/>
-<polygon points="70,145 60,150 70,155" fill="black"/>
-<polygon points="230,145 240,150 230,155" fill="black"/>
-<text x="145" y="145" class="text">d</text>
-
-
+<line x1="60" y1="150" x2="60" y2="250" stroke="black" stroke-width="2"/>
+<line x1="240" y1="150" x2="240" y2="250" stroke="black" stroke-width="2"/>
+<line x1="60" y1="250" x2="240" y2="250" stroke="black" stroke-width="2"/>
+<polygon points="60,250 70,245 70,255" fill="black"/>
+<polygon points="240,250 230,245 230,255" fill="black</text>
+<text x="145" y="260" class="text">d</text>
