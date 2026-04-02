@@ -28,23 +28,43 @@
     <h2>δ = PL³ / 48EI</h2>
    </div>
 
-   <label>荷重 P (N)</label><br>
-   <input id="P" type="number"><br>
+   <div class="bw">
+    <div class="left">
+     <label>荷重 P (N)</label><br>
+     <input id="P" type="number"><br>
 
-   <label>梁長さ L (m)</label><br>
-   <input id="L" type="number"><br>
+     <label>梁長さ L (m)</label><br>
+     <input id="L" type="number"><br>
 
-   <label>ヤング率 E (Pa)</label><br>
-   <input id="E" type="number"><br>
+     <label>ヤング率 E (Pa)</label><br>
+     <input id="E" type="number"><br>
 
-   <label>断面2次モーメント I (m⁴)</label><br>
-   <input id="I" type="number"><br>
+     <label>断面2次モーメント I (m⁴)</label><br>
+     <input id="I" type="number"><br>
 
-   <button onclick="calc()">計算</button>
+     <button onclick="calc()">計算</button>
 
-   <h3 id="result"></h3>
+     <h3 id="result"></h3>
+    </div>
+  
+    <div class="right">
+     <h4>関連ツール</h4>
+     <ul>
+      <li>
+       <a href="/ja/cae/unit/unit-converter.html">単位変換</a>
+       <p>入力単位に変換</p>
+      </li>
+      <li>
+       <a href="/ja/cae/beam/section-prop.html">断面特性計算ツール</a>
+       <p>断面2次モーメント算定</p>
+      </li>
+     </ul>
+    </div>
+   </div>
+  
+  </div>
 
-   <script>
+  <script>
 
 function calc(){
 
@@ -60,8 +80,7 @@ document.getElementById("result").innerHTML =
 
 }
 
-   </script>
-  </div>
+  </script>
 
   <footer>
    <div class="container">
