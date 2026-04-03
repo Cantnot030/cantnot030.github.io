@@ -21,9 +21,9 @@ fill="lightblue" stroke="black"/>
 
 <!-- tw（ウェブ厚） -->
 <line x1="65" y1="135" x2="65" y2="165" stroke="black" stroke-width="2"/>
-<polygon points="20,50 15,60 25,60" fill="black"/>
-<polygon points="20,80 15,70 25,70" fill="black"/>
-<text x="5" y="70" class="text">tw</text>
+<polygon points="55,135 50,145 60,145" fill="black"/>
+<polygon points="55,165 50,155 60,155" fill="black"/>
+<text x="45" y="155" class="text">tw</text>
 
 <!-- tf（フランジ厚） -->
 <line x1="130" y1="30" x2="170" y2="30" stroke="black" stroke-width="2"/>
