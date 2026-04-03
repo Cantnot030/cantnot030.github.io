@@ -14,11 +14,9 @@ fill="lightblue" stroke="black"/>
 <text x="145" y="245" class="text">B</text>
 
 <!-- H（高さ） -->
-<line x1="270" y1="50" x2="270" y2="250" stroke="black" stroke-width="2"/>
-<line x1="250" y1="50" x2="290" y2="50" stroke="black" stroke-width="2"/>
-<line x1="250" y1="250" x2="290" y2="250" stroke="black" stroke-width="2"/>
-<polygon points="270,50 265,60 275,60" fill="black"/>
-<polygon points="270,250 265,240 275,240" fill="black"/>
+<line x1="235" y1="75" x2="235" y2="225" stroke="black" stroke-width="2"/>
+<polygon points="235,75 230,85 240,85" fill="black"/>
+<polygon points="235,235 230,230 240,230" fill="black"/>
 <text x="275" y="155" class="text">H</text>
 
 <!-- tf（フランジ厚） -->
