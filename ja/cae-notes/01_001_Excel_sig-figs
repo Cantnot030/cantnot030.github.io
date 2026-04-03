@@ -12,7 +12,7 @@
    <!-- パンくず -->
    <nav class="breadcrumb">
     <a href="/">Top</a> &gt;
-    <a href="/ja/cae-note/">CAEノート</a> &gt;
+    <a href="/ja/cae-notes/">CAEノート</a> &gt;
     <span>タイトル</span>
    </nav>
 
