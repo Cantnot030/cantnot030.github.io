@@ -14,7 +14,7 @@
    <nav class="breadcrumb">
     <a href="/">Top</a> &gt;
     <a href="/ja/cae-notes/cae-notes.html">CAEノート</a> &gt;
-    <span>Excel-有効数字丸め</span>
+    <span>[Excel]有効数字丸め</span>
    </nav>
 
    <h1>Excelで有効数字に丸める方法（関数あり）</h1>
@@ -23,7 +23,13 @@
    <hr>
 
    <h2 class="center-title">
-    =ROUND(値, 指定桁数 - 1 - INT(LOG10(ABS(値))))
+    =ROUND(
+    <span class="hl-red">値</span>
+    , 
+    <span class="hl-green">指定桁数</span>
+     - 1 - INT(LOG10(ABS(
+    <span class="hl-red">値</span>
+    ))))
    </h2>
 
    <h2>概要</h2>
