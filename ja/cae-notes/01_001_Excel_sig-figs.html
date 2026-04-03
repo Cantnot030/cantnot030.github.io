@@ -13,44 +13,75 @@
    <nav class="breadcrumb">
     <a href="/">Top</a> &gt;
     <a href="/ja/cae-notes/cae-notes.html">CAEノート</a> &gt;
-    <span>有効数字丸め</span>
+    <span>Excel-有効数字丸め</span>
    </nav>
 
-   <h1>Excel 有効数字丸め</h1>
+   <h1>Excelで有効数字に丸める方法（関数あり）</h1>
 
    <p class="note-meta">投稿日：2026-04-03</p>
-
    <hr>
 
-   <h2 style="text-align:center;">
+   <h2 class="center-title">結論</h2>
+
+   <p>
+    Excelで有効数字に丸めるには、以下の関数を使用します。
+   </p>
+
+   <div class="formula">
     =ROUND(A1, 指定桁数 - 1 - INT(LOG10(ABS(A1))))
-   </h2>
+   </div>
+
+   <h2 class="center-title">概要</h2>
+
    <p>
-    A1セルにある値を指定桁数で有効数字丸めにする。<br>
-    表示上ではなく、セルの持つ数値そのものを丸める。
+    Excelでは表示形式で桁数を調整できますが、セルが持つ値自体は変わりません。
+    本関数を使用することで、有効数字で実際の値を丸めることができます。
    </p>
 
-   <h2>使用例</h2>
+   <h2 class="center-title">使用例</h2>
+
    <p>
-    ・B12セルにある値を有効数字4桁に丸める場合<br>
-      =ROUND(B12,4-1-INT(LOG10(ABS(B12))))
+    B12セルの値を有効数字4桁に丸める場合
    </p>
 
-   <h3>結果</h3>
+   <div class="formula">
+    =ROUND(B12, 4 - 1 - INT(LOG10(ABS(B12))))
+   </div>
+
+   <p><strong>結果</strong></p>
+
+   <div class="formula">
+    0.1234567 → 0.1235
+   </div>
+
+   <h2 class="center-title">ポイント</h2>
+
+   <ul>
+    <li>LOG10で桁数を取得</li>
+    <li>INTで整数化</li>
+    <li>ROUNDで指定桁に丸める</li>
+   </ul>
+
+   <h2 class="center-title">注意点</h2>
+
+   <ul>
+    <li>0や負の値では挙動に注意</li>
+    <li>表示形式の変更とは別物</li>
+   </ul>
+
+   <h2 class="center-title">関連ツール</h2>
+
+   <ul>
+    <li><a href="/ja/cae/unit/">単位変換ツール</a></li>
+    <li><a href="/ja/cae/beam/section-prop.html">断面特性計算ツール</a></li>
+   </ul>
+
+   <h2 class="center-title">まとめ</h2>
+
    <p>
-    [B12]0.1234567<br>
-    =>0.1235
+    有効数字で正確に値を扱うには、表示形式ではなく関数で処理することが重要です。
    </p>
-   <br>
-  
-   <h2>memo</h2>
-   <p>業務によっては有効数字ルールが決められている。<br>
-      表示桁数の調整によって表示上で整えたとしても、<br>
-      セルは細かい桁まで持っている。<br>
-      本関数の組み合わせで処理すると、<br>
-      一意にセルの持つ値を制御できる。
-  　</p>
-    <br>
+
   </div>
 
   <footer>
