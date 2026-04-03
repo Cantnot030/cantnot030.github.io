@@ -13,7 +13,11 @@
   overflow-x: auto;
 }
 
-.h2-title {
+h2 {
   margin-top: 40px;
   margin-bottom: 15px;
+}
+
+.center-title {
+  text-align: center;
 }
