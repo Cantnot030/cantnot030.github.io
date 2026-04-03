@@ -20,4 +20,6 @@ h2 {
 
 .center-title {
   text-align: center;
+  border: 1px solid #333;   /* ←枠 */
+  padding: 5px;             /* ←余白 */
 }
