@@ -8,10 +8,10 @@ fill="lightblue" stroke="black"/>
 fill="lightblue" stroke="black"/>
 
 <!-- B（幅） -->
-<line x1="50" y1="210" x2="200" y2="210" stroke="black" stroke-width="2"/>
-<polygon points="50,210 60,205 60,215" fill="black"/>
-<polygon points="200,210 190,205 190,210" fill="black"/>
-<text x="145" y="220" class="text">B</text>
+<line x1="75" y1="235" x2="225" y2="235" stroke="black" stroke-width="2"/>
+<polygon points="75,235 85,230 85,240" fill="black"/>
+<polygon points="225,235 215,230 215,240" fill="black"/>
+<text x="145" y="245" class="text">B</text>
 
 <!-- H（高さ） -->
 <line x1="270" y1="50" x2="270" y2="250" stroke="black" stroke-width="2"/>
