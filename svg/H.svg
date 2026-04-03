@@ -19,18 +19,16 @@ fill="lightblue" stroke="black"/>
 <polygon points="235,235 230,230 240,230" fill="black"/>
 <text x="240" y="155" class="text">H</text>
 
-<!-- tf（フランジ厚） -->
-<line x1="20" y1="50" x2="20" y2="80" stroke="black" stroke-width="2"/>
-<line x1="10" y1="50" x2="30" y2="50" stroke="black" stroke-width="2"/>
-<line x1="10" y1="80" x2="30" y2="80" stroke="black" stroke-width="2"/>
+<!-- tw（ウェブ厚） -->
+<line x1="65" y1="135" x2="65" y2="165" stroke="black" stroke-width="2"/>
 <polygon points="20,50 15,60 25,60" fill="black"/>
 <polygon points="20,80 15,70 25,70" fill="black"/>
-<text x="5" y="70" class="text">tf</text>
+<text x="5" y="70" class="text">tw</text>
 
-<!-- tw（ウェブ厚） -->
+<!-- tf（フランジ厚） -->
 <line x1="130" y1="30" x2="170" y2="30" stroke="black" stroke-width="2"/>
 <line x1="130" y1="20" x2="130" y2="40" stroke="black" stroke-width="2"/>
 <line x1="170" y1="20" x2="170" y2="40" stroke="black" stroke-width="2"/>
 <polygon points="130,30 140,25 140,35" fill="black"/>
 <polygon points="170,30 160,25 160,35" fill="black"/>
-<text x="145" y="20" class="text">tw</text>
+<text x="145" y="20" class="text">tf</text>
