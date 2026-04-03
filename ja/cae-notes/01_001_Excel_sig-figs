@@ -1,11 +1,21 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="UTF-8">
+  <title>CAEノート</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/breadcrumb.css">
+ </head>
 
-  <!-- パンくず -->
-  <nav class="breadcrumb">
+ <body>
+  <div class="container">
+   <!-- パンくず -->
+   <nav class="breadcrumb">
     <a href="/">Top</a> &gt;
-    <a href="/ja/note/">CAEノート</a> &gt;
+    <a href="/ja/cae-note/">CAEノート</a> &gt;
     <span>タイトル</span>
-  </nav>
+   </nav>
+
 
   <h1>タイトル（例：梁たわみ計算でよくあるミス）</h1>
 
