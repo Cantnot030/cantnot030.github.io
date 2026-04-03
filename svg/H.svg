@@ -16,13 +16,13 @@ fill="lightblue" stroke="black"/>
 <!-- H（高さ） -->
 <line x1="235" y1="75" x2="235" y2="225" stroke="black" stroke-width="2"/>
 <polygon points="235,75 230,85 240,85" fill="black"/>
-<polygon points="235,225 210,220 240,220" fill="black"/>
+<polygon points="235,225 230,220 240,220" fill="black"/>
 <text x="240" y="155" class="text">H</text>
 
 <!-- tw（ウェブ厚） -->
 <line x1="65" y1="135" x2="65" y2="165" stroke="black" stroke-width="2"/>
-<polygon points="55,135 50,145 60,145" fill="black"/>
-<polygon points="55,165 50,155 60,155" fill="black"/>
+<polygon points="65,135 60,145 70,145" fill="black"/>
+<polygon points="65,165 60,155 70,155" fill="black"/>
 <text x="45" y="155" class="text">tw</text>
 
 <!-- tf（フランジ厚） -->
