@@ -63,3 +63,16 @@
   </p>
 
 </div>
+
+  <footer>
+   <div class="container">
+    <hr>
+    <a href="/ja/about.html">サイト概要</a>
+ | 
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+ | 
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </body>
+</html>
