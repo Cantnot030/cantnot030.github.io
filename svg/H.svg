@@ -17,7 +17,7 @@ fill="lightblue" stroke="black"/>
 <line x1="235" y1="75" x2="235" y2="225" stroke="black" stroke-width="2"/>
 <polygon points="235,75 230,85 240,85" fill="black"/>
 <polygon points="235,235 230,230 240,230" fill="black"/>
-<text x="275" y="155" class="text">H</text>
+<text x="240" y="155" class="text">H</text>
 
 <!-- tf（フランジ厚） -->
 <line x1="20" y1="50" x2="20" y2="80" stroke="black" stroke-width="2"/>
