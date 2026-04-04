@@ -142,16 +142,16 @@ document.getElementById("result").innerHTML = `
 <h3>変換結果</h3>
 
 Å : ${formatSmart(A,digits)} <br>
-nm : ${nm.toFixed(4)} <br>
-μm : ${microm.toFixed(4)} <br>
-mm : ${mm.toFixed(4)} <br>
-cm : ${cm.toFixed(4)} <br>
-m : ${meter.toFixed(4)} <br>
-km : ${km.toFixed(6)} <br>
-yard : ${yard.toFixed(4)} <br>
-mile : ${mile.toFixed(4)} <br>
-inch : ${inch.toFixed(4)} <br>
-ft : ${ft.toFixed(4)}
+nm : ${formatSmart(nm,digits)} <br>
+μm : ${formatSmart(microm.toFixed(4)} <br>
+mm : ${formatSmart(mm.toFixed(4)} <br>
+cm : ${formatSmart(cm.toFixed(4)} <br>
+m : ${formatSmart(meter.toFixed(4)} <br>
+km : ${formatSmart(km.toFixed(6)} <br>
+yard : ${formatSmart(yard.toFixed(4)} <br>
+mile : ${formatSmart(mile.toFixed(4)} <br>
+inch : ${formatSmart(inch.toFixed(4)} <br>
+ft : ${formatSmart(ft.toFixed(4)}
 
 `;
 
