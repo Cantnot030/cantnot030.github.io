@@ -46,7 +46,7 @@ text-align: right;
    <input type="number" id="K" placeholder="K（体積弾性係数）"><br>
 
    <select id="digits">
-    結果表示形式
+    <option value="" disabled selected>結果表示形式</option>
     <option value="auto">自動表示</option>  
     <option value="e">指数表示</option>
    </select>
@@ -69,6 +69,7 @@ let E = parseFloat(document.getElementById("E").value);
 let G = parseFloat(document.getElementById("G").value);
 let nu = parseFloat(document.getElementById("nu").value);
 let K = parseFloat(document.getElementById("K").value);
+let digits = parseFloat(document.getElementById("digits").value);
 
 // 入力チェック
 let count = 0;
@@ -132,11 +133,10 @@ nu = (3*K - 2*G) / (2*(3*K + G));
 document.getElementById("result").innerHTML = `
 <h3>計算結果</h3>
 
-E : ${E}<br>
-G : ${G}<br>
-ν : ${nu}${warning}
-<br>
-K : ${K}
+E : ${formatSmart(E,digits)}<br>
+G : ${formatSmart(G,digits)}<br>
+ν : ${nu}${warning}<br>
+K : ${formatSmart(K,digits)}
 `;
 
 }
