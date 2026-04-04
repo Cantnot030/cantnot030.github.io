@@ -141,7 +141,7 @@ let ft = meter / 0.3048;
 document.getElementById("result").innerHTML = `
 <h3>変換結果</h3>
 
-Å : ${A.toFixed(4)} <br>
+Å : ${formatSmart(A,digits)} <br>
 nm : ${nm.toFixed(4)} <br>
 μm : ${microm.toFixed(4)} <br>
 mm : ${mm.toFixed(4)} <br>
