@@ -45,10 +45,12 @@ background:#f5f5f5;
     <option value="kPa">kPa</option>
     <option value="MPa">MPa</option>
     <option value="GPa">GPa</option>
-    <option value="Nmm2">Nmm2</option>
-    <option value="kNm2">kNm2</option>
-    <option value="kgfcm2">kgfcm2</option>
-    <option value="kgfmm2">kgfmm2</option>
+    <option value="Nmm2">N/mm2</option>
+    <option value="Nm2">N/m2</option>
+    <option value="kNmm2">kN/mm2</option>
+    <option value="kNm2">kN/m2</option>
+    <option value="kgfcm2">kgf/cm2</option>
+    <option value="kgfmm2">kgf/mm2</option>
     <option value="psi">psi</option>
    </select>
 
@@ -92,6 +94,14 @@ case "Nmm2":
 pascal = value * 1000000;
 break;
 
+case "Nm2":
+pascal = value;
+break;
+
+case "kNmm2":
+pascal = value * 1000000000;
+break;
+
 case "kNm2":
 pascal = value * 1000;
 break;
@@ -114,6 +124,8 @@ let kPa = pascal / 1000;
 let MPa = pascal / 1000000;
 let GPa = pascal / 1000000000;
 let Nmm2 = pascal / 1000000;
+let Nm2 = pascal;
+let kNmm2 = pascal / 1000000000;
 let kNm2 = pascal / 1000;
 let kgfcm2 = pascal / 98066.5;
 let kgfmm2 = pascal / 9806650;
@@ -127,6 +139,8 @@ kPa : ${kPa.toFixed(4)} <br>
 MPa : ${MPa.toFixed(4)} <br>
 GPa : ${GPa.toFixed(4)} <br>
 Nmm2 : ${Nmm2.toFixed(4)} <br>
+Nm2 : ${Nm2.toFixed(4)} <br>
+kNmm2 : ${kNmm2.toFixed(4)} <br>
 kNm2 : ${kNm2.toFixed(4)} <br>
 kgfcm2 : ${kgfcm2.toFixed(4)} <br>
 kgfmm2 : ${kgfmm2.toFixed(4)} <br>
