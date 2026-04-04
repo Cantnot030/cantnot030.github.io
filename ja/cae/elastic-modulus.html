@@ -77,6 +77,11 @@ if(!isNaN(G)) count++;
 if(!isNaN(nu)) count++;
 if(!isNaN(K)) count++;
 
+if(count !== 2){
+document.getElementById("result").innerHTML = "2つだけ入力してください";
+return;
+}
+
 if(count < 2){
 document.getElementById("result").innerHTML = "2つ以上入力してください";
 return;
