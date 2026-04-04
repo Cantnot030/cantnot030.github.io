@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/breadcrumb.css">
-  <link rel="stylesheet" href="/css/breadcrumb.css">
   <title>応力単位変換 | Stress Unit Converter</title>
 
   <style>
@@ -145,6 +144,8 @@ let ksi = pascal / 6894757;
 
 document.getElementById("result").innerHTML = `
 <h3>変換結果</h3>
+
+<script src="/js/unit-converter.js"></script>
 
 Pa : ${pascal.toFixed(4)} <br>
 kPa : ${kPa.toFixed(4)} <br>
