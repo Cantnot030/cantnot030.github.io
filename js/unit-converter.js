@@ -1,8 +1,10 @@
 function formatSmart(value) {
   const absVal = Math.abs(value);
 
+
+  if (digits == "auto") {
   // 0.001未満または1e6以上 → 指数表示
-  if ((absVal !== 0 && absVal < 0.001) || absVal >= 1e6) {
+  if (absVal !== 0 && absVal < 0.001) {
     return value.toExponential(6); // 最大6桁の指数表示
   }
 
@@ -16,4 +18,8 @@ function formatSmart(value) {
   // 不要な末尾ゼロを削除
   str = str.replace(/\.?0+$/, '');
   return str;
+} else {
+    
+  return value.toExponential(6);
+
 }
