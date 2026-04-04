@@ -1,4 +1,4 @@
-function formatSmart(value) {
+function formatSmart(value,digits) {
   const absVal = Math.abs(value);
 
 
