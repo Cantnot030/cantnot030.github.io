@@ -106,11 +106,11 @@ let oz = kgram * 35.274;
 document.getElementById("result").innerHTML = `
 <h3>変換結果</h3>
 
-mg : ${mg.toFixed(4)} <br>
-g : ${g.toFixed(4)} <br>
-kg : ${kgram.toFixed(4)} <br>
-lb : ${lb.toFixed(6)} <br>
-oz : ${oz.toFixed(4)} <br>
+mg : ${formatSmart(mg,digits)} <br>
+g : ${formatSmart(g,digits)} <br>
+kg : ${formatSmart(kgram,digits)} <br>
+lb : ${formatSmart(lb,digits)} <br>
+oz : ${formatSmart(oz,digits)} <br>
 
 `;
 
