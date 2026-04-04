@@ -1,1 +1,139 @@
-aaa
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/breadcrumb.css">
+  <link rel="stylesheet" href="/css/section-prop.css">
+  <title>弾性係数（E,G,ν,K）相互変換ツール</title>
+
+  <style>
+body{
+font-family:Arial;
+margin:40px;
+}
+
+input{
+margin:5px;
+padding:5px;
+}
+
+label {
+display: inline-block;
+width: 60px;
+text-align: right;
+}
+  </style>
+ </head>
+
+ <body onload="drawRect()">
+  <div class="container">
+   <!-- パンくず -->
+   <nav class="breadcrumb">
+    <a href="/">Top</a> &gt;
+    <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
+    <span>弾性係数（E,G,ν,K）相互変換ツール</span>
+   </nav>
+
+   <h1>弾性係数（E,G,ν,K）相互変換ツール</h1>
+
+   <p>E,G,ν,Kの内、2種類の値から<br>
+      その他の値を計算します。</p>
+
+   <input type="number" id="E" placeholder="E（ヤング率）">
+   <input type="number" id="G" placeholder="G（せん断弾性係数）">
+   <input type="number" id="nu" placeholder="ν（ポアソン比）">
+   <input type="number" id="K" placeholder="K（体積弾性係数）">
+
+   <button onclick="calc()">計算</button>
+
+   <!--
+    <label>b</label>
+    -->
+    
+   <div id="result"></div>
+  </div>
+
+  <script>
+function calc(){
+
+let E = parseFloat(document.getElementById("E").value);
+let G = parseFloat(document.getElementById("G").value);
+let nu = parseFloat(document.getElementById("nu").value);
+let K = parseFloat(document.getElementById("K").value);
+
+// 入力チェック
+let count = 0;
+if(!isNaN(E)) count++;
+if(!isNaN(G)) count++;
+if(!isNaN(nu)) count++;
+if(!isNaN(K)) count++;
+
+if(count < 2){
+document.getElementById("result").innerHTML = "2つ以上入力してください";
+return;
+}
+
+// パターン分岐
+
+// E & ν
+if(!isNaN(E) && !isNaN(nu)){
+G = E / (2 * (1 + nu));
+K = E / (3 * (1 - 2 * nu));
+}
+
+// E & G
+else if(!isNaN(E) && !isNaN(G)){
+nu = E / (2 * G) - 1;
+K = E / (3 * (1 - 2 * nu));
+}
+
+// E & K
+else if(!isNaN(E) && !isNaN(K)){
+nu = (3*K - E) / (6*K);
+G = E / (2 * (1 + nu));
+}
+
+// G & ν
+else if(!isNaN(G) && !isNaN(nu)){
+E = 2 * G * (1 + nu);
+K = E / (3 * (1 - 2 * nu));
+}
+
+// K & ν
+else if(!isNaN(K) && !isNaN(nu)){
+E = 3 * K * (1 - 2 * nu);
+G = E / (2 * (1 + nu));
+}
+
+// G & K
+else if(!isNaN(G) && !isNaN(K)){
+E = 9 * K * G / (3*K + G);
+nu = (3*K - 2*G) / (2*(3*K + G));
+}
+
+// 出力
+document.getElementById("result").innerHTML = `
+<h3>計算結果</h3>
+
+E : ${E}<br>
+G : ${G}<br>
+ν : ${nu}<br>
+K : ${K}
+`;
+
+}
+</script>
+
+  <footer>
+   <div class="container">
+    <hr>
+    <a href="/ja/about.html">サイト概要</a>
+ | 
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+ | 
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </body>
+</html>
