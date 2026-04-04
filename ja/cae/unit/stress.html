@@ -148,18 +148,18 @@ let ksi = pascal / 6894757;
 document.getElementById("result").innerHTML = `
 <h3>変換結果</h3>
 
-Pa : ${pascal.toFixed(4)} <br>
-kPa : ${kPa.toFixed(4)} <br>
-MPa : ${MPa.toFixed(4)} <br>
+Pa : ${formatSmart(pascal,digits)} <br>
+kPa : ${formatSmart(kPa,digits)} <br>
+MPa : ${formatSmart(MPa,digits)} <br>
 GPa : ${formatSmart(GPa,digits)} <br>
-N/mm<sup>2</sup> : ${Nmm2.toFixed(4)} <br>
-N/m<sup>2</sup> : ${Nm2.toFixed(4)} <br>
-kN/mm<sup>2</sup> : ${kNmm2.toFixed(4)} <br>
-kN/m<sup>2</sup> : ${kNm2.toFixed(4)} <br>
-kgf/cm<sup>2</sup> : ${kgfcm2.toFixed(4)} <br>
-kgf/mm<sup>2</sup> : ${kgfmm2.toFixed(4)} <br>
-psi : ${psi.toFixed(4)} <br>
-ksi : ${ksi.toFixed(4)} <br>
+N/mm<sup>2</sup> : ${formatSmart(Nmm2,digits)} <br>
+N/m<sup>2</sup> : ${formatSmart(Nm2,digits)} <br>
+kN/mm<sup>2</sup> : ${formatSmart(kNmm2,digits)} <br>
+kN/m<sup>2</sup> : ${formatSmart(kNm2,digits)} <br>
+kgf/cm<sup>2</sup> : ${formatSmart(kgfcm2,digits)} <br>
+kgf/mm<sup>2</sup> : ${formatSmart(kgfmm2,digits)} <br>
+psi : ${formatSmart(psi,digits)} <br>
+ksi : ${formatSmart(ksi,digits)} <br>
 
 `;
 
