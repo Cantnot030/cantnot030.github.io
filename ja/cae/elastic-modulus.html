@@ -71,9 +71,11 @@ if(!isNaN(G)) count++;
 if(!isNaN(nu)) count++;
 if(!isNaN(K)) count++;
 
+let warning = "";
+
 if(!isNaN(nu)){
   if(nu >= 0.5 || nu <= -1){
-    document.getElementById("result").innerHTML = "νの値が物理的に不適切な可能性があります";
+    warning += " νの値が物理的に不適切な可能性があります";
     }
 }
 
@@ -126,7 +128,8 @@ document.getElementById("result").innerHTML = `
 
 E : ${E}<br>
 G : ${G}<br>
-ν : ${nu}<br>
+ν : ${nu}${warning}
+<br>
 K : ${K}
 `;
 
