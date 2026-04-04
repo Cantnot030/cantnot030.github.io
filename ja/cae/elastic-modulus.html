@@ -59,12 +59,6 @@ text-align: right;
   <script>
 function calc(){
 
-if(!isNaN(nu)){
-  if(nu >= 0.5 || nu <= -1){
-    warning += "⚠ νの値が物理的に不適切な可能性があります<br>";
-  }
-}
-
 let E = parseFloat(document.getElementById("E").value);
 let G = parseFloat(document.getElementById("G").value);
 let nu = parseFloat(document.getElementById("nu").value);
@@ -76,6 +70,12 @@ if(!isNaN(E)) count++;
 if(!isNaN(G)) count++;
 if(!isNaN(nu)) count++;
 if(!isNaN(K)) count++;
+
+if(!isNaN(nu)){
+  if(nu >= 0.5 || nu <= -1){
+    warning += "⚠ νの値が物理的に不適切な可能性があります<br>";
+  }
+}
 
 if(count !== 2){
 document.getElementById("result").innerHTML = "2つだけ入力してください";
