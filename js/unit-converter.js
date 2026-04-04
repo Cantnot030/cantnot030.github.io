@@ -24,7 +24,7 @@ function formatSmart(value,digits) {
 
 } else {
   
-  return 99999;
+  return "結果表示形式を指定してください。";
   
   }
 
