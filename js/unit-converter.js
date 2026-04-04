@@ -22,6 +22,10 @@ function formatSmart(value,digits) {
     
   return value.toExponential(6);
 
-}
+} else {
+  
+  return 99999;
+  
+  }
 
 }
