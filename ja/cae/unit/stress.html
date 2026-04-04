@@ -52,6 +52,7 @@ background:#f5f5f5;
     <option value="kgfcm2">kgf/cm²</option>
     <option value="kgfmm2">kgf/mm²</option>
     <option value="psi">psi</option>
+    <option value="ksi">ksi</option>
    </select>
 
    <button onclick="convert()">変換</button>
@@ -115,7 +116,11 @@ pascal = value * 9806650;
 break;
 
 case "psi":
-pascal = value * 6894.76;
+pascal = value * 6894.757;
+break;
+
+case "ksi":
+pascal = value * 6894757;
 break;
 
 }
@@ -129,7 +134,7 @@ let kNmm2 = pascal / 1000000000;
 let kNm2 = pascal / 1000;
 let kgfcm2 = pascal / 98066.5;
 let kgfmm2 = pascal / 9806650;
-let psi = pascal / 6894.76;
+let psi = pascal / 6894.757;
 
 document.getElementById("result").innerHTML = `
 <h3>変換結果</h3>
