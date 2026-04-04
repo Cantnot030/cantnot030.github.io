@@ -23,3 +23,5 @@ function formatSmart(value,digits) {
   return value.toExponential(6);
 
 }
+
+}
