@@ -131,11 +131,17 @@ E = 9 * K * G / (3*K + G);
 nu = (3*K - 2*G) / (2*(3*K + G));
 }
 
+let E_val = formatSmart(E,digits);
+
+
+
+
 // 出力
 document.getElementById("result").innerHTML = `
 <h3>計算結果</h3>
 
-E : ${formatSmart(E,digits)}<br>
+E : <span id="E_val">${E_val}</span>
+<button onclick="copyText('E_val')">コピー</button><br>
 G : ${formatSmart(G,digits)}<br>
 ν : ${nu}${warning}<br>
 K : ${formatSmart(K,digits)}
