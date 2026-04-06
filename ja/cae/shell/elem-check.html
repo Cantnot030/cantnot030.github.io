@@ -1,0 +1,202 @@
+
+
+
+
+<script>
+
+// ===== グローバル =====
+let view = {
+  scale: 1,
+  offsetX: 0,
+  offsetY: 0
+};
+
+let nodes = {};
+let elems = {};
+let lastDist = null;
+
+// ===== 初期化（1回だけ）=====
+window.onload = function(){
+  setupZoom();
+};
+
+// ===== メイン =====
+function drawMesh(){
+  nodes = parseNodes();
+  elems = parseElems();
+  drawCanvas(nodes, elems);
+}
+
+// ===== ノード =====
+function parseNodes(){
+
+  const text = document.getElementById("nodeInput").value;
+  const lines = text.trim().split("\n");
+
+  let nodes = {};
+
+  for(let i=1; i<lines.length; i++){
+
+    let [id, x, y] = lines[i].split(",").map(v => v.trim());
+
+    if(isNaN(id) || isNaN(x) || isNaN(y)){
+      alert("節点の入力形式が正しくありません");
+      return {};
+    }
+
+    nodes[id] = {
+      x: Number(x),
+      y: Number(y)
+    };
+  }
+
+  return nodes;
+}
+
+// ===== 要素 =====
+function parseElems(){
+
+  const text = document.getElementById("elemInput").value;
+  const lines = text.trim().split("\n");
+
+  let elems = [];
+
+  for(let i=1; i<lines.length; i++){
+
+    let [id, n1, n2, n3] = lines[i].split(",").map(v => Number(v.trim()));
+
+    if(isNaN(id) || isNaN(n1) || isNaN(n2) || isNaN(n3)){
+      alert("要素の入力形式が正しくありません");
+      return [];
+    }
+
+    elems.push({
+      id,
+      nodes: [n1, n2, n3]
+    });
+  }
+
+  return elems;
+}
+
+// ===== 描画 =====
+function drawCanvas(nodes, elems){
+
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  let xs = Object.values(nodes).map(n => n.x);
+  let ys = Object.values(nodes).map(n => n.y);
+
+  let minX = Math.min(...xs);
+  let maxX = Math.max(...xs);
+  let minY = Math.min(...ys);
+  let maxY = Math.max(...ys);
+
+  let scaleX = canvas.width / (maxX - minX);
+  let scaleY = canvas.height / (maxY - minY);
+  let baseScale = Math.min(scaleX, scaleY) * 0.8;
+
+  function toCanvas(x, y){
+
+    let px = (x - minX) * baseScale;
+    let py = (y - minY) * baseScale;
+
+    // ズーム適用
+    px = px * view.scale + view.offsetX + 20;
+    py = py * view.scale + view.offsetY + 20;
+
+    // Y反転
+    py = canvas.height - py;
+
+    return {px, py};
+  }
+
+  // 要素描画
+  elems.forEach(e => {
+
+    let n1 = nodes[e.nodes[0]];
+    let n2 = nodes[e.nodes[1]];
+    let n3 = nodes[e.nodes[2]];
+
+    if(!n1 || !n2 || !n3) return;
+
+    let p1 = toCanvas(n1.x, n1.y);
+    let p2 = toCanvas(n2.x, n2.y);
+    let p3 = toCanvas(n3.x, n3.y);
+
+    ctx.beginPath();
+    ctx.moveTo(p1.px, p1.py);
+    ctx.lineTo(p2.px, p2.py);
+    ctx.lineTo(p3.px, p3.py);
+    ctx.closePath();
+    ctx.stroke();
+  });
+
+  // 節点描画
+  Object.entries(nodes).forEach(([id, n]) => {
+    let p = toCanvas(n.x, n.y);
+
+    ctx.beginPath();
+    ctx.arc(p.px, p.py, 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillText(id, p.px + 5, p.py - 5);
+  });
+}
+
+// ===== ズーム設定 =====
+function setupZoom(){
+
+  const canvas = document.getElementById("canvas");
+
+  // PCホイール
+  canvas.addEventListener("wheel", function(e){
+    e.preventDefault();
+
+    const zoom = 1.1;
+
+    if(e.deltaY < 0){
+      view.scale *= zoom;
+    }else{
+      view.scale /= zoom;
+    }
+
+    drawCanvas(nodes, elems);
+
+  }, { passive: false });
+
+  // スマホピンチ
+  canvas.addEventListener("touchmove", function(e){
+
+    if(e.touches.length === 2){
+
+      e.preventDefault();
+
+      let dx = e.touches[0].clientX - e.touches[1].clientX;
+      let dy = e.touches[0].clientY - e.touches[1].clientY;
+
+      let dist = Math.sqrt(dx*dx + dy*dy);
+
+      if(lastDist !== null){
+        let scaleChange = dist / lastDist;
+        view.scale *= scaleChange;
+        drawCanvas(nodes, elems);
+      }
+
+      lastDist = dist;
+    }
+
+  }, { passive: false });
+
+  canvas.addEventListener("touchend", function(){
+    lastDist = null;
+  });
+}
+
+</script>
+
+
+
