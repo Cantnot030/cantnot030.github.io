@@ -56,6 +56,11 @@
       x: Number(x),
       y: Number(y)
     });
+    
+    if(isNaN(id) || isNaN(x) || isNaN(y)){
+  alert("入力形式が正しくありません");
+  return;
+}
 
   });
 
