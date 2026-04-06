@@ -51,6 +51,12 @@ function drawMesh(){
 
   let nodes = parseNodes();
   let elems = parseElems();
+  
+  let view = {
+  scale: 1,
+  offsetX: 0,
+  offsetY: 0
+};
 
   drawCanvas(nodes, elems);
 }
@@ -131,11 +137,29 @@ function drawCanvas(nodes, elems){
   let scaleY = canvas.height / (maxY - minY);
   let scale = Math.min(scaleX, scaleY) * 0.8;
 
+/*
   function toCanvas(x, y){
     let px = (x - minX) * scale + 20;
     let py = canvas.height - ((y - minY) * scale + 20);
     return {px, py};
   }
+*/
+
+function toCanvas(x, y){
+
+  let px = (x - minX) * baseScale;
+  let py = (y - minY) * baseScale;
+
+  // ズーム適用
+  px = px * view.scale + view.offsetX;
+  py = py * view.scale + view.offsetY;
+
+  // Y反転
+  py = canvas.height - py;
+
+  return {px, py};
+}
+
 
   // 三角形描画
   elems.forEach(e => {
