@@ -23,59 +23,101 @@
       要素品質を計算します。</p>
 
 
-   <textarea id="nodeInput" rows="8" cols="30">
-    id,x,y
-    1,0,0
-    2,100,0
-    3,100,100
-   </textarea><br>
+   <h3>節点（Node CSV）</h3>
+<textarea id="nodeInput" rows="6" cols="30">
+id,x,y
+1,0,0
+2,100,0
+3,100,100
+4,0,100
+</textarea>
 
-   <button onclick="drawNodes()">描画</button>
+<h3>要素（Element CSV）</h3>
+<textarea id="elemInput" rows="6" cols="30">
+id,n1,n2,n3
+1,1,2,3
+2,1,3,4
+</textarea>
 
-   <canvas id="canvas" width="400" height="400" style="border:1px solid #ccc;"></canvas>
+<br>
+<button onclick="drawMesh()">描画</button>
+
+<br><br>
+<canvas id="canvas" width="400" height="400" style="border:1px solid #ccc;"></canvas>
 
 
-   <script>
-  
-    function drawNodes(){
+<script>
+function drawMesh(){
+
+  let nodes = parseNodes();
+  let elems = parseElems();
+
+  drawCanvas(nodes, elems);
+}
+   
+  function parseNodes(){
 
   const text = document.getElementById("nodeInput").value;
   const lines = text.trim().split("\n");
 
-  let nodes = [];
+  let nodes = {};
 
   lines.forEach((line, index) => {
-
-    // ヘッダー行スキップ
     if(index === 0) return;
 
     let [id, x, y] = line.split(",").map(v => v.trim());
 
-    nodes.push({
-      id: Number(id),
+    nodes[id] = {
       x: Number(x),
       y: Number(y)
+    };
+  });
+  
+  if(isNaN(id) || isNaN(x) || isNaN(y)){
+  alert("入力形式が正しくありません");
+  return;
+}
+  
+  return nodes;
+}
+
+function parseElems(){
+
+  const text = document.getElementById("elemInput").value;
+  const lines = text.trim().split("\n");
+
+  let elems = [];
+
+  lines.forEach((line, index) => {
+    if(index === 0) return;
+
+    let [id, n1, n2, n3] = line.split(",").map(v => Number(v.trim()));
+
+    elems.push({
+      id,
+      nodes: [n1, n2, n3]
     });
-    
-    if(isNaN(id) || isNaN(x) || isNaN(y)){
+  });
+
+if(isNaN(id) || isNaN(n1) || isNaN(n2)|| isNaN(n3)){
   alert("入力形式が正しくありません");
   return;
 }
 
-  });
 
-  drawCanvas(nodes);
+  return elems;
 }
-   
-function drawCanvas(nodes){
+
+function drawCanvas(nodes, elems){
 
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let xs = nodes.map(n => n.x);
-  let ys = nodes.map(n => n.y);
+  // スケール計算
+  let xs = Object.values(nodes).map(n => n.x);
+  let ys = Object.values(nodes).map(n => n.y);
 
   let minX = Math.min(...xs);
   let maxX = Math.max(...xs);
@@ -86,21 +128,54 @@ function drawCanvas(nodes){
   let scaleY = canvas.height / (maxY - minY);
   let scale = Math.min(scaleX, scaleY) * 0.8;
 
-  nodes.forEach(n => {
+  function toCanvas(x, y){
+    let px = (x - minX) * scale + 20;
+    let py = canvas.height - ((y - minY) * scale + 20);
+    return {px, py};
+  }
 
-    let px = (n.x - minX) * scale + 20;
-    let py = canvas.height - ((n.y - minY) * scale + 20);
+  // 三角形描画
+  elems.forEach(e => {
+
+    let n1 = nodes[e.nodes[0]];
+    let n2 = nodes[e.nodes[1]];
+    let n3 = nodes[e.nodes[2]];
+
+    if(!n1 || !n2 || !n3) return;
+
+    let p1 = toCanvas(n1.x, n1.y);
+    let p2 = toCanvas(n2.x, n2.y);
+    let p3 = toCanvas(n3.x, n3.y);
 
     ctx.beginPath();
-    ctx.arc(px, py, 4, 0, Math.PI * 2);
+    ctx.moveTo(p1.px, p1.py);
+    ctx.lineTo(p2.px, p2.py);
+    ctx.lineTo(p3.px, p3.py);
+    ctx.closePath();
+
+    ctx.stroke();
+  });
+
+  // 節点も描画
+  Object.entries(nodes).forEach(([id, n]) => {
+    let p = toCanvas(n.x, n.y);
+
+    ctx.beginPath();
+    ctx.arc(p.px, p.py, 3, 0, Math.PI * 2);
     ctx.fill();
 
-    ctx.fillText(n.id, px + 5, py - 5);
+    ctx.fillText(id, p.px + 5, p.py - 5);
   });
 }
+</script>
+  
+  
+  
+  
+    
+    
 
 
-  </script>
 
   <footer>
    <div class="container">
