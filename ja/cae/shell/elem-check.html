@@ -199,44 +199,84 @@ function setupZoom(){
 
   const canvas = document.getElementById("canvas");
 
-  // PCホイール
-  canvas.addEventListener("wheel", function(e){
+
+// PCホイール
+canvas.addEventListener("wheel", function(e){
+  e.preventDefault();
+
+  const zoom = 1.1;
+
+  const rect = canvas.getBoundingClientRect();
+
+  // キャンバス中心
+  const cx = canvas.width / 2;
+  const cy = canvas.height / 2;
+
+  let prevScale = view.scale;
+
+  if(e.deltaY < 0){
+    view.scale *= zoom;
+  }else{
+    view.scale /= zoom;
+  }
+
+  let scaleRatio = view.scale / prevScale;
+
+  // 中心を基準に補正
+  view.offsetX = cx - (cx - view.offsetX) * scaleRatio;
+  view.offsetY = cy - (cy - view.offsetY) * scaleRatio;
+
+  drawCanvas(nodes, elems);
+
+}, { passive: false });
+
+
+//スマホズーム
+canvas.addEventListener("touchmove", function(e){
+
+  if(e.touches.length === 2){
+
     e.preventDefault();
 
-    const zoom = 1.1;
+    let dx = e.touches[0].clientX - e.touches[1].clientX;
+    let dy = e.touches[0].clientY - e.touches[1].clientY;
 
-    if(e.deltaY < 0){
-      view.scale *= zoom;
-    }else{
-      view.scale /= zoom;
+    let dist = Math.sqrt(dx*dx + dy*dy);
+
+    if(lastDist !== null){
+
+      let prevScale = view.scale;
+      let scaleChange = dist / lastDist;
+
+      view.scale *= scaleChange;
+
+      let scaleRatio = view.scale / prevScale;
+
+      // 中心基準
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+
+      view.offsetX = cx - (cx - view.offsetX) * scaleRatio;
+      view.offsetY = cy - (cy - view.offsetY) * scaleRatio;
+
+      drawCanvas(nodes, elems);
     }
 
-    drawCanvas(nodes, elems);
+    lastDist = dist;
+  }
 
-  }, { passive: false });
+}, { passive: false });
 
-  // スマホピンチ
-  canvas.addEventListener("touchmove", function(e){
 
-    if(e.touches.length === 2){
-
-      e.preventDefault();
-
-      let dx = e.touches[0].clientX - e.touches[1].clientX;
-      let dy = e.touches[0].clientY - e.touches[1].clientY;
-
-      let dist = Math.sqrt(dx*dx + dy*dy);
-
-      if(lastDist !== null){
-        let scaleChange = dist / lastDist;
-        view.scale *= scaleChange;
-        drawCanvas(nodes, elems);
-      }
-
-      lastDist = dist;
-    }
-
-  }, { passive: false });
+  
+  
+    
+    
+    
+    
+    
+    
+    
 
   canvas.addEventListener("touchend", function(){
     lastDist = null;
