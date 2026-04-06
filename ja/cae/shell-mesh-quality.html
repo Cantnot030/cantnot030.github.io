@@ -71,12 +71,14 @@ function drawMesh(){
       x: Number(x),
       y: Number(y)
     };
-  });
-  
-  if(isNaN(id) || isNaN(x) || isNaN(y)){
+    
+    if(isNaN(id) || isNaN(x) || isNaN(y)){
   alert("入力形式が正しくありません");
   return;
-}
+    
+    }
+    
+  });
   
   return nodes;
 }
@@ -97,13 +99,14 @@ function parseElems(){
       id,
       nodes: [n1, n2, n3]
     });
-  });
-
-if(isNaN(id) || isNaN(n1) || isNaN(n2)|| isNaN(n3)){
+    
+    if(isNaN(id) || isNaN(n1) || isNaN(n2)|| isNaN(n3)){
   alert("入力形式が正しくありません");
   return;
 }
-
+    
+    
+  });
 
   return elems;
 }
