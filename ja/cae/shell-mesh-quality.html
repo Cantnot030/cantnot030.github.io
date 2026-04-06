@@ -35,12 +35,67 @@
    <canvas id="canvas" width="400" height="400" style="border:1px solid #ccc;"></canvas>
 
 
+   <script>
+  
+    function drawNodes(){
 
+  const text = document.getElementById("nodeInput").value;
+  const lines = text.trim().split("\n");
+
+  let nodes = [];
+
+  lines.forEach((line, index) => {
+
+    // ヘッダー行スキップ
+    if(index === 0) return;
+
+    let [id, x, y] = line.split(",").map(v => v.trim());
+
+    nodes.push({
+      id: Number(id),
+      x: Number(x),
+      y: Number(y)
+    });
+
+  });
+
+  drawCanvas(nodes);
+}
    
+function drawCanvas(nodes){
+
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  let xs = nodes.map(n => n.x);
+  let ys = nodes.map(n => n.y);
+
+  let minX = Math.min(...xs);
+  let maxX = Math.max(...xs);
+  let minY = Math.min(...ys);
+  let maxY = Math.max(...ys);
+
+  let scaleX = canvas.width / (maxX - minX);
+  let scaleY = canvas.height / (maxY - minY);
+  let scale = Math.min(scaleX, scaleY) * 0.8;
+
+  nodes.forEach(n => {
+
+    let px = (n.x - minX) * scale + 20;
+    let py = canvas.height - ((n.y - minY) * scale + 20);
+
+    ctx.beginPath();
+    ctx.arc(px, py, 4, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillText(n.id, px + 5, py - 5);
+  });
+}
 
 
-
-
+  </script>
 
   <footer>
    <div class="container">
