@@ -120,7 +120,7 @@ function parseElems(){
     if(isNaN(n4) || n3 == n4){
       elems.push({
         id,
-        nodes: [n1, n2, n3, 0]
+        nodes: [n1, n2, n3]
       });
     }
     else {
@@ -180,7 +180,7 @@ function drawCanvas(nodes, elems){
 
     if(!n1 || !n2 || !n3) return;
 
-    if(n4 == 0){
+    if(!n4){
      let p1 = toCanvas(n1.x, n1.y);
      let p2 = toCanvas(n2.x, n2.y);
      let p3 = toCanvas(n3.x, n3.y);
