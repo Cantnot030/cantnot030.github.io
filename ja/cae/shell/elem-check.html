@@ -54,7 +54,7 @@ id,n1,n2,n3
 <br><br>
 <canvas id="canvas" width="400" height="400" style="border:1px solid #ccc;"></canvas>
 
-
+<div id="result"></div>
 
 <script src="/ja/cae/shell/js/calc-quality.js"></script>
 
@@ -278,6 +278,20 @@ function calcQuality(nodes, elems){
 
   });
 
+}
+
+// 品質表示
+function showResult(elems){
+
+  let html = "<h3>要素品質</h3>";
+
+  elems.forEach(e => {
+    html += `
+      要素 ${e.id} : 面積 = ${e.quality.area.toFixed(2)}<br>
+    `;
+  });
+
+  document.getElementById("result").innerHTML = html;
 }
 
 // ===== マウス操作、スマホタッチ設定 =====
