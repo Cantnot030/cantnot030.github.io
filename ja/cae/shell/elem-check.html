@@ -110,17 +110,26 @@ function parseElems(){
 
   for(let i=1; i<lines.length; i++){
 
-    let [id, n1, n2, n3] = lines[i].split(",").map(v => Number(v.trim()));
+    let [id, n1, n2, n3, n4] = lines[i].split(",").map(v => Number(v.trim()));
 
     if(isNaN(id) || isNaN(n1) || isNaN(n2) || isNaN(n3)){
       alert("要素の入力形式が正しくありません");
       return [];
     }
 
-    elems.push({
-      id,
-      nodes: [n1, n2, n3]
-    });
+　　　if(isNaN(n4) || n3 == n4){
+      elems.push({
+        id,
+        nodes: [n1, n2, n3]
+      });
+    }
+    else {
+      elems.push({
+        id,
+        nodes: [n1, n2, n3, n4]
+      });
+    }
+    
   }
 
   return elems;
