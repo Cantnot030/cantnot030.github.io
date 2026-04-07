@@ -214,7 +214,7 @@ canvas.addEventListener("mousemove", e => {
   if(!isDragging) return;
 
   let dx = e.offsetX - lastX;
-  let dy = e.offsetY - lastY;
+  let dy = - ( e.offsetY - lastY );
 
   view.offsetX += dx;
   view.offsetY += dy;
@@ -254,7 +254,7 @@ canvas.addEventListener("touchmove", e => {
     let y = e.touches[0].clientY;
 
     let dx = x - lastTouchX;
-    let dy = y - lastTouchY;
+    let dy = - ( y - lastTouchY );
 
     view.offsetX += dx;
     view.offsetY += dy;
