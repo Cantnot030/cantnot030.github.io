@@ -120,7 +120,7 @@ function parseElems(){
     if(isNaN(n4) || n3 == n4){
       elems.push({
         id,
-        nodes: [n1, n2, n3]
+        nodes: [n1, n2, n3, 0]
       });
     }
     else {
@@ -176,19 +176,35 @@ function drawCanvas(nodes, elems){
     let n1 = nodes[e.nodes[0]];
     let n2 = nodes[e.nodes[1]];
     let n3 = nodes[e.nodes[2]];
+    let n4 = nodes[e.nodes[3]];
 
     if(!n1 || !n2 || !n3) return;
 
-    let p1 = toCanvas(n1.x, n1.y);
-    let p2 = toCanvas(n2.x, n2.y);
-    let p3 = toCanvas(n3.x, n3.y);
+    if(isNaN(n4)){
+     let p1 = toCanvas(n1.x, n1.y);
+     let p2 = toCanvas(n2.x, n2.y);
+     let p3 = toCanvas(n3.x, n3.y);
 
-    ctx.beginPath();
-    ctx.moveTo(p1.px, p1.py);
-    ctx.lineTo(p2.px, p2.py);
-    ctx.lineTo(p3.px, p3.py);
-    ctx.closePath();
-    ctx.stroke();
+     ctx.beginPath();
+     ctx.moveTo(p1.px, p1.py);
+     ctx.lineTo(p2.px, p2.py);
+     ctx.lineTo(p3.px, p3.py);
+     ctx.closePath();
+     ctx.stroke();
+    } else {
+     let p1 = toCanvas(n1.x, n1.y);
+     let p2 = toCanvas(n2.x, n2.y);
+     let p3 = toCanvas(n3.x, n3.y);
+     let p4 = toCanvas(n4.x, n4.y);
+
+     ctx.beginPath();
+     ctx.moveTo(p1.px, p1.py);
+     ctx.lineTo(p2.px, p2.py);
+     ctx.lineTo(p3.px, p3.py);
+     ctx.lineTo(p4.px, p4.py);
+     ctx.closePath();
+     ctx.stroke();
+    
   });
 
   // 節点描画
