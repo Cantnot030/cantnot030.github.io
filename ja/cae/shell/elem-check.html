@@ -130,12 +130,24 @@ function parseElems(){
       elems.push({
         id,
         nodes: [n1, n2, n3]
+        quality: {
+              area: null,
+              minAngle: null,
+              maxAngle: null,
+              aspect: null
+        }
       });
     }
     else {
       elems.push({
         id,
         nodes: [n1, n2, n3, n4]
+        quality: {
+              area: null,
+              minAngle: null,
+               maxAngle: null,
+              aspect: null
+        }
       });
     }
     
