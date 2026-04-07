@@ -80,6 +80,9 @@ window.onload = function(){
 function drawMesh(){
   nodes = parseNodes();
   elems = parseElems();
+  
+  calcQuality(nodes, elems);
+  
   drawCanvas(nodes, elems);
 }
 
@@ -242,6 +245,39 @@ function drawCanvas(nodes, elems){
 
     ctx.fillText(id, p.px + 5, p.py - 5);
   });
+}
+
+// 要素品質計算
+function calcQuality(nodes, elems){
+
+  elems.forEach(e => {
+
+    let pts = e.nodes.map(id => nodes[id]).filter(n => n);
+
+    if(pts.length < 3) return;
+
+    // 面積
+    e.quality.area = calcArea(pts);
+
+    // 辺長
+/*
+    let edges = calcEdges(pts);
+    e.quality.minEdge = Math.min(...edges);
+    e.quality.maxEdge = Math.max(...edges);
+*/
+
+    // アスペクト比
+//    e.quality.aspect = e.quality.maxEdge / e.quality.minEdge;
+
+    // 角度
+/*
+    let angles = calcAngles(pts);
+    e.quality.minAngle = Math.min(...angles);
+    e.quality.maxAngle = Math.max(...angles);
+*/
+
+  });
+
 }
 
 // ===== マウス操作、スマホタッチ設定 =====
