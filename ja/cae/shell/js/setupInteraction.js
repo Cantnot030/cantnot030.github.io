@@ -175,7 +175,7 @@ alert( `${elem.id}` );
 function isInsideTriangle(px, py, p1, p2, p3){
 
   function sign(a, b, c){
-    return (a.x - c.x)*(b.y - c.y) - (b.x - c.x)*(a.y - c.y);
+    return (a.px - c.px)*(b.py - c.py) - (b.px - c.px)*(a.py - c.py);
   }
 
   let pt = {x:px, y:py};
