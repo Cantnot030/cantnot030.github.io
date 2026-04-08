@@ -180,9 +180,9 @@ function isInsideTriangle(px, py, p1, p2, p3){
 
   let pt = {x:px, y:py};
 
-console.log(typeof p1.x);
-console.log(typeof p2.x);
-console.log(typeof p3.x);
+console.log(typeof p1.px);
+console.log(typeof p2.px);
+console.log(typeof p3.px);
 
   
   
@@ -207,7 +207,7 @@ function findElement(x, y){
 //alert( `${x} ${y}` );
     if(canvasPts.length === 3){
 //alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
-console.log(typeof canvasPts[0].x);
+console.log(typeof canvasPts[0].px);
       if(isInsideTriangle(
         x, y,
         canvasPts[0],
