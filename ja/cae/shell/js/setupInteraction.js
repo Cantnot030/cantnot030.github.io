@@ -3,16 +3,16 @@ function setupInteraction(){
 
   const canvas = document.getElementById("canvas");
 
-//PCドラッグ
-let isDragging = false;
-let lastX = 0;
-let lastY = 0;
+  //PCドラッグ
+  let isDragging = false;
+  let lastX = 0;
+  let lastY = 0;
 
-canvas.addEventListener("mousedown", e => {
-  isDragging = true;
-  lastX = e.offsetX;
-  lastY = e.offsetY;
-});
+  canvas.addEventListener("mousedown", e => {
+    isDragging = true;
+    lastX = e.offsetX;
+    lastY = e.offsetY;
+  });
 
 canvas.addEventListener("mousemove", e => {
   if(!isDragging) return;
