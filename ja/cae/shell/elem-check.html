@@ -176,18 +176,18 @@ function parseElems(){
 //描画用パーツ
 function toCanvas(x, y){
 
-    let px = (x - minX) * baseScale;
-    let py = (y - minY) * baseScale;
+  const canvas = document.getElementById("canvas");
 
-    // ズーム適用
-    px = px * view.scale + view.offsetX + 20;
-    py = py * view.scale + view.offsetY + 20;
+  let px = (x - transform.minX) * transform.baseScale;
+  let py = (y - transform.minY) * transform.baseScale;
 
-    // Y反転
-    py = canvas.height - py;
+  px = px * view.scale + view.offsetX + 20;
+  py = py * view.scale + view.offsetY + 20;
 
-    return {px, py};
-  }
+  py = canvas.height - py;
+
+  return {px, py};
+}
 
 // ===== 描画 =====
 function drawCanvas(nodes, elems){
@@ -212,7 +212,25 @@ function drawCanvas(nodes, elems){
   transform.minX = minX;
   transform.minY = minY;
   transform.baseScale = baseScale;
+  
+  /*
+  function toCanvas(x, y){
 
+    let px = (x - minX) * baseScale;
+    let py = (y - minY) * baseScale;
+
+    // ズーム適用
+    px = px * view.scale + view.offsetX + 20;
+    py = py * view.scale + view.offsetY + 20;
+
+    // Y反転
+    py = canvas.height - py;
+
+    return {px, py};
+  }
+*/
+  
+  
   // 要素描画
   elems.forEach(e => {
 
