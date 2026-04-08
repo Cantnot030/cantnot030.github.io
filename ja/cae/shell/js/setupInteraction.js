@@ -152,16 +152,6 @@ function setupInteraction(){
 　  let y = canvas.height - (e.clientY - rect.top);
 
     let elem = findElement(x, y);
-
-
-    
-if(elem){    
-alert( `${elem.id}` );
-}else{
-  alert("nashi");
-}
-
-
   
     if(elem){
       showElemInfo(elem);
@@ -190,10 +180,10 @@ console.log(typeof p3.px);
   let d1 = sign(pt, p1, p2);
   let d2 = sign(pt, p2, p3);
   let d3 = sign(pt, p3, p1);
-alert( `${d1} ${d2} ${d3}` )
+//alert( `${d1} ${d2} ${d3}` )
   let hasNeg = (d1<0)||(d2<0)||(d3<0);
   let hasPos = (d1>0)||(d2>0)||(d3>0);
-alert( `${hasNeg} ${hasPos}` );
+//alert( `${hasNeg} ${hasPos}` );
   return !(hasNeg && hasPos);
 }
 
