@@ -182,7 +182,7 @@ function isInsideTriangle(px, py, p1, p2, p3){
 
 //要素探索
 function findElement(x, y){
-
+alert( `${x} ${y}` );
   for(let e of elems){
 
     let pts = e.nodes.map(id => nodes[id]).filter(n => n);
