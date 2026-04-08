@@ -170,6 +170,8 @@ function isInsideTriangle(px, py, p1, p2, p3){
 
   let pt = {x:px, y:py};
 
+console.log(typeof pt.px);
+console.log(typeof pt.y);
 console.log(typeof p1.px);
 console.log(typeof p2.px);
 console.log(typeof p3.px);
