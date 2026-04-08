@@ -154,7 +154,7 @@ canvas.addEventListener("touchmove", function(e){
 
 alert(x, y); 
 
-  let elem = findElement(x, y);
+  let elem = findElement(x, " ", y);
 
   if(elem){
     showElemInfo(elem);
