@@ -157,6 +157,8 @@ canvas.addEventListener("touchmove", function(e){
     showElemInfo(elem);
   }
   
+  });
+  
   //三角形判定
   function isInsideTriangle(px, py, p1, p2, p3){
 
@@ -175,9 +177,31 @@ canvas.addEventListener("touchmove", function(e){
 
   return !(hasNeg && hasPos);
 }
-  
 
-});
+//要素探索
+function findElement(x, y){
+
+  for(let e of elems){
+
+    let pts = e.nodes.map(id => nodes[id]).filter(n => n);
+    let canvasPts = pts.map(p => toCanvas(p.x, p.y));
+
+    if(canvasPts.length === 3){
+
+      if(isInsideTriangle(
+        x, y,
+        canvasPts[0],
+        canvasPts[1],
+        canvasPts[2]
+      )){
+        return e;
+      }
+    }
+
+  }
+
+  return null;
+}
   
   
 //-----------------------
