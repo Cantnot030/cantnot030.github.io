@@ -179,7 +179,15 @@ function isInsideTriangle(px, py, p1, p2, p3){
   }
 
   let pt = {x:px, y:py};
+console.log(typeof px);
+console.log(typeof py);
+console.log(typeof p1.x);
+console.log(typeof p2.x);
+console.log(typeof p3.x);
 
+  
+  
+  
   let d1 = sign(pt, p1, p2);
   let d2 = sign(pt, p2, p3);
   let d3 = sign(pt, p3, p1);
