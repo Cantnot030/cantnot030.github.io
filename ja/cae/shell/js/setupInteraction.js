@@ -182,13 +182,13 @@ function isInsideTriangle(px, py, p1, p2, p3){
 
 //要素探索
 function findElement(x, y){
-alert( `${x} ${y}` );
+//alert( `${x} ${y}` );
   for(let e of elems){
 
     let pts = e.nodes.map(id => nodes[id]).filter(n => n);
     let canvasPts = pts.map(p => toCanvas(p.x, p.y));
 //alert( `${x} ${y}` );
-alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
+//alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
     if(canvasPts.length === 3){
 //alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
       if(isInsideTriangle(
