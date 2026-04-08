@@ -148,8 +148,8 @@ function setupInteraction(){
     let rect = canvas.getBoundingClientRect();
 
     let x = e.clientX - rect.left;
-    //let y = e.clientY - rect.top;
-　  let y = canvas.height - (e.clientY - rect.top);
+    let y = e.clientY - rect.top;
+　  //let y = canvas.height - (e.clientY - rect.top);
 
     let elem = findElement(x, y);
   
