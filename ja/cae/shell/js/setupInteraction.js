@@ -152,7 +152,7 @@ canvas.addEventListener("touchmove", function(e){
   //let y = e.clientY - rect.top;
 　let y = canvas.height - (e.clientY - rect.top);
 
-console.log("canvas座標:", x, y); 
+alert(x, y); 
 
   let elem = findElement(x, y);
 
