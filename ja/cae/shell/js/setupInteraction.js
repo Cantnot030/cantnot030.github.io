@@ -152,7 +152,7 @@ function setupInteraction(){
 　  let y = canvas.height - (e.clientY - rect.top);
 
     let elem = findElement(x, y);
-alert( ${elem.id} )
+alert( '${elem.id}' )
     if(elem){
       showElemInfo(elem);
     }
