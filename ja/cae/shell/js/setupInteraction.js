@@ -146,10 +146,6 @@ canvas.addEventListener("touchmove", function(e){
   //PC 要素クリック
   canvas.addEventListener("click", function(e){
 
-let test = toCanvas(20.0, 0.0);
-alert(`${test.px} ${test.py}`);
-
-
   let rect = canvas.getBoundingClientRect();
 
   let x = e.clientX - rect.left;
