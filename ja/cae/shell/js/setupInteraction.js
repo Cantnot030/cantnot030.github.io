@@ -188,6 +188,7 @@ function findElement(x, y){
     let pts = e.nodes.map(id => nodes[id]).filter(n => n);
     let canvasPts = pts.map(p => toCanvas(p.x, p.y));
 //alert( `${x} ${y}` );
+alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
     if(canvasPts.length === 3){
 //alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
       if(isInsideTriangle(
