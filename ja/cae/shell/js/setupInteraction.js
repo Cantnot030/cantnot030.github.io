@@ -152,7 +152,17 @@ function setupInteraction(){
 　  let y = canvas.height - (e.clientY - rect.top);
 
     let elem = findElement(x, y);
-alert( `${elem.id}` )
+
+
+    
+if(elem){    
+alert( `${elem.id}` );
+}else{
+  alert("nashi");
+}
+
+
+  
     if(elem){
       showElemInfo(elem);
     }
