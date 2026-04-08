@@ -285,6 +285,7 @@ function calcQuality(nodes, elems){
 }
 
 // 品質表示
+/*
 function showResult(elems){
 
   let html = "<h3>要素品質</h3>";
@@ -297,7 +298,17 @@ function showResult(elems){
 
   document.getElementById("result").innerHTML = html;
 }
+*/
 
+function showElemInfo(e){
+
+  document.getElementById("result").innerHTML = `
+    <h3>選択要素</h3>
+    ID : ${e.id}<br>
+    面積 : ${e.quality.area.toFixed(2)}<br>
+    最小角 : ${e.quality.minAngle.toFixed(1)}°
+  `;
+}
 
 
 </script>
