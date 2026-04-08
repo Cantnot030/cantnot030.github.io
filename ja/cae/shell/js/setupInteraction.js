@@ -142,4 +142,22 @@ canvas.addEventListener("touchmove", function(e){
   canvas.addEventListener("touchend", function(){
     lastDist = null;
   });
+  
+  canvas.addEventListener("click", function(e){
+
+  let rect = canvas.getBoundingClientRect();
+
+  let x = e.clientX - rect.left;
+  let y = e.clientY - rect.top;
+
+  let elem = findElement(x, y);
+
+  if(elem){
+    showElemInfo(elem);
+  }
+
+});
+  
+  
+//-----------------------
 }
