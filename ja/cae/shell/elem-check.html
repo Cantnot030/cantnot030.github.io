@@ -73,6 +73,12 @@ let nodes = {};
 let elems = {};
 let lastDist = null;
 
+let transform = {
+  minX: 0,
+  minY: 0,
+  baseScale: 1
+};
+
 // ===== 初期化（1回だけ）=====
 window.onload = function(){
   setupInteraction();
@@ -186,6 +192,10 @@ function drawCanvas(nodes, elems){
   let scaleX = canvas.width / (maxX - minX);
   let scaleY = canvas.height / (maxY - minY);
   let baseScale = Math.min(scaleX, scaleY) * 0.8;
+
+  transform.minX = minX;
+  transform.minY = minY;
+  transform.baseScale = baseScale;
 
   function toCanvas(x, y){
 
