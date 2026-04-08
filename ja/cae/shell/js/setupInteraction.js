@@ -158,7 +158,13 @@ canvas.addEventListener("touchmove", function(e){
   }
   
   });
-  
+
+//-----------------------
+}
+//マウス操作、スマホタッチ設定終了
+
+
+
   //三角形判定
   function isInsideTriangle(px, py, p1, p2, p3){
 
@@ -202,7 +208,6 @@ function findElement(x, y){
 
   return null;
 }
-  
-  
-//-----------------------
-}
+
+
+
