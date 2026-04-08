@@ -165,19 +165,10 @@ function setupInteraction(){
 function isInsideTriangle(px, py, p1, p2, p3){
 
   function sign(a, b, c){
-    return (a.px - c.px)*(b.py - c.py) - (b.px - c.px)*(a.py - c.py);
+    return (a.x - c.px)*(b.py - c.py) - (b.px - c.px)*(a.y - c.py);
   }
 
-  let pt = {x:px, y:py};
-
-console.log(typeof pt.px);
-console.log(typeof pt.y);
-console.log(typeof p1.px);
-console.log(typeof p2.px);
-console.log(typeof p3.px);
-
-  
-  
+  let pt = {x:px, y:py};  
   
   let d1 = sign(pt, p1, p2);
   let d2 = sign(pt, p2, p3);
@@ -199,7 +190,6 @@ function findElement(x, y){
 //alert( `${x} ${y}` );
     if(canvasPts.length === 3){
 //alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
-console.log(typeof canvasPts[0].px);
       if(isInsideTriangle(
         x, y,
         canvasPts[0],
