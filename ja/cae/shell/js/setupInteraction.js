@@ -143,6 +143,7 @@ canvas.addEventListener("touchmove", function(e){
     lastDist = null;
   });
   
+  //PC 要素クリック
   canvas.addEventListener("click", function(e){
 
   let rect = canvas.getBoundingClientRect();
@@ -155,6 +156,26 @@ canvas.addEventListener("touchmove", function(e){
   if(elem){
     showElemInfo(elem);
   }
+  
+  //三角形判定
+  function isInsideTriangle(px, py, p1, p2, p3){
+
+  function sign(a, b, c){
+    return (a.x - c.x)*(b.y - c.y) - (b.x - c.x)*(a.y - c.y);
+  }
+
+  let pt = {x:px, y:py};
+
+  let d1 = sign(pt, p1, p2);
+  let d2 = sign(pt, p2, p3);
+  let d3 = sign(pt, p3, p1);
+
+  let hasNeg = (d1<0)||(d2<0)||(d3<0);
+  let hasPos = (d1>0)||(d2>0)||(d3>0);
+
+  return !(hasNeg && hasPos);
+}
+  
 
 });
   
