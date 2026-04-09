@@ -242,21 +242,6 @@ function drawCanvas(nodes, elems){
 
     if(!n1 || !n2 || !n3) return;
 
-    //選択要素色塗り
-    if(e === selectedElem){
-      ctx.fillStyle = "rgba(255,0,0,0.2)";
-      ctx.fill();
-      ctx.strokeStyle = "red";
-      ctx.lineWidth = 2;
-      ctx.stroke();
-    } else {
-      ctx.fillStyle = "rgba(0,0,0,0)";
-      ctx.fill();
-      ctx.strokeStyle = "black";
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-
     if(!n4){
      let p1 = toCanvas(n1.x, n1.y);
      let p2 = toCanvas(n2.x, n2.y);
@@ -282,7 +267,23 @@ function drawCanvas(nodes, elems){
      ctx.closePath();
      ctx.stroke();
     }
+  
+    //選択要素色塗り
+    if(e === selectedElem){
+      ctx.fillStyle = "rgba(255,0,0,0.2)";
+      ctx.fill();
+      ctx.strokeStyle = "red";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    } else {
+      ctx.fillStyle = "rgba(0,0,0,0)";
+      ctx.fill();
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
   });
+
 
   // 節点描画
   Object.entries(nodes).forEach(([id, n]) => {
