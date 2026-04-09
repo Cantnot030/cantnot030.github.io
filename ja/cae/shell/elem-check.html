@@ -278,12 +278,13 @@ function drawCanvas(nodes, elems){
     } else {
       ctx.fillStyle = "rgba(0,0,0,0)";
       ctx.fill();
-      ctx.strokeStyle = "black";
+      //ctx.strokeStyle = "black";
       //ctx.lineWidth = 1;
       //ctx.stroke();
     }
   });
 
+  ctx.fillStyle = "black";
 
   // 節点描画
   Object.entries(nodes).forEach(([id, n]) => {
