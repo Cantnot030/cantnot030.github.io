@@ -322,6 +322,13 @@ function calcQuality(nodes, elems){
     e.quality.area = calcArea(pts);
 
     // 辺長
+    e.quality.minEdge = calcMinEdge(pts);
+    e.quality.maxEdge = calcMaxEdge(pts);
+
+
+
+
+    // 辺長
 /*
     let edges = calcEdges(pts);
     e.quality.minEdge = Math.min(...edges);
