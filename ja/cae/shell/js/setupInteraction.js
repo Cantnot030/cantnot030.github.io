@@ -180,6 +180,17 @@ function isInsideTriangle(px, py, p1, p2, p3){
   return !(hasNeg && hasPos);
 }
 
+//四角形判定（三角形を2回実行）
+function isInsideQuadrilateral(px, py, p1, p2, p3, p4){
+
+  return (
+    isInsideTriangle(px, py, p1, p2, p3) ||
+    isInsideTriangle(px, py, p1, p3, p4)
+  );
+
+}
+
+
 //要素探索
 function findElement(x, y){
 //alert( `${x} ${y}` );
@@ -190,7 +201,7 @@ function findElement(x, y){
 //alert( `${x} ${y}` );
 //alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
     if(canvasPts.length === 3){
-//alert( `${canvasPts[0].px} ${canvasPts[0].py} ${canvasPts[1].px} ${canvasPts[1].py} ${canvasPts[2].px} ${canvasPts[2].py}` );
+
       if(isInsideTriangle(
         x, y,
         canvasPts[0],
@@ -200,9 +211,19 @@ function findElement(x, y){
         return e;
       }
     }
+    
+    if(canvasPts.length === 4){
 
+      if(isInsideQuadrilateral(
+        x, y,
+        canvasPts[0],
+        canvasPts[1],
+        canvasPts[2],
+        canvasPts[3]
+      )){
+        return e;
+      }
   }
-
   return null;
 }
 
