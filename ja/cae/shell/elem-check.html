@@ -191,7 +191,7 @@ function toCanvas(x, y){
   const canvas = document.getElementById("canvas");
 
   let px = (x - transform.minX) * transform.baseScale;
-  let py = (y - transform.minY) * transform.baseScale;
+  let py = (- 1) * (y - transform.minY) * transform.baseScale;
 
   px = px * view.scale + view.offsetX + 20;
   py = py * view.scale + view.offsetY + 20;
