@@ -87,6 +87,15 @@ window.onload = function(){
   setupInteraction();
 };
 
+//フィット
+function resetView(){
+  view.scale = 1;
+  view.offsetX = 0;
+  view.offsetY = 0;
+
+  drawCanvas(nodes, elems); // ←これでfit再計算される
+}
+
 // ===== メイン =====
 function drawMesh(){
   nodes = parseNodes();
