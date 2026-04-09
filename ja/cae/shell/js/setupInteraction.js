@@ -154,9 +154,10 @@ function setupInteraction(){
     let elem = findElement(x, y);
   
     if(elem){
+      selectedElem = elem;
       showElemInfo(elem);
+      drawCanvas(nodes, elems);
     }
-  
   });
 }
 //マウス操作、スマホタッチ設定終了
