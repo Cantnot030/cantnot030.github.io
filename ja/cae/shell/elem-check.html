@@ -305,6 +305,7 @@ function drawCanvas(nodes, elems){
     ctx.arc(p.px, p.py, 3, 0, Math.PI * 2);
     ctx.fill();
 
+    ctx.font = "14px sans-serif";
     ctx.fillText(id, p.px + 5, p.py - 5);
   });
 }
