@@ -223,6 +223,7 @@ function findElement(x, y){
       )){
         return e;
       }
+    }
   }
   return null;
 }
