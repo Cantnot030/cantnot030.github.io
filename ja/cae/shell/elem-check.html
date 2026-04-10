@@ -320,28 +320,26 @@ function drawCanvas(nodes, elems){
       //ctx.lineWidth = 1;
       //ctx.stroke();
     }
-  });
+    
+    //要素品質閾値
+    let isBad = isBadElement(e);
 
-/*
-  //要素品質閾値
-  let isBad = isBadElement(e);
+    ctx.beginPath();
 
-  ctx.beginPath();
+    if(isBad){
+      ctx.fillStyle = "rgba(255,0,0,0.4)";
+      ctx.strokeStyle = "red";
+    } else {
+      ctx.strokeStyle = "black";
+    }
 
-  if(isBad){
-    ctx.fillStyle = "rgba(255,0,0,0.4)";
-    ctx.strokeStyle = "red";
-  } else {
-    ctx.strokeStyle = "black";
-  }
+    if(isBad){
+      ctx.fill();
+    }
 
-  if(isBad){
-    ctx.fill();
-  }
-
-  ctx.stroke();
+    ctx.stroke();
 //閾値終了
-*/
+  });
 
   ctx.fillStyle = "black";
 
