@@ -255,6 +255,9 @@ function drawCanvas(nodes, elems){
   //センタリングのために追加
   let width = (maxX - minX) * baseScale;
   let height = (maxY - minY) * baseScale;
+  
+  view.offsetX = (canvas.width - width) / 2;
+  view.offsetY = (canvas.height - height) / 2;
   //
   
   // 要素描画
@@ -296,7 +299,6 @@ function drawCanvas(nodes, elems){
     
     ctx.fillStyle = "rgba(0,0,0,0)";
     ctx.strokeStyle = "black";
-    
     
     //要素品質閾値
     if(isBad){
