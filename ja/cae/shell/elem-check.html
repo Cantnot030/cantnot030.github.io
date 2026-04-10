@@ -77,6 +77,8 @@ id,n1,n2,n3
 
 <button onclick="drawMesh()">実行</button>
 
+<div id="countTh"></div>
+
 <div id="result"></div>
 
 <script src="/ja/cae/shell/js/calc-quality.js"></script>
@@ -371,6 +373,10 @@ function calcQuality(nodes, elems){
 
     
   });
+
+  document.getElementById("countTh").innerHTML = `
+    ${countTh} 要素
+  `;
 
 }
 
