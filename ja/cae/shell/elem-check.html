@@ -57,7 +57,32 @@ id,n1,n2,n3
 <br><br>
 <canvas id="canvas" width="800" height="800" style="border:1px solid #ccc;"></canvas>
 
+検査項目：
+<select id="checkType">
+  <option value="area">面積</option>
+  <option value="minAngle">最小角</option>
+  <option value="aspect">アスペクト比</option>
+  <option value="minEdge">最短辺</option>
+  <option value="minHeight">最小高さ</option>
+</select>
+
+方向：
+<select id="condition">
+  <option value="lt">未満</option>
+  <option value="gt">超過</option>
+</select>
+
+閾値：
+<input id="threshold" type="number" value="20">
+
+<button onclick="drawMesh()">実行</button>
+
+
+
 <div id="result"></div>
+
+
+
 
 <script src="/ja/cae/shell/js/calc-quality.js"></script>
 <script src="/ja/cae/shell/js/setupInteraction.js"></script>
