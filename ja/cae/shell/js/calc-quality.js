@@ -50,6 +50,58 @@ function calcMaxEdge(pts){
 
 }
 
+//角度算定
+function calcAngles(pts){
 
+  let angles = [];
 
+  for(let i=0; i<pts.length; i++){
 
+    let p0 = pts[(i - 1 + pts.length) % pts.length];
+    let p1 = pts[i];
+    let p2 = pts[(i + 1) % pts.length];
+
+    let v1 = {
+      x: p0.x - p1.x,
+      y: p0.y - p1.y
+    };
+
+    let v2 = {
+      x: p2.x - p1.x,
+      y: p2.y - p1.y
+    };
+
+    let dot = v1.x * v2.x + v1.y * v2.y;
+
+    let len1 = Math.sqrt(v1.x**2 + v1.y**2);
+    let len2 = Math.sqrt(v2.x**2 + v2.y**2);
+
+    if(len1 === 0 || len2 === 0) continue;
+
+    let cos = dot / (len1 * len2);
+
+    cos = Math.max(-1, Math.min(1, cos));
+
+    let angle = Math.acos(cos) * 180 / Math.PI;
+
+    angles.push(angle);
+  }
+
+  return angles;
+}
+
+//最小角度
+function calcMinAngle(pts){
+
+  let angles = calcAngles(pts);
+  return Math.min(...angles);
+
+}
+
+//最大角度
+function calcMaxAngle(pts){
+
+  let angles = calcAngles(pts);
+  return Math.max(...angles);
+
+}
