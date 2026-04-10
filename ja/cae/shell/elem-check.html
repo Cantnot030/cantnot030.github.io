@@ -104,7 +104,9 @@ let selectedElem = null;
 let transform = {
   minX: 0,
   minY: 0,
-  baseScale: 1
+  baseScale: 1,
+  maxX: 0,
+  maxY: 0
 };
 
 // ===== 初期化（1回だけ）=====
@@ -115,7 +117,7 @@ window.onload = function(){
 //フィット
 function resetView(){
   view.scale = 1;
-  view.offsetX = 200;
+  view.offsetX = (800-(transform.maxX-transform.minX))/2;
   view.offsetY = 200;
 
   drawCanvas(nodes, elems); // ←これでfit再計算される
