@@ -272,6 +272,7 @@ function drawCanvas(nodes, elems){
   
   // 要素描画
   elems.forEach(e => {
+    let isBad = isBadElement(e);
 
     let n1 = nodes[e.nodes[0]];
     let n2 = nodes[e.nodes[1]];
@@ -305,37 +306,35 @@ function drawCanvas(nodes, elems){
      ctx.closePath();
      ctx.stroke();
     }
+    
+    //要素品質閾値
+    if(isBad){
+      //ctx.fillStyle = "rgba(255,0,0,0.4)";
+      ctx.strokeStyle = "red";
+    } else {
+      ctx.strokeStyle = "black";
+    }
   
     //選択要素色塗り
     if(e === selectedElem){
       ctx.fillStyle = "rgba(255,0,0,0.2)";
-      ctx.fill();
+      //ctx.fill();
       //ctx.strokeStyle = "red";
       //ctx.lineWidth = 2;
       //ctx.stroke();
     } else {
       ctx.fillStyle = "rgba(0,0,0,0)";
-      ctx.fill();
+      //ctx.fill();
       //ctx.strokeStyle = "black";
       //ctx.lineWidth = 1;
       //ctx.stroke();
     }
     
-    //要素品質閾値
-    let isBad = isBadElement(e);
+    
 
-    ctx.beginPath();
-
-    if(isBad){
-      ctx.fillStyle = "rgba(255,0,0,0.4)";
-      ctx.strokeStyle = "red";
-    } else {
-      ctx.strokeStyle = "black";
-    }
-
-    if(isBad){
+    //if(isBad){
       ctx.fill();
-    }
+ //   }
 
     ctx.stroke();
 //閾値終了
