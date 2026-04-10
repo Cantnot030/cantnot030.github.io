@@ -16,16 +16,23 @@ function isBadElement(e){
       if(cond === "gt"){
         return q.area > th;
       }
-
-
-    case "minAngle":
-      return q.minAngle < th;
-
-    //case "aspect":
-      //return (q.maxEdge / q.minEdge) > th;
-
-    case "minEdge":
-      return q.minEdge < th;
+      
+      
+    case "Angle":
+      if(cond === "lt"){
+        return q.minAngle < th;
+      }
+      if(cond === "gt"){
+        return q.maxAngle > th;
+      }
+      
+    case "edgeLength":
+      if(cond === "lt"){
+        return q.minEdge < th;
+      }
+      if(cond === "gt"){
+        return q.maxEdge > th;
+      }
 
     case "minHeight":
       return q.minHeight < th;
