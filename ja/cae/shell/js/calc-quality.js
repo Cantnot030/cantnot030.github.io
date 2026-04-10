@@ -1,3 +1,42 @@
+//悪い品質閾値判断
+function isBadElement(e){
+
+  let type = document.getElementById("checkType").value;
+  let cond = document.getElementById("condition").value;
+  let th = Number(document.getElementById("threshold").value);
+
+  let q = e.quality;
+
+  switch(type){
+
+    case "area":
+      if(cond === "lt"){
+        return q.area < th;
+      }
+      if(cond === "gt"){
+        return q.area > th;
+      }
+
+
+    case "minAngle":
+      return q.minAngle < th;
+
+    //case "aspect":
+      //return (q.maxEdge / q.minEdge) > th;
+
+    case "minEdge":
+      return q.minEdge < th;
+
+    case "minHeight":
+      return q.minHeight < th;
+
+    default:
+      return false;
+  }
+}
+//============================
+
+
 //面積
 function calcArea(pts){
 
