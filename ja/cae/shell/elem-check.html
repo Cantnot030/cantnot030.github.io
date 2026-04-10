@@ -252,13 +252,13 @@ function drawCanvas(nodes, elems){
   transform.minY = minY;
   transform.baseScale = baseScale;
   
-  //センタリングのために追加 /*
-  let width = (maxX - minX) * baseScale;
-  let height = (maxY - minY) * baseScale;
+  //センタリングのために追加
+  //let width = (maxX - minX) * baseScale;
+  //let height = (maxY - minY) * baseScale;
   
-  view.offsetX = (canvas.width - width) / 2;
-  view.offsetY = (canvas.height - height) / 2;
-*/  //
+  //view.offsetX = (canvas.width - width) / 2;
+  //view.offsetY = (canvas.height - height) / 2;
+  //
   
   // 要素描画
   elems.forEach(e => {
