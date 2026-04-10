@@ -307,13 +307,17 @@ function drawCanvas(nodes, elems){
      ctx.stroke();
     }
     
+    ctx.fillStyle = "rgba(0,0,0,0)";
+    ctx.strokeStyle = "black";
+    
+    
     //要素品質閾値
     if(isBad){
       ctx.fillStyle = "rgba(255,0,0,0.4)";
       ctx.strokeStyle = "red";
     } else {
-      ctx.fillStyle = "rgba(0,0,0,0)";
-      ctx.strokeStyle = "black";
+      //ctx.fillStyle = "rgba(0,0,0,0)";
+      //ctx.strokeStyle = "black";
     }
   
     //選択要素色塗り
@@ -324,7 +328,7 @@ function drawCanvas(nodes, elems){
       //ctx.lineWidth = 2;
       //ctx.stroke();
     } else {
-      ctx.fillStyle = "rgba(0,0,0,0)";
+      //ctx.fillStyle = "rgba(0,0,0,0)";
       //ctx.fill();
       //ctx.strokeStyle = "black";
       //ctx.lineWidth = 1;
