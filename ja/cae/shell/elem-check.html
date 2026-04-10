@@ -125,8 +125,12 @@ function drawMesh(){
   elems = parseElems();
   
   //初期センタリングのため
-  transform.minX = Math.min(...nodes.x);
-  transform.maxX = Math.max(...nodes.x);
+
+  let xs = Object.values(nodes).map(n => n.x);
+  let ys = Object.values(nodes).map(n => n.y);
+
+  transform.minX = Math.min(...xs);
+  transform.maxX = Math.max(...xs);
   
   view.scale = 1;
   view.offsetX = (800-(transform.maxX-transform.minX)*transform.baseScale)/2-20;
