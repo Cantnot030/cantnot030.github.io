@@ -95,7 +95,6 @@ function calcMinAngle(pts){
 
   let angles = calcAngles(pts);
   return Math.min(...angles);
-
 }
 
 //最大角度
@@ -103,5 +102,39 @@ function calcMaxAngle(pts){
 
   let angles = calcAngles(pts);
   return Math.max(...angles);
-
 }
+
+//要素高さ
+function calcHeights(pts){
+
+  let heights = [];
+  let area = calcArea(pts);
+
+  for(let i=0; i<pts.length; i++){
+
+    let p1 = pts[i];
+    let p2 = pts[(i+1) % pts.length];
+
+    let dx = p2.x - p1.x;
+    let dy = p2.y - p1.y;
+
+    let edge = Math.sqrt(dx*dx + dy*dy);
+
+    if(edge === 0) continue;
+
+    let height = 2 * area / edge;
+
+    heights.push(height);
+  }
+
+  return heights;
+}
+
+//最初高さ
+function calcMinHeight(pts){
+  let heights = calcHeights(pts);
+  return Math.min(...heights);
+}
+
+
+
