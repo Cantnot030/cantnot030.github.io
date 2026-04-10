@@ -297,6 +297,26 @@ function drawCanvas(nodes, elems){
     }
   });
 
+
+  //要素品質閾値
+  let isBad = isBadElement(e);
+
+  ctx.beginPath();
+
+  if(isBad){
+    ctx.fillStyle = "rgba(255,0,0,0.4)";
+    ctx.strokeStyle = "red";
+  } else {
+    ctx.strokeStyle = "black";
+  }
+
+  if(isBad){
+    ctx.fill();
+  }
+
+  ctx.stroke();
+//閾値終了
+
   ctx.fillStyle = "black";
 
   // 節点描画
