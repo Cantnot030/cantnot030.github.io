@@ -161,7 +161,8 @@ function parseElems(){
               area: null,
               minAngle: null,
               maxAngle: null,
-              aspect: null
+              aspect: null,
+              minHeight: null
         }
       });
     }
@@ -175,7 +176,8 @@ function parseElems(){
               area: null,
               minAngle: null,
               maxAngle: null,
-              aspect: null
+              aspect: null,
+              minHeight: null
         }
       });
     }
@@ -330,7 +332,7 @@ function calcQuality(nodes, elems){
     e.quality.minAngle = calcMinAngle(pts);
     e.quality.maxAngle = calcMaxAngle(pts);
 
-
+    e.quality.minHeight = calcMinHeight(pts);
 
     // アスペクト比
 //    e.quality.aspect = e.quality.maxEdge / e.quality.minEdge;
