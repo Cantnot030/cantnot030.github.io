@@ -117,7 +117,7 @@ window.onload = function(){
 //フィット
 function resetView(){
   view.scale = 1;
-  view.offsetX = (800-(transform.maxX-transform.minX)*transform.baseScale)/2;
+  view.offsetX = (800-(transform.maxX-transform.minX)*transform.baseScale)/2-20;
   view.offsetY = 200;
 
   drawCanvas(nodes, elems); // ←これでfit再計算される
