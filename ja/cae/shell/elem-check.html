@@ -326,26 +326,16 @@ function calcQuality(nodes, elems){
     e.quality.minEdge = calcMinEdge(pts);
     e.quality.maxEdge = calcMaxEdge(pts);
 
+    // 角度
+    e.quality.minAngle = calcMinAngle(pts);
+    e.quality.maxAngle = calcMaxAngle(pts);
 
 
-
-    // 辺長
-/*
-    let edges = calcEdges(pts);
-    e.quality.minEdge = Math.min(...edges);
-    e.quality.maxEdge = Math.max(...edges);
-*/
 
     // アスペクト比
 //    e.quality.aspect = e.quality.maxEdge / e.quality.minEdge;
 
-    // 角度
-/*
-    let angles = calcAngles(pts);
-    e.quality.minAngle = Math.min(...angles);
-    e.quality.maxAngle = Math.max(...angles);
-*/
-
+    
   });
 
 }
@@ -373,7 +363,9 @@ function showElemInfo(e){
     ID : ${e.id}<br>
     面積 : ${e.quality.area.toFixed(2)}<br>
     最短辺 : ${e.quality.minEdge.toFixed(2)}<br>
-    最長辺 : ${e.quality.maxEdge.toFixed(2)}
+    最長辺 : ${e.quality.maxEdge.toFixed(2)}<br>
+    最小角度 : ${e.quality.minAngle.toFixed(2)}<br>
+    最大角度 : ${e.quality.maxAngle.toFixed(2)}
   `;
 }
 
