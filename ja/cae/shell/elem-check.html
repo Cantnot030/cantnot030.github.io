@@ -309,15 +309,16 @@ function drawCanvas(nodes, elems){
     
     //要素品質閾値
     if(isBad){
-      //ctx.fillStyle = "rgba(255,0,0,0.4)";
+      ctx.fillStyle = "rgba(255,0,0,0.4)";
       ctx.strokeStyle = "red";
     } else {
+      ctx.fillStyle = "rgba(0,0,0,0)";
       ctx.strokeStyle = "black";
     }
   
     //選択要素色塗り
     if(e === selectedElem){
-      ctx.fillStyle = "rgba(255,0,0,0.2)";
+      ctx.fillStyle = "rgba(0,255,0,0.2)";
       //ctx.fill();
       //ctx.strokeStyle = "red";
       //ctx.lineWidth = 2;
@@ -336,7 +337,7 @@ function drawCanvas(nodes, elems){
       ctx.fill();
  //   }
 
-    ctx.stroke();
+      ctx.stroke();
 //閾値終了
   });
 
