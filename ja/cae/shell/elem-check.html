@@ -125,6 +125,10 @@ function resetView(){
 
 // ===== メイン =====
 function drawMesh(){
+  view.scale = 1;
+  view.offsetX = (800-(transform.maxX-transform.minX)*transform.baseScale)/2-20;
+  view.offsetY = (800-(transform.maxY-transform.minY)*transform.baseScale)/2-20;
+  
   nodes = parseNodes();
   elems = parseElems();
   
