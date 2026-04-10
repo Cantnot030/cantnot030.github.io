@@ -96,6 +96,8 @@ let elems = {};
 let lastDist = null;
 let selectedElem = null;
 
+let flagFirst = 0;
+
 let transform = {
   minX: 0,
   minY: 0,
@@ -124,22 +126,14 @@ function drawMesh(){
   nodes = parseNodes();
   elems = parseElems();
   
-  //初期センタリングのため
-
-  let xs = Object.values(nodes).map(n => n.x);
-  let ys = Object.values(nodes).map(n => n.y);
-
-  transform.minX = Math.min(...xs);
-  transform.maxX = Math.max(...xs);
-  
-  view.scale = 1;
-  view.offsetX = (800-(transform.maxX-transform.minX)*transform.baseScale)/2-20;
-  view.offsetY = (800-(transform.maxY-transform.minY)*transform.baseScale)/2-20;
-  //
-  
   calcQuality(nodes, elems);
   
   drawCanvas(nodes, elems);
+  
+  if(flagFirst == 0){
+    resetView();
+    flagFirts=1;
+  }
   
   //showElemInfo(e);
 }
