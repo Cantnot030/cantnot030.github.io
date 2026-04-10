@@ -28,10 +28,10 @@ function isBadElement(e){
       
     case "edgeLength":
       if(cond === "lt"){
-        return q.length < th;
+        return q.minEdge < th;
       }
       if(cond === "gt"){
-        return q.length > th;
+        return q.maxEdge > th;
       }
 
     case "minHeight":
