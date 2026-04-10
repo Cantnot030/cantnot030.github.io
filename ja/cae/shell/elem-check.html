@@ -97,6 +97,7 @@ let lastDist = null;
 let selectedElem = null;
 
 let flagFirst = 0;
+let countTh = 0;
 
 let transform = {
   minX: 0,
@@ -303,6 +304,7 @@ function drawCanvas(nodes, elems){
     if(isBad){
       ctx.fillStyle = "rgba(255,0,0,0.4)";
       ctx.strokeStyle = "red";
+      countTh += 1;
     } else {
       //ctx.fillStyle = "rgba(0,0,0,0)";
       //ctx.strokeStyle = "black";
