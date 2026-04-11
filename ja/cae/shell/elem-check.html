@@ -308,7 +308,6 @@ function drawCanvas(nodes, elems){
     if(isBad){
       ctx.fillStyle = "rgba(255,0,0,0.4)";
       ctx.strokeStyle = "red";
-      countTh += 1;
     } else {
       //ctx.fillStyle = "rgba(0,0,0,0)";
       //ctx.strokeStyle = "black";
@@ -373,7 +372,10 @@ function calcQuality(nodes, elems){
     // アスペクト比
 //    e.quality.aspect = e.quality.maxEdge / e.quality.minEdge;
 
-    
+　　　if(isBadElement(e)){
+      countTh += 1;
+     }
+
   });
 
   document.getElementById("countTh").innerHTML = `
