@@ -1,1 +1,85 @@
-a
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="UTF-8">
+  <title>CAEノート</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/breadcrumb.css">
+ </head>
+
+ <body>
+  <div class="container">
+   <!-- パンくず -->
+   <nav class="breadcrumb">
+    <a href="/">Top</a> &gt;
+    <a href="/ja/cae-notes/cae-notes.html">CAEノート</a> &gt;
+    <span>コラム</span>
+   </nav>
+
+   <h1>タイトル（例：梁たわみ計算でよくあるミス）</h1>
+
+   <p class="note-meta">投稿日：2026-04-03</p>
+
+   <hr>
+
+   <h2>概要</h2>
+   <p>
+    このページでは、〇〇について実務で得た知識をまとめています。
+   </p>
+
+   <h2>結論</h2>
+   <p>
+    就活のとき、正直やりたいことは決まっていませんでした。
+そんな中で参加した合同説明会で、ある映像を目にします。
+
+車が壁に衝突して、ぐしゃっと潰れるシミュレーション。
+コンピュータ上で現象を再現し、「こうなります」と“見せる”ことができる。
+
+その瞬間、すごく華やかな仕事に見えました。
+これだ、と思ってこの業界に入りました。
+<br>
+    ・ポイント2<br>
+   </p>
+
+   <h2>詳細</h2>
+   <p>
+    実務での背景や考え方を書きます。
+   </p>
+
+   <h3>例</h3>
+   <p>
+    ・ケース1：〇〇の場合<br>
+    ・ケース2：〇〇の場合
+   </p>
+
+   <h2>注意点</h2>
+   <ul>
+    <li>〇〇に注意</li>
+    <li>〇〇は誤解しやすい</li>
+   </ul>
+
+   <h2>関連ツール</h2>
+   <ul>
+    <li><a href="/ja/cae/beam/deflection-s-p.html">単純支持梁（集中荷重）</a></li>
+    <li><a href="/ja/cae/beam/section-prop.html">断面特性計算ツール</a></li>
+   </ul>
+
+   <h2>まとめ</h2>
+   <p>
+    ・今回のポイントを簡潔にまとめる
+   </p>
+
+  </div>
+
+  <footer>
+   <div class="container">
+    <hr>
+    <a href="/ja/about.html">サイト概要</a>
+ | 
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+ | 
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </body>
+</html>
