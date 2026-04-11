@@ -73,7 +73,7 @@ id,n1,n2,n3
 </select>
 
 閾値：
-<input id="threshold" type="number" value="70">
+<input id="threshold" type="number" value="">
 
 <button onclick="drawMesh()">実行</button>
 
@@ -133,12 +133,11 @@ function drawMesh(){
   nodes = parseNodes();
   elems = parseElems();
   
-  //calcQuality(nodes, elems);
+  calcQuality(nodes, elems);
   
   drawCanvas(nodes, elems);
   
   if(flagFirst == 0){
-    calcQuality(nodes, elems);
     resetView();
     flagFirst=1;
   }
