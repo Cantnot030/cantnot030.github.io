@@ -17,7 +17,6 @@ function isBadElement(e){
         return q.area > th;
       }
       
-      
     case "Angle":
       if(cond === "lt"){
         return q.minAngle < th;
@@ -36,6 +35,9 @@ function isBadElement(e){
 
     case "minHeight":
       return q.minHeight < th;
+      
+    case "aspect1":
+      return q.aspect1 > th;
 
     default:
       return false;
