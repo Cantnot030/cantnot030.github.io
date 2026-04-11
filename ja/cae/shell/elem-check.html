@@ -139,7 +139,7 @@ function drawMesh(){
   
   if(flagFirst == 0){
     resetView();
-    flagFirts=1;
+    flagFirst=1;
   }
   
   //showElemInfo(e);
@@ -382,9 +382,11 @@ function calcQuality(nodes, elems){
 
   });
 
+     if(flagFirst == 0){
   document.getElementById("countTh").innerHTML = `
     ${countTh} 要素
   `;
+  }
   /*
   document.getElementById("numAllElem").innerHTML = `
     ${e.length} 要素
