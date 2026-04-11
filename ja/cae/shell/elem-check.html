@@ -133,11 +133,12 @@ function drawMesh(){
   nodes = parseNodes();
   elems = parseElems();
   
-  calcQuality(nodes, elems);
+  //calcQuality(nodes, elems);
   
   drawCanvas(nodes, elems);
   
   if(flagFirst == 0){
+    calcQuality(nodes, elems);
     resetView();
     flagFirst=1;
   }
