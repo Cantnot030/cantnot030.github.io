@@ -1,0 +1,6 @@
+.quote {
+  margin: 16px 0;
+  padding-left: 12px;
+  border-left: 3px solid #ccc;
+  font-style: italic;
+}
