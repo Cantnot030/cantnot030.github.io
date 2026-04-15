@@ -4,6 +4,7 @@
   <!-- トップ -->
   <url>
     <loc>https://あなたのドメイン/</loc>
+index.html
     <priority>1.0</priority>
   </url>
 
