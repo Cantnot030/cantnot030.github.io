@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップ -->
+  <url>
+    <loc>https://あなたのドメイン/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- CAEツール一覧 -->
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/cae-tools.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 梁系 -->
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-list.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 個別ツール -->
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-c-p.html</loc>
+  </url>
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-c-w.html</loc>
+  </url>
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-s-p.html</loc>
+  </url>
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-s-w.html</loc>
+  </url>
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-f-p.html</loc>
+  </url>
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/deflection-f-w.html</loc>
+  </url>
+
+  <!-- その他ツール -->
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/beam/section-prop.html</loc>
+  </url>
+
+  <!-- 将来追加分（例） -->
+  <!--
+  <url>
+    <loc>https://あなたのドメイン/ja/cae/element-quality.html</loc>
+  </url>
+  -->
+
+</urlset>
