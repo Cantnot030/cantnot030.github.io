@@ -7,6 +7,22 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- フッター -->
+  <url>
+    <loc>https://cantnot030.github.io/ja/about.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cantnot030.github.io/ja/privacy-policy.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cantnot030.github.io/ja/contact.html</loc>
+    <priority>1.0</priority>
+  </url>
+
   <!-- CAEツール一覧 -->
   <url>
     <loc>https://cantnot030.github.io/ja/cae/cae-tools.html</loc>
