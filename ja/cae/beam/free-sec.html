@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>断面描画テスト</title>
+<style>
+  svg {
+    border: 1px solid #ccc;
+    width: 400px;
+    height: 400px;
+  }
+  textarea {
+    width: 400px;
+    height: 120px;
+  }
+</style>
+</head>
+<body>
+
+<h3>座標入力 (x,y)</h3>
+<textarea id="input">
+0,0
+100,0
+100,50
+0,50
+</textarea><br>
+
+<button onclick="draw()">描画</button>
+
+<svg id="canvas"></svg>
+
+<script>
+function draw() {
+  const text = document.getElementById("input").value.trim();
+  const lines = text.split("\n");
+
+  // 座標配列
+  let points = [];
+
+  for (let line of lines) {
+    let [x, y] = line.split(",").map(Number);
+    points.push({x, y});
+  }
+
+  const svg = document.getElementById("canvas");
+  svg.innerHTML = "";
+
+  // スケール調整（簡易）
+  const scale = 3;
+  const offset = 50;
+
+  // polygon用文字列
+  let pointStr = points.map(p => {
+    let sx = p.x * scale + offset;
+    let sy = 300 - (p.y * scale + offset); // y反転
+    return `${sx},${sy}`;
+  }).join(" ");
+
+  // ポリゴン描画
+  const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+  polygon.setAttribute("points", pointStr);
+  polygon.setAttribute("fill", "lightblue");
+  polygon.setAttribute("stroke", "black");
+  svg.appendChild(polygon);
+
+  // 点描画
+  for (let p of points) {
+    let cx = p.x * scale + offset;
+    let cy = 300 - (p.y * scale + offset);
+
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", cx);
+    circle.setAttribute("cy", cy);
+    circle.setAttribute("r", 3);
+    circle.setAttribute("fill", "red");
+
+    svg.appendChild(circle);
+  }
+}
+</script>
+
+</body>
+</html>
