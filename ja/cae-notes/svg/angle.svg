@@ -4,7 +4,7 @@
 
   
 
-  <rect x="120" y="80" width="160" height="140"
+  <rect x="120" y="80" width="160" height="160"
         fill="none" stroke="black" stroke-width="4"/>
 
   <text x="200" y="280" font-size="40" fill="red" text-anchor="middle">○</text>
