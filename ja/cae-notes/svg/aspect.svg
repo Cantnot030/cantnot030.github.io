@@ -10,7 +10,7 @@
 
   
 
-  <rect x="480" y="120" width="240" height="40"
+  <rect x="480" y="130" width="240" height="40"
         fill="none" stroke="black" stroke-width="4"/>
 
   <text x="600" y="280" font-size="40" fill="red" text-anchor="middle">×</text>
