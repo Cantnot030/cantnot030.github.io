@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- トップ -->
   <url>
     <loc>https://cantnot030.github.io/</loc>
     <priority>1.0</priority>
   </url>
 
-  <!-- フッター -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/about.html</loc>
     <priority>1.0</priority>
@@ -23,13 +22,13 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- CAEツール一覧 -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/cae/cae-tools.html</loc>
     <priority>0.9</priority>
   </url>
 
-  <!-- 単位変換 -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/cae/unit/unit-converter.html</loc>
     <priority>0.8</priority>
@@ -60,13 +59,13 @@
     <priority>0.9</priority>
    </url>
 
-  <!-- 相互変換 -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/cae/elastic-modulus.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- 梁系 -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/cae/beam.html</loc>
     <priority>0.9</priority>
@@ -107,7 +106,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- 平面要素系 -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/cae/shell.html</loc>
     <priority>0.9</priority>
@@ -118,7 +117,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- CAEノート -->
+
   <url>
     <loc>https://cantnot030.github.io/ja/cae-notes/cae-notes.html</loc>
   </url>
@@ -132,13 +131,5 @@
   <url>
     <loc>https://cantnot030.github.io/ja/cae-notes/02_001_Excel_sig-figs.html</loc>
   </url>
-  
-
-  <!-- 将来追加分（例） -->
-  <!--
-  <url>
-    <loc>html</loc>
-  </url>
-  -->
 
 </urlset>
