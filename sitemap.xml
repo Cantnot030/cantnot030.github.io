@@ -102,40 +102,26 @@
     <priority>0.8</priority>
   </url>
 
-
-
-
-
-
-  <!-- 個別ツール -->
+  <!-- CAEノート -->
   <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/deflection-c-p.html</loc>
-  </url>
-  <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/deflection-c-w.html</loc>
-  </url>
-  <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/deflection-s-p.html</loc>
-  </url>
-  <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/deflection-s-w.html</loc>
-  </url>
-  <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/deflection-f-p.html</loc>
-  </url>
-  <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/deflection-f-w.html</loc>
+    <loc>https://cantnot030.github.io/ja/cae-notes/cae-notes.html</loc>
   </url>
 
-  <!-- その他ツール -->
   <url>
-    <loc>https://あなたのドメイン/ja/cae/beam/section-prop.html</loc>
+    <loc>https://cantnot030.github.io/ja/cae-notes/01_001_column_CAE.html</loc>
   </url>
+  <url>
+    <loc>https://cantnot030.github.io/ja/cae-notes/01_002_column_FEM.html</loc>
+  </url>
+  <url>
+    <loc>https://cantnot030.github.io/ja/cae-notes/02_001_Excel_sig-figs.html</loc>
+  </url>
+  
 
   <!-- 将来追加分（例） -->
   <!--
   <url>
-    <loc>https://あなたのドメイン/ja/cae/element-quality.html</loc>
+    <loc>html</loc>
   </url>
   -->
 
