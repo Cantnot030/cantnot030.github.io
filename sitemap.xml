@@ -14,15 +14,15 @@
   </url>
 
   <!-- 単位変換 -->
-　 <url>
+  <url>
     <loc>https://cantnot030.github.io/ja/cae/unit/unit-converter.html</loc>
     <priority>0.8</priority>
    </url>
 
-   <url>
+  <url>
     <loc>https://cantnot030.github.io/ja/cae/unit/length.html</loc>
     <priority>0.9</priority>
-   </url>
+  </url>
 
    <url>
     <loc>https://cantnot030.github.io/ja/cae/unit/weight.html</loc>
@@ -44,11 +44,11 @@
     <priority>0.9</priority>
    </url>
 
-   <!-- 相互変換 -->
-　 <url>
+  <!-- 相互変換 -->
+  <url>
     <loc>https://cantnot030.github.io/ja/cae/elastic-modulus.html</loc>
     <priority>0.8</priority>
-   </url>
+  </url>
 
   <!-- 梁系 -->
   <url>
