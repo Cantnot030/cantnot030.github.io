@@ -70,6 +70,6 @@
 
   <!-- ラベル -->
   <text x="705" y="100" font-size="14">節点</text>
-  <text x="755" y="250" font-size="14">要素</text>
+  <text x="745" y="250" font-size="14">要素</text>
 
 </svg>
