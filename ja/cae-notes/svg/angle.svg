@@ -11,7 +11,7 @@
 
 
 
-  <polygon points="500,200 650,140 720,180 580,240"
+  <polygon points="500,180 650,120 720,160 580,220"
            fill="none" stroke="black" stroke-width="4"/>
 
   <text x="600" y="280" font-size="40" fill="red" text-anchor="middle">×</text>
