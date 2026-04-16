@@ -2,21 +2,14 @@
 
   <rect width="100%" height="100%" fill="white"/>
 
-  <!-- タイトル -->
-  <text x="400" y="40" font-size="22" text-anchor="middle">
-    要素角度（Angle Quality）
-  </text>
-
-  <!-- 良い -->
-  <text x="200" y="80" font-size="18" text-anchor="middle">良い</text>
+  
 
   <rect x="120" y="100" width="160" height="160"
         fill="none" stroke="black" stroke-width="4"/>
 
   <text x="200" y="280" font-size="40" fill="red" text-anchor="middle">○</text>
 
-  <!-- 悪い -->
-  <text x="600" y="80" font-size="18" text-anchor="middle">悪い</text>
+
 
   <polygon points="500,220 650,160 720,200 580,260"
            fill="none" stroke="black" stroke-width="4"/>
