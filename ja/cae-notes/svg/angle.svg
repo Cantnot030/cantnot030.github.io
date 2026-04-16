@@ -4,14 +4,14 @@
 
   
 
-  <rect x="120" y="100" width="160" height="160"
+  <rect x="120" y="80" width="160" height="140"
         fill="none" stroke="black" stroke-width="4"/>
 
   <text x="200" y="280" font-size="40" fill="red" text-anchor="middle">○</text>
 
 
 
-  <polygon points="500,220 650,160 720,200 580,260"
+  <polygon points="500,200 650,140 720,180 580,240"
            fill="none" stroke="black" stroke-width="4"/>
 
   <text x="600" y="280" font-size="40" fill="red" text-anchor="middle">×</text>
