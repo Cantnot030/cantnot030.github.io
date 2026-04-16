@@ -68,7 +68,7 @@
   <circle cx="820" cy="230" r="5" fill="red"/>
 
   <!-- ラベル -->
-  <text x="705" y="100" font-size="14">Node</text>
-  <text x="730" y="250" font-size="14">Element</text>
+  <text x="705" y="100" font-size="14">節点</text>
+  <text x="730" y="250" font-size="14">要素</text>
 
 </svg>
