@@ -69,7 +69,13 @@ let remainMin = Math.floor((remainTime % (1000*60*60)) / (1000*60));
 // 完了日時
 let finishDate = new Date(start.getTime() + totalTime);
 
+// 計算進捗
+let progress = (currentStep / totalStep * 100).toFixed(1);
+
 // 表示
+document.getElementById("progress").innerHTML =
+"計算進捗： " + progress + "%";
+
 document.getElementById("remain").innerHTML =
 "予測残り時間： " + remainHour + "時間 " + remainMin + "分";
 
