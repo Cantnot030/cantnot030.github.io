@@ -209,11 +209,27 @@ function calc(){
   //document.getElementById("status").innerHTML = "状態： " + status;
 
   // 経過時間
+/*
   let hour = Math.floor(elapsed/(1000*60*60));
   let min = Math.floor((elapsed%(1000*60*60))/(1000*60));
 
   document.getElementById("elapsed").innerHTML =
 "経過時間： " + hour + "時間 " + min + "分";
+*/
+
+  // 経過時間
+  let day = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+  let hour = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let min = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+
+  // 表示
+  let text = "経過時間： ";
+
+  if(day > 0){
+    text += day + "日 ";
+  }
+  text += hour + "時間 " + min + "分";
+  document.getElementById("elapsed").innerHTML = text;
 
   // ステップ時間
   let secPerStep = (timePerStep/1000).toFixed(2);
@@ -224,11 +240,26 @@ function calc(){
 */
 
   // 残り時間
+/*
   let remainHour = Math.floor(remainTime/(1000*60*60));
   let remainMin = Math.floor((remainTime%(1000*60*60))/(1000*60));
 
   document.getElementById("remain").innerHTML =
 "残り時間： " + remainHour + "時間 " + remainMin + "分";
+*/
+
+  // 残り時間
+  let remailDay = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+  let remainHour = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let remainMin = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+
+  // 表示
+  let text = "残り時間： ";
+  if(day > 0){
+    text += remailDay + "日 ";
+  }
+  text += remainHour + "時間 " + remainMin + "分";
+  document.getElementById("elapsed").innerHTML = text;
 
   // 完了時刻
   let finishDate = new Date(start.getTime() + totalTime);
