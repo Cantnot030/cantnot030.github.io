@@ -148,11 +148,8 @@ let totalStep = parseFloat(document.getElementById("totalStep").value);
 let currentStep = parseFloat(document.getElementById("currentStep").value);
 let coef = parseFloat(document.getElementById("coef").value);
 
-//let start = new Date(document.getElementById("start").value);
-//let now = new Date(document.getElementById("now").value);
-
-let start = getLocalDate("start");
-let now = getLocalDate("now");
+let start = new Date(document.getElementById("start").value);
+let now = new Date(document.getElementById("now").value);
 
 
 // 異常チェック
