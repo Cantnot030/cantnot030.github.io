@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>計算時間予測ツール</title>
+<style>
+body{font-family:sans-serif;}
+input{width:120px; margin:5px;}
+.result{font-size:20px; margin-top:20px;}
+</style>
+</head>
+
+<body>
+
+<h2>計算時間予測ツール</h2>
+
+<h3>入力</h3>
+
+<p>総ステップ数</p>
+<input id="totalStep" type="number">
+
+<p>計算開始日時</p>
+<input id="start" type="datetime-local">
+
+<p>確認日時</p>
+<input id="now" type="datetime-local">
+
+<p>確認時ステップ数</p>
+<input id="currentStep" type="number">
+
+<p>補正係数（収束悪化対策）</p>
+<input id="coef" type="number" value="1.0" step="0.1">
+
+<br><br>
+<button onclick="calc()">計算</button>
+
+<div class="result">
+<p id="remain"></p>
+<p id="finish"></p>
+</div>
+
+<script>
+
+function calc(){
+
+let totalStep = parseFloat(document.getElementById("totalStep").value);
+let currentStep = parseFloat(document.getElementById("currentStep").value);
+let coef = parseFloat(document.getElementById("coef").value);
+
+let start = new Date(document.getElementById("start").value);
+let now = new Date(document.getElementById("now").value);
+
+// 経過時間（ms）
+let elapsed = now - start;
+
+// 1ステップあたり時間
+let timePerStep = elapsed / currentStep;
+
+// 総時間
+let totalTime = timePerStep * totalStep * coef;
+
+// 残り時間
+let remainTime = totalTime - elapsed;
+
+// 時間・分変換
+let remainHour = Math.floor(remainTime / (1000*60*60));
+let remainMin = Math.floor((remainTime % (1000*60*60)) / (1000*60));
+
+// 完了日時
+let finishDate = new Date(start.getTime() + totalTime);
+
+// 表示
+document.getElementById("remain").innerHTML =
+"予測残り時間： " + remainHour + "時間 " + remainMin + "分";
+
+document.getElementById("finish").innerHTML =
+"予測完了時刻： " + finishDate.getFullYear() + "年"
++ (finishDate.getMonth()+1) + "月"
++ finishDate.getDate() + "日 "
++ finishDate.getHours() + "時"
++ finishDate.getMinutes() + "分";
+
+}
+
+</script>
+
+</body>
+</html>
