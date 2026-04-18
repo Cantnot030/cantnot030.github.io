@@ -1,91 +1,188 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>計算時間予測ツール</title>
-<style>
-body{font-family:sans-serif;}
-input{width:120px; margin:5px;}
-.result{font-size:20px; margin-top:20px;}
-</style>
-</head>
-
-<body>
-
-<h2>計算時間予測ツール</h2>
-
-<h3>入力</h3>
-
-<p>総ステップ数<input id="totalStep" type="number"></p>
-
-<p>確認時ステップ数<input id="currentStep" type="number"></p>
-
-<p>計算開始日時<input id="start" type="datetime-local"></p>
-
-<p>確認日時<input id="now" type="datetime-local"></p>
-
-<p>補正係数（収束悪化対策）<input id="coef" type="number" value="1.0" step="0.1"></p>
-
-
-<br><br>
-<button onclick="calc()">計算</button>
-
-<div class="result">
-<p id="progress"></p>
-<p id="remain"></p>
-<p id="finish"></p>
-</div>
-
-<script>
-
-function calc(){
-
-let totalStep = parseFloat(document.getElementById("totalStep").value);
-let currentStep = parseFloat(document.getElementById("currentStep").value);
-let coef = parseFloat(document.getElementById("coef").value);
-
-let start = new Date(document.getElementById("start").value);
-let now = new Date(document.getElementById("now").value);
-
-// 経過時間（ms）
-let elapsed = now - start;
-
-// 1ステップあたり時間
-let timePerStep = elapsed / currentStep;
-
-// 総時間
-let totalTime = timePerStep * totalStep * coef;
-
-// 残り時間
-let remainTime = totalTime - elapsed;
-
-// 時間・分変換
-let remainHour = Math.floor(remainTime / (1000*60*60));
-let remainMin = Math.floor((remainTime % (1000*60*60)) / (1000*60));
-
-// 完了日時
-let finishDate = new Date(start.getTime() + totalTime);
-
-// 計算進捗
-let progress = (currentStep / totalStep * 100).toFixed(1);
-
-// 表示
-document.getElementById("progress").innerHTML =
-"計算進捗： " + progress + "%";
-
-document.getElementById("remain").innerHTML =
-"予測残り時間： " + remainHour + "時間 " + remainMin + "分";
-
-document.getElementById("finish").innerHTML =
-"予測完了時刻： " + finishDate.getFullYear() + "年"
-+ (finishDate.getMonth()+1) + "月"
-+ finishDate.getDate() + "日 "
-+ finishDate.getHours() + "時"
-+ finishDate.getMinutes() + "分";
-
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/breadcrumb.css">
+  <link rel="stylesheet" href="/css/section-prop.css">
+  <title>弾性係数（E,G,ν,K）相互変換ツール</title>
+  <!-- Google AdSenseコード -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9353484227417299"
+     crossorigin="anonymous"></script>
+  <style>
+body{
+font-family:Arial;
+margin:40px;
 }
 
+input{
+margin:5px;
+padding:5px;
+}
+
+label {
+font-size: 15px;
+/* display: inline-block;
+width: 60px;
+text-align: right;*/
+}
+  </style>
+ </head>
+
+ <body>
+  <div class="container">
+   <!-- パンくず -->
+   <nav class="breadcrumb">
+    <a href="/">Top</a> &gt;
+    <a href="/ja/cae/cae-tools.html">CAEツール</a> &gt;
+    <span>弾性係数（E,G,ν,K）相互変換ツール</span>
+   </nav>
+
+   <h1>弾性係数（E,G,ν,K）相互変換ツール</h1>
+
+   <h2>このツールについて</h2>
+<p>
+ヤング率（E）、せん断弾性係数（G）、ポアソン比（ν）、体積弾性係数（K）は、
+等方弾性体において互いに関係式で結ばれています。
+本ツールでは、これら4つの弾性係数のうち2つを入力することで、
+残りの値を自動的に計算します。
+</p>
+
+<h2>使い方</h2>
+<p>
+E、G、ν、Kのうち任意の2つを入力し、「計算」ボタンを押してください。
+入力された値に基づいて、他の弾性係数が算出されます。
+</p>
+
+<h2>注意事項</h2>
+<p>
+ポアソン比νは一般的に -1 < ν < 0.5 の範囲にある必要があります。
+この範囲を外れる場合、物理的に不適切な結果となる可能性があります。
+</p>
+
+   <input type="number" id="E" placeholder="E（ヤング率）"><br>
+   <input type="number" id="G" placeholder="G（せん断弾性係数）"><br>
+   <input type="number" id="nu" placeholder="ν（ポアソン比）"><br>
+   <input type="number" id="K" placeholder="K（体積弾性係数）"><br>
+
+   <label for="digits">結果表示形式</label>
+   <select id="digits">
+<!--    <option value="" disabled selected>結果表示形式</option> -->
+    <option value="auto">自動表示</option><br>
+    <option value="e">指数表示</option>
+   </select>
+   <br>
+   <button onclick="calc()">計算</button>
+
+   <!--
+    <label>b</label>
+    -->
+    
+   <div id="result"></div>
+  </div>
+
+  <script src="/js/unit-converter.js"></script>
+  <script src="/js/section-prop.js"></script>
+
+  <script>
+function calc(){
+
+let E = parseFloat(document.getElementById("E").value);
+let G = parseFloat(document.getElementById("G").value);
+let nu = parseFloat(document.getElementById("nu").value);
+let K = parseFloat(document.getElementById("K").value);
+let digits = document.getElementById("digits").value;
+
+// 入力チェック
+let count = 0;
+if(!isNaN(E)) count++;
+if(!isNaN(G)) count++;
+if(!isNaN(nu)) count++;
+if(!isNaN(K)) count++;
+
+let warning = "";
+
+if(!isNaN(nu)){
+  if(nu >= 0.5 || nu <= -1){
+    warning += " νの値が物理的に不適切な可能性があります";
+    }
+}
+
+if(count !== 2){
+document.getElementById("result").innerHTML = "E・G・ν・Kのうち2つだけ入力してください";
+return;
+}
+
+// パターン分岐
+
+// E & ν
+if(!isNaN(E) && !isNaN(nu)){
+G = E / (2 * (1 + nu));
+K = E / (3 * (1 - 2 * nu));
+}
+
+// E & G
+else if(!isNaN(E) && !isNaN(G)){
+nu = E / (2 * G) - 1;
+K = E / (3 * (1 - 2 * nu));
+}
+
+// E & K
+else if(!isNaN(E) && !isNaN(K)){
+nu = (3*K - E) / (6*K);
+G = E / (2 * (1 + nu));
+}
+
+// G & ν
+else if(!isNaN(G) && !isNaN(nu)){
+E = 2 * G * (1 + nu);
+K = E / (3 * (1 - 2 * nu));
+}
+
+// K & ν
+else if(!isNaN(K) && !isNaN(nu)){
+E = 3 * K * (1 - 2 * nu);
+G = E / (2 * (1 + nu));
+}
+
+// G & K
+else if(!isNaN(G) && !isNaN(K)){
+E = 9 * K * G / (3*K + G);
+nu = (3*K - 2*G) / (2*(3*K + G));
+}
+
+let E_val = formatSmart(E,digits);
+let G_val = formatSmart(G,digits);
+let nu_val = formatSmart(nu,digits);
+let K_val = formatSmart(K,digits);
+
+// 出力
+document.getElementById("result").innerHTML = `
+<h3>計算結果</h3>
+
+E : <span id="E_val">${E_val}</span>
+<button onclick="copyText('E_val')">コピー</button><br>
+G : <span id="G_val">${G_val}</span>
+<button onclick="copyText('G_val')">コピー</button><br>
+ν : <span id="nu_val">${nu_val}</span>
+<button onclick="copyText('nu_val')">コピー</button><br>
+K : <span id="K_val">${K_val}</span>
+<button onclick="copyText('K_val')">コピー</button>
+
+`;
+
+}
 </script>
 
-</body>
+  <footer>
+   <div class="container">
+    <hr>
+    <a href="/ja/about.html">サイト概要</a>
+ | 
+    <a href="/ja/privacy-policy.html">プライバシーポリシー</a>
+ | 
+    <a href="/ja/contact.html">お問い合わせ</a>
+   </div>
+  </footer>
+ </body>
 </html>
