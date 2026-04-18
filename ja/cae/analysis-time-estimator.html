@@ -18,17 +18,14 @@ input{width:120px; margin:5px;}
 
 <p>総ステップ数<input id="totalStep" type="number"></p>
 
-<p>計算開始日時</p>
-<input id="start" type="datetime-local">
+<p>確認時ステップ数<input id="currentStep" type="number"></p>
 
-<p>確認日時</p>
-<input id="now" type="datetime-local">
+<p>計算開始日時<input id="start" type="datetime-local"></p>
 
-<p>確認時ステップ数</p>
-<input id="currentStep" type="number">
+<p>確認日時<input id="now" type="datetime-local"></p>
 
-<p>補正係数（収束悪化対策）</p>
-<input id="coef" type="number" value="1.0" step="0.1">
+<p>補正係数（収束悪化対策）<input id="coef" type="number" value="1.0" step="0.1"></p>
+
 
 <br><br>
 <button onclick="calc()">計算</button>
