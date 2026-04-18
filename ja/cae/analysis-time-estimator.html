@@ -180,17 +180,16 @@ function calc(){
   // 1ステップ時間
   let timePerStep = elapsed / currentStep;
 
-  // 総時間
-//  let totalTime = timePerStep * totalStep * coef;
-
   // 残りステップ
   let remainStep = totalStep - currentStep;
 
   // 残り時間
-  let remainTime = elapsed * remainStep * coef;
+  let remainTime = timePerStep * remainStep * coef;
+
+  // 総時間
+  let totalTime = elapsed + remainTime;
 
   // ---- 表示 ----
-
   // 進捗
   let progress = (currentStep / totalStep * 100).toFixed(1);
   document.getElementById("progressText").innerHTML = "進捗： " + progress + " %";
