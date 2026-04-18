@@ -249,14 +249,14 @@ function calc(){
 */
 
   // 残り時間
-  let remailDay = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+  let remainDay = Math.floor(elapsed / (1000 * 60 * 60 * 24));
   let remainHour = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let remainMin = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
 
   // 表示
   let text = "残り時間： ";
   if(day > 0){
-    text += remailDay + "日 ";
+    text += remainDay + "日 ";
   }
   text += remainHour + "時間 " + remainMin + "分";
   document.getElementById("elapsed").innerHTML = text;
