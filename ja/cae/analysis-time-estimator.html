@@ -154,8 +154,90 @@ button{
   </div>
    
   <script>
+// 確認時刻を自動入力
+//document.getElementById("now").value = new Date().toISOString().slice(0,16);
+
+function calc(){
+
+  let totalStep = parseFloat(document.getElementById("totalStep").value);
+  let currentStep = parseFloat(document.getElementById("currentStep").value);
+  let coef = parseFloat(document.getElementById("coef").value);
+
+  let start = new Date(document.getElementById("start").value);
+  let now = new Date(document.getElementById("now").value);
 
 
+  // 異常チェック
+  if(!totalStep || !currentStep || currentStep <= 0){
+    alert("ステップ数が不正です");
+    return;
+  }
+
+  // 経過時間(ms)
+  let elapsed = now - start;
+
+  // 1ステップ時間
+  let timePerStep = elapsed / currentStep;
+
+  // 総時間
+  let totalTime = timePerStep * totalStep * coef;
+
+  // 残り時間
+  let remainTime = totalTime - elapsed;
+
+  // ---- 表示 ----
+
+  // 進捗
+  let progress = (currentStep / totalStep * 100).toFixed(1);
+  document.getElementById("progressText").innerHTML = "進捗： " + progress + " %";
+  document.getElementById("bar").style.width = progress + "%";
+
+  // 色変化
+  if(progress < 50){
+    document.getElementById("bar").style.background = "orange";
+  }else{
+    document.getElementById("bar").style.background = "#4caf50";
+  }
+
+  // 状態表示
+  let status = "正常";
+  if(coef > 1.3) status = "収束悪化の可能性";
+  if(coef > 1.8) status = "要注意";
+  //document.getElementById("status").innerHTML = "状態： " + status;
+
+  // 経過時間
+  let hour = Math.floor(elapsed/(1000*60*60));
+  let min = Math.floor((elapsed%(1000*60*60))/(1000*60));
+
+  document.getElementById("elapsed").innerHTML =
+"経過時間： " + hour + "時間 " + min + "分";
+
+  // ステップ時間
+  let secPerStep = (timePerStep/1000).toFixed(2);
+
+/*
+  document.getElementById("stepTime").innerHTML =
+"1ステップ時間： " + secPerStep + " 秒";
+*/
+
+  // 残り時間
+  let remainHour = Math.floor(remainTime/(1000*60*60));
+  let remainMin = Math.floor((remainTime%(1000*60*60))/(1000*60));
+
+  document.getElementById("remain").innerHTML =
+"残り時間： " + remainHour + "時間 " + remainMin + "分";
+
+  // 完了時刻
+  let finishDate = new Date(start.getTime() + totalTime);
+
+  document.getElementById("finish").innerHTML =
+"完了予定： " + finishDate.getFullYear() + "年"
++ (finishDate.getMonth()+1) + "月"
++ finishDate.getDate() + "日 "
++ finishDate.getHours() + "時"
++ finishDate.getMinutes() + "分";
+
+}
   </script>
 
   <footer>
