@@ -133,16 +133,7 @@ button{
 // 確認時刻を自動入力
 //document.getElementById("now").value = new Date().toISOString().slice(0,16);
 
-function getLocalDate(id){
-  let d = new Date(document.getElementById(id).value);
-  d.setMinutes(d.getMinutes() + d.getTimezoneOffset());
-  return d;
-}
-
 function calc(){
-
-
-
 
 let totalStep = parseFloat(document.getElementById("totalStep").value);
 let currentStep = parseFloat(document.getElementById("currentStep").value);
