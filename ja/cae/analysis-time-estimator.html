@@ -181,10 +181,13 @@ function calc(){
   let timePerStep = elapsed / currentStep;
 
   // 総時間
-  let totalTime = timePerStep * totalStep * coef;
+//  let totalTime = timePerStep * totalStep * coef;
+
+  // 残りステップ
+  let remainStep = totalStep - currentStep;
 
   // 残り時間
-  let remainTime = totalTime - elapsed;
+  let remainTime = elapsed * remainStep * coef;
 
   // ---- 表示 ----
 
