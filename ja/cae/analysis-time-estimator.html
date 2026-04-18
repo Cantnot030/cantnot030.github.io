@@ -249,17 +249,17 @@ function calc(){
 */
 
   // 残り時間
-  let remainDay = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-  let remainHour = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let remainMin = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+  let remainDay = Math.floor(remainTime / (1000 * 60 * 60 * 24));
+  let remainHour = Math.floor((remainTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let remainMin = Math.floor((remainTime % (1000 * 60 * 60)) / (1000 * 60));
 
   // 表示
-  let text = "残り時間： ";
+  let text2 = "残り時間： ";
   if(day > 0){
-    text += remainDay + "日 ";
+    text2 += remainDay + "日 ";
   }
-  text += remainHour + "時間 " + remainMin + "分";
-  document.getElementById("elapsed").innerHTML = text;
+  text2 += remainHour + "時間 " + remainMin + "分";
+  document.getElementById("remain").innerHTML = text2;
 
   // 完了時刻
   let finishDate = new Date(start.getTime() + totalTime);
