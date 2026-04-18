@@ -94,16 +94,64 @@ button{
 
 </p>
 
-<h2>使い方</h2>
+   <h2>使い方</h2>
 <p>
 
 </p>
 
-<h2>注意事項</h2>
+   <h2>注意事項</h2>
 <p>
 
 </p>
 
+   <!-- 入力 -->
+   <div class="panel">
+    <h3>入力</h3>
+
+    <div class="grid">
+     <input id="totalStep" type="number" placeholder="総ステップ数">
+     <input id="currentStep" type="number" placeholder="確認時ステップ">
+    </div>
+
+    <div class="grid">
+     <p>計算開始日時<br>
+      <input id="start" type="datetime-local">
+     </p>
+     <p>確認時<br>
+      <input id="now" type="datetime-local">
+     </p>
+    </div>
+
+    <div class="grid">
+     <input id="coef" type="number" value="1.0" step="0.1" placeholder="係数">
+    </div>
+
+    <button onclick="calc()">計算</button>
+   </div>
+
+   <!-- 進捗 -->
+   <div class="panel">
+    <h3>進捗</h3>
+
+    <div class="progress-bar">
+     <div id="bar" class="progress"></div>
+    </div>
+
+    <p id="progressText"></p>
+    <p id="status"></p>
+    <p id="elapsed" class="small"></p>
+    <p id="stepTime" class="small"></p>
+
+   </div>
+
+   <!-- 結果 -->
+   <div class="panel">
+    <h3>結果</h3>
+
+    <p id="remain" class="result"></p>
+    <p id="finish" class="result"></p>
+   </div>
+  </div>
    
   <script>
 
