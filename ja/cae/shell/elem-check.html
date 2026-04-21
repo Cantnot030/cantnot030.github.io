@@ -84,7 +84,7 @@ id,n1,n2,n3,n4
   <option value="Angle">角度</option>
   <option value="aspect1">アスペクト比（最長辺/最短辺）</option>
   <option value="edgeLength">辺長</option>
-  <option value="minHeight">最小高さ（延長底辺含）</option>
+<!--  <option value="minHeight">最小高さ（延長底辺含）</option> -->
   <option value="minHeightInner">最小高さ（要素内）</option>
 </select>
 
@@ -395,7 +395,7 @@ function calcQuality(nodes, elems){
     e.quality.minAngle = calcMinAngle(pts);
     e.quality.maxAngle = calcMaxAngle(pts);
 
-    e.quality.minHeight = calcMinHeight(pts);
+//    e.quality.minHeight = calcMinHeight(pts);
     e.quality.minHeightInner = calcMinHeightInner(pts);
 
     // アスペクト比（最長辺/最短辺）
@@ -443,7 +443,7 @@ function showElemInfo(e){
     面積 : ${e.quality.area.toFixed(2)}<br>
     最短辺 : ${e.quality.minEdge.toFixed(2)}<br>
     最長辺 : ${e.quality.maxEdge.toFixed(2)}<br>
-    最小要素高さ（延長底辺含） : ${e.quality.minHeight.toFixed(2)}<br>
+/*    最小要素高さ（延長底辺含） : ${e.quality.minHeight.toFixed(2)}<br> */
     最小要素高さ（要素内） : ${e.quality.minHeightInner.toFixed(2)}<br>
     アスペクト比（最長辺/最短辺）: ${e.quality.aspect1.toFixed(2)}<br>
     最小角度 : ${e.quality.minAngle.toFixed(2)}<br>
