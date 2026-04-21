@@ -36,6 +36,9 @@ function isBadElement(e){
     case "minHeight":
       return q.minHeight < th;
       
+    case "minHeightInner":
+      return q.minHeightInner < th;
+      
     case "aspect1":
       return q.aspect1 > th;
 
