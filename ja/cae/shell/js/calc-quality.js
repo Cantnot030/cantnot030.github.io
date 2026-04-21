@@ -212,7 +212,7 @@ function pointToSegmentDistance(p, a, b){
 }
 
 // 要素高さ（内側限定）
-function calcHeightsInner(pts){
+function calcHeightInner(pts){
 
   let heights = [];
 
@@ -242,7 +242,7 @@ function calcHeightsInner(pts){
 }
 
 //最小高さ　要素内
-function calcHeightsInner(pts){
-  let heights = calcHeightsInner(pts);
+function calcMinHeightInner(pts){
+  let heights = calcHeightInner(pts);
   return Math.min(...heights);
 }
