@@ -41,6 +41,9 @@ function isBadElement(e){
       
     case "aspect1":
       return q.aspect1 > th;
+      
+    case "aspect2":
+      return q.aspect2 > th;
 
     default:
       return false;
