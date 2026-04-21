@@ -152,7 +152,7 @@ function calcMaxAngle(pts){
   return Math.max(...angles);
 }
 
-//要素高さ
+//要素高さ　底辺延長含む
 function calcHeights(pts){
 
   let heights = [];
@@ -178,11 +178,63 @@ function calcHeights(pts){
   return heights;
 }
 
-//最初高さ
+//最小高さ
 function calcMinHeight(pts){
   let heights = calcHeights(pts);
   return Math.min(...heights);
 }
 
+// 点 → 線分AB の最短距離（内側制約あり）
+function pointToSegmentDistance(p, a, b){
+  const dx = b.x - a.x;
+  const dy = b.y - a.y;
 
+  const len2 = dx*dx + dy*dy;
+  if(len2 === 0) return Math.hypot(p.x - a.x, p.y - a.y);
+
+  let t = ((p.x - a.x)*dx + (p.y - a.y)*dy) / len2;
+
+  if(t < 0){
+    // A側に外れる
+    return Math.hypot(p.x - a.x, p.y - a.y);
+  } else if(t > 1){
+    // B側に外れる
+    return Math.hypot(p.x - b.x, p.y - b.y);
+  } else {
+    // 線分上に垂線
+    const projX = a.x + t*dx;
+    const projY = a.y + t*dy;
+    return Math.hypot(p.x - projX, p.y - projY);
+  }
+}
+
+// 要素高さ（内側限定）
+function calcHeightsInner(pts){
+
+  let heights = [];
+
+  for(let i = 0; i < pts.length; i++){
+
+    let a = pts[i];
+    let b = pts[(i + 1) % pts.length];
+
+    let minDist = Infinity;
+
+    // 辺AB以外の頂点との距離を評価
+    for(let j = 0; j < pts.length; j++){
+
+      if(j === i || j === (i + 1) % pts.length) continue;
+
+      let d = pointToSegmentDistance(pts[j], a, b);
+
+      if(d < minDist){
+        minDist = d;
+      }
+    }
+
+    heights.push(minDist);
+  }
+
+  return heights;
+}
 
