@@ -84,7 +84,8 @@ id,n1,n2,n3,n4
   <option value="Angle">角度</option>
   <option value="aspect1">アスペクト比（最長辺/最短辺）</option>
   <option value="edgeLength">辺長</option>
-  <option value="minHeight">最小高さ</option>
+  <option value="minHeight">最小高さ（延長底辺含）</option>
+  <option value="minHeightInner">最小高さ（要素内）</option>
 </select>
 
 方向：
@@ -221,7 +222,8 @@ function parseElems(){
               maxAngle: null,
               aspect1: null,
               aspect2: null,
-              minHeight: null
+              minHeight: null,
+              minHeightInner: null
         }
       });
     }
@@ -237,7 +239,8 @@ function parseElems(){
               maxAngle: null,
               aspect1: null,
               aspect2: null,
-              minHeight: null
+              minHeight: null,
+              minHeightInner: null
         }
       });
     }
@@ -393,6 +396,7 @@ function calcQuality(nodes, elems){
     e.quality.maxAngle = calcMaxAngle(pts);
 
     e.quality.minHeight = calcMinHeight(pts);
+    e.quality.minHeightInner = calcHeightsInner(pts);
 
     // アスペクト比（最長辺/最短辺）
     e.quality.aspect1 = e.quality.maxEdge / e.quality.minEdge;
