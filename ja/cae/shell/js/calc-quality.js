@@ -241,3 +241,8 @@ function calcHeightsInner(pts){
   return heights;
 }
 
+//最小高さ　要素内
+function calcHeightsInner(pts){
+  let heights = calcHeightsInner(pts);
+  return Math.min(...heights);
+}
