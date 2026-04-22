@@ -81,9 +81,12 @@ function draw() {
     svg.appendChild(circle);
   }
   
-  
-  
-  document.getElementById("result").innerHTML = Math.max(...points.x);
+  let prop = [];
+  for (let i = 0; i < points.length; i++) {
+    prop[i][1] = points[i].x + points[i].y;
+    
+  }
+  document.getElementById("result").innerHTML = prop[2][1];
   
 }
 </script>
