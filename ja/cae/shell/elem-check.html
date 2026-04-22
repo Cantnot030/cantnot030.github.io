@@ -437,7 +437,7 @@ function calcQuality(nodes, elems){
     e.quality.aspect1 = e.quality.maxEdge / e.quality.minEdge;
     
     let minH = 0;
-    if(pts.length = 3){
+    if(pts.length === 3){
       minH = e.quality.minHeightInner * 2 / Math.sqrt(3);
     } else {
       minH = e.quality.minHeightInner;
