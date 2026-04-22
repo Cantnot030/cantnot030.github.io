@@ -435,7 +435,14 @@ function calcQuality(nodes, elems){
 
     // アスペクト比（最長辺/最短辺）
     e.quality.aspect1 = e.quality.maxEdge / e.quality.minEdge;
-    e.quality.aspect2 = e.quality.maxEdge / Math.min(e.quality.minEdge, e.quality.minHeightInner);
+    
+    let minH = 0;
+    if(pts.length = 3){
+      minH = e.quality.minHeightInner * 2 / Math.sqrt(3);
+    } else {
+      minH = e.quality.minHeightInner;
+    }
+    e.quality.aspect2 = e.quality.maxEdge / Math.min(e.quality.minEdge, minH);
 
 
 　　　if(isBadElement(e)){
