@@ -95,7 +95,7 @@ function draw() {
   let last = points.length-1;
   prop[last] = [];
   prop[last][1] = (points[last].x * points[0].y)-(points[0].x * points[last].y);
-  prop[last][2] = (points[last].y + points[0].x) * (points[last].x * points[0].y - points[0].x * points[last].y);
+  prop[last][2] = (points[last].y + points[0].y) * (points[last].x * points[0].y - points[0].x * points[last].y);
   prop[last][3] = (points[last].y * points[last].y + points[last].y * points[0].y + points[0].y * points[0].y) * (points[last].x * points[0].y - points[0].x * points[last].y);
   
   let Asum = 0;
