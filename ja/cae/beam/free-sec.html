@@ -88,7 +88,7 @@ function draw() {
     //面積
     prop[i][1] = (points[i].x * points[i+1].y)-(points[i+1].x * points[i].y);
     //重心y
-    prop[i][2] = (points[i].y + points[i+1].x) * (points[i].x * points[i+1].y - points[i+1].x * points[i].y);
+    prop[i][2] = (points[i].y + points[i+1].y) * (points[i].x * points[i+1].y - points[i+1].x * points[i].y);
     //Ix0
     prop[i][3] = (points[i].y * points[i].y + points[i].y * points[i+1].y + points[i+1].y * points[i+1].y) * (points[i].x * points[i+1].y - points[i+1].x * points[i].y);
   }
