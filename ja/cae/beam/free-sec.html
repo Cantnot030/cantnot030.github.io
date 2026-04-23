@@ -89,25 +89,33 @@ function draw() {
     prop[i][1] = (points[i].x * points[i+1].y)-(points[i+1].x * points[i].y);
     //重心y
     prop[i][2] = (points[i].y + points[i+1].x) * (points[i].x * points[i+1].y - points[i+1].x * points[i].y);
+    //Ix0
+    prop[i][3] = (points[i].y * points[i].y + points[i].y * points[i+1].y + points[i+1].y * points[i+1].y) * (points[i].x * points[i+1].y - points[i+1].x * points[i].y);
   }
   let last = points.length-1;
   prop[last] = [];
   prop[last][1] = (points[last].x * points[0].y)-(points[0].x * points[last].y);
   prop[last][2] = (points[last].y + points[0].x) * (points[last].x * points[0].y - points[0].x * points[last].y);
+  prop[last][3] = (points[last].y * points[last].y + points[last].y * points[0].y + points[0].y * points[0].y) * (points[last].x * points[0].y - points[0].x * points[last].y);
   
   let Asum = 0;
   let YCsum = 0;
+  let IX0sum = 0;
+  
   for (let i = 0; i < points.length; i++) {
     Asum += prop[i][1];
     YCsum += prop[i][2];
+    IX0sum += prop[i][3];
   }
   
   let A = Asum / 2;
   let Yc = YCsum / A / 6;
+  let Ix = IX0sum - A * Yc * Yc;
   
   document.getElementById("result").innerHTML =
     "面積: " + A + "<br>" +
-    "重心Y: " + Yc;
+    "重心Y: " + Yc + "<br>" +
+    "断面二次モーメントIy: " + Ix;
   
   
   
