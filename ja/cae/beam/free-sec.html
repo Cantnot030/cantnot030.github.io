@@ -86,7 +86,7 @@ function draw() {
     prop[i] = [];
     prop[i][1] = (points[i].x * points[i+1].y)-(points[i+1].x * points[i].y);
   }
-  let last = points.length
+  let last = points.length-1;
   prop[last] = [];
   prop[last][1] = (points[last].x * points[0].y)-(points[0].x * points[last].y);
   
