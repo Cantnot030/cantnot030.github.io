@@ -37,7 +37,31 @@
 function draw() {
   const text = document.getElementById("input").value.trim();
   const lines = text.split("\n");
+  
+  // バウンディングボックス計算
+  let minX = Infinity, maxX = -Infinity;
+  let minY = Infinity, maxY = -Infinity;
 
+  for (let p of points) {
+    if (p.x < minX) minX = p.x;
+    if (p.x > maxX) maxX = p.x;
+    if (p.y < minY) minY = p.y;
+    if (p.y > maxY) maxY = p.y;
+  }
+
+  // SVGサイズ
+  const svgSize = 400;
+  const margin = 40;
+
+  // スケール（縦横フィット）
+  let scaleX = (svgSize - margin * 2) / (maxX - minX);
+  let scaleY = (svgSize - margin * 2) / (maxY - minY);
+  let scale = Math.min(scaleX, scaleY);
+
+  // オフセット（中央寄せ）
+  let offsetX = -minX * scale + margin;
+  let offsetY = -minY * scale + margin;
+  
   // 座標配列
   let points = [];
 
@@ -50,13 +74,15 @@ function draw() {
   svg.innerHTML = "";
 
   // スケール調整（簡易）
-  const scale = 3;
-  const offset = 50;
+  //const scale = 3;
+  //const offset = 50;
 
   // polygon用文字列
   let pointStr = points.map(p => {
-    let sx = p.x * scale + offset;
-    let sy = 300 - (p.y * scale + offset); // y反転
+    let sx = p.x * scale + offsetX;
+    let sy = svgSize - (p.y * scale + offsetY);    
+    //let sx = p.x * scale + offset;
+    //let sy = 300 - (p.y * scale + offset); // y反転
     return `${sx},${sy}`;
   }).join(" ");
 
