@@ -110,7 +110,7 @@ function draw() {
   
   let A = Asum / 2;
   let Yc = YCsum / A / 6;
-  let Ix = IX0sum - A * Yc * Yc;
+  let Ix = IX0sum / 12 - A * Yc * Yc;
   
   document.getElementById("result").innerHTML =
     "面積: " + A + "<br>" +
