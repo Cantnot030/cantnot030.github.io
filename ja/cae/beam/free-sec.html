@@ -151,8 +151,21 @@ function draw() {
     "重心Y: " + Yc + "<br>" +
     "断面二次モーメントIx: " + Ix;
   
-  
-  
+  // 重心Yのライン描画
+  let yLine = svgSize - (Yc * scale + offsetY);
+
+  const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line.setAttribute("x1", 0);
+  line.setAttribute("x2", svgSize);
+  line.setAttribute("y1", yLine);
+  line.setAttribute("y2", yLine);
+
+  // 破線
+  line.setAttribute("stroke", "red");
+  line.setAttribute("stroke-dasharray", "5,5");
+  line.setAttribute("stroke-width", "1");
+
+  svg.appendChild(line);
   
 }
 </script>
