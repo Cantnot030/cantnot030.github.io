@@ -66,9 +66,17 @@ function draw() {
   let scaleY = (svgSize - margin * 2) / (maxY - minY);
   let scale = Math.min(scaleX, scaleY);
 
+  let width = (maxX - minX) * scale;
+  let height = (maxY - minY) * scale;
+
+  // 中央寄せ
+  let offsetX = (svgSize - width) / 2 - minX * scale;
+  let offsetY = (svgSize - height) / 2 - minY * scale;
+
+
   // オフセット（中央寄せ）
-  let offsetX = -minX * scaleX + margin;
-  let offsetY = -minY * scaleY + margin;
+  //let offsetX = -minX * scale + margin;
+  //let offsetY = -minY * scale + margin;
   
   const svg = document.getElementById("canvas");
   svg.innerHTML = "";
