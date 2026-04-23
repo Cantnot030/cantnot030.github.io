@@ -67,8 +67,8 @@ function draw() {
   let scale = Math.min(scaleX, scaleY);
 
   // オフセット（中央寄せ）
-  let offsetX = -minX * scale + margin;
-  let offsetY = -minY * scale + margin;
+  let offsetX = -minX * scaleX + margin;
+  let offsetY = -minY * scaleY + margin;
   
   const svg = document.getElementById("canvas");
   svg.innerHTML = "";
