@@ -82,11 +82,14 @@ function draw() {
   }
   
   let prop = [];
-  for (let i = 0; i < points.length; i++) {
+  for (let i = 0; i < points.length - 1; i++) {
     prop[i] = [];
-    prop[i][1] = points[i].x + points[i].y;
-    
+    prop[i][1] = (points[i].x * points[i+1].y)-(points[i+1].x * points[i].y);
   }
+  let last = points.length
+  prop[last] = [];
+  prop[last][1] = (points[last].x * points[0].y)-(points[0].x * points[last].y);
+  
   document.getElementById("result").innerHTML = prop[2][1];
   
 }
