@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Realistic SVG Landscape</title>
+</head>
+<body style="margin:0">
+
+<svg viewBox="0 0 900 550" width="100%" height="100%">
+
+  <defs>
+    <!-- 空グラデーション -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5fa8ff"/>
+      <stop offset="100%" stop-color="#e6f3ff"/>
+    </linearGradient>
+
+    <!-- 山グラデーション -->
+    <linearGradient id="mountain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6c7a89"/>
+      <stop offset="100%" stop-color="#3f4a52"/>
+    </linearGradient>
+
+    <!-- 雪グラデーション -->
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dfe6ea"/>
+    </linearGradient>
+
+    <!-- 茶畑グラデーション -->
+    <linearGradient id="tea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ed957"/>
+      <stop offset="100%" stop-color="#3f8f2f"/>
+    </linearGradient>
+
+    <!-- ノイズフィルター -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- 空 -->
+  <rect width="900" height="550" fill="url(#sky)"/>
+
+  <!-- 山本体 -->
+  <path d="M450 90 
+           L280 360 
+           L620 360 Z"
+        fill="url(#mountain)"/>
+
+  <!-- 山陰影 -->
+  <path d="M450 90 
+           L450 360 
+           L620 360 Z"
+        fill="#2f3940" opacity="0.5"/>
+
+  <!-- 雪（細かく） -->
+  <path d="M450 90 
+           L400 170 
+           L430 200 
+           L390 260 
+           L450 230 
+           L510 260 
+           L470 200 
+           L500 170 Z"
+        fill="url(#snow)"/>
+
+  <!-- 雪の筋 -->
+  <g stroke="#ffffff" stroke-width="2" opacity="0.7">
+    <path d="M450 100 L420 300"/>
+    <path d="M450 110 L460 320"/>
+    <path d="M450 120 L500 300"/>
+    <path d="M450 130 L390 280"/>
+  </g>
+
+  <!-- 森 -->
+  <rect x="0" y="320" width="900" height="80" fill="#2e5a34"/>
+
+  <!-- 茶畑 -->
+  <rect x="0" y="400" width="900" height="150" fill="url(#tea)"/>
+
+  <!-- 畝（リアル風に細かく） -->
+  <g stroke="#2d6f25" fill="none" opacity="0.8">
+    <path d="M0 410 Q200 380 450 410 T900 410"/>
+    <path d="M0 430 Q200 400 450 430 T900 430"/>
+    <path d="M0 450 Q200 420 450 450 T900 450"/>
+    <path d="M0 470 Q200 440 450 470 T900 470"/>
+    <path d="M0 490 Q200 460 450 490 T900 490"/>
+    <path d="M0 510 Q200 480 450 510 T900 510"/>
+  </g>
+
+  <!-- 道 -->
+  <path d="M380 400 
+           Q450 360 520 400 
+           Q580 440 550 550 
+           L350 550 Z"
+        fill="#cfd6db"/>
+
+  <!-- 木（少しリアル寄り） -->
+  <g>
+    <rect x="120" y="300" width="12" height="60" fill="#5a3b1f"/>
+    <circle cx="126" cy="280" r="35" fill="#4caf50"/>
+    <circle cx="110" cy="290" r="25" fill="#3e8e41"/>
+    <circle cx="140" cy="295" r="25" fill="#3e8e41"/>
+  </g>
+
+  <!-- 全体に軽いノイズ -->
+  <rect width="900" height="550" filter="url(#noise)" opacity="0.2"/>
+
+</svg>
+
+</body>
+</html>
