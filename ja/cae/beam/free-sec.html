@@ -42,6 +42,14 @@ function draw() {
   let minX = Infinity, maxX = -Infinity;
   let minY = Infinity, maxY = -Infinity;
 
+  // 座標配列
+  let points = [];
+
+  for (let line of lines) {
+    let [x, y] = line.split(",").map(Number);
+    points.push({x, y});
+  }
+
   for (let p of points) {
     if (p.x < minX) minX = p.x;
     if (p.x > maxX) maxX = p.x;
@@ -62,14 +70,6 @@ function draw() {
   let offsetX = -minX * scale + margin;
   let offsetY = -minY * scale + margin;
   
-  // 座標配列
-  let points = [];
-
-  for (let line of lines) {
-    let [x, y] = line.split(",").map(Number);
-    points.push({x, y});
-  }
-
   const svg = document.getElementById("canvas");
   svg.innerHTML = "";
 
@@ -95,8 +95,8 @@ function draw() {
 
   // 点描画
   for (let p of points) {
-    let cx = p.x * scale + offset;
-    let cy = 300 - (p.y * scale + offset);
+    let cx = p.x * scale + offsetX;
+    let cy = 300 - (p.y * scale + offsetY);
 
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", cx);
@@ -134,7 +134,7 @@ function draw() {
     IX0sum += prop[i][3];
   }
   
-  let A = Asum / 2;
+  let A = Math.abs(Asum) / 2;
   let Yc = YCsum / A / 6;
   let Ix = IX0sum / 12 - A * Yc * Yc;
   
