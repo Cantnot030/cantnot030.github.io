@@ -81,21 +81,29 @@ function draw() {
     svg.appendChild(circle);
   }
   
+  //断面特性計算
   let prop = [];
   for (let i = 0; i < points.length - 1; i++) {
     prop[i] = [];
+    //面積
     prop[i][1] = (points[i].x * points[i+1].y)-(points[i+1].x * points[i].y);
+    //重心y
+    prop[i][2] = (points[i].y + points[i+1].x) * (points[i].x * points[i+1].y - points[i+1].x * points[i].y);
   }
   let last = points.length-1;
   prop[last] = [];
   prop[last][1] = (points[last].x * points[0].y)-(points[0].x * points[last].y);
+  prop[last][2] = (points[last].y + points[0].x) * (points[last].x * points[0].y - points[0].x * points[last].y);
   
   let Asum = 0;
+  let YCsum = 0;
   for (let i = 0; i < points.length; i++) {
     Asum += prop[i][1];
+    YCsum += prop[i][2];
   }
   
   document.getElementById("result").innerHTML = Asum / 2;
+  document.getElementById("result").innerHTML = YCsum / (Asum / 2) / 6;
   
 }
 </script>
