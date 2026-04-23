@@ -50,16 +50,38 @@
    </p>
 
 　　<h2>座標入力 (x,y)</h2>
-<textarea id="input">
+   <textarea id="input">
 0,0
 100,0
 100,50
 0,50
-</textarea><br>
+   </textarea>
 
-<button onclick="draw()">描画</button>
+   <button onclick="draw()">描画</button>
 
-<svg id="canvas"></svg>
+   <svg id="canvas"></svg>
+
+   <!--   <p id="result"></p> -->
+  
+   <p>
+    <label>A = </label>
+    <span id="A_val">-</span>
+    <span id="A_unit"> mm²</span>
+    <button onclick="copyText('A_val')">コピー</button><br>
+
+    <label>Ix = </label>
+    <span id="Ix_val">-</span>
+    <span id="Ix_unit"> mm⁴</span>
+    <button onclick="copyText('Ix_val')">コピー</button><br>
+
+<!--    <label>Zx = </label>
+    <span id="Zx_val">-</span>
+    <span id="Zx_unit"> mm³</span>
+    <button onclick="copyText('Zx_val')">コピー</button> -->
+   </p>
+
+
+
 
 
 <h4 id="result"></h4>
@@ -179,10 +201,10 @@ function draw() {
   let Yc = YCsum / A / 6;
   let Ix = IX0sum / 12 - A * Yc * Yc;
   
-  document.getElementById("result").innerHTML =
-    "面積: " + A + "<br>" +
-    "重心Y: " + Yc + "<br>" +
-    "断面二次モーメントIx: " + Ix;
+  //document.getElementById("result").innerHTML =
+//    "面積: " + A + "<br>" +
+//    "重心Y: " + Yc + "<br>" +
+//    "断面二次モーメントIx: " + Ix;
   
   // 重心Yのライン描画
   let yLine = svgSize - (Yc * scale + offsetY);
