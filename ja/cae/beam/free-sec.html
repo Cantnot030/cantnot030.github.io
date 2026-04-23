@@ -96,7 +96,7 @@ function draw() {
   // 点描画
   for (let p of points) {
     let cx = p.x * scale + offsetX;
-    let cy = 300 - (p.y * scale + offsetY);
+    let cy = svgSize - (p.y * scale + offsetY);
 
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", cx);
