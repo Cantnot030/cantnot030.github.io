@@ -205,6 +205,9 @@ function draw() {
 //    "面積: " + A + "<br>" +
 //    "重心Y: " + Yc + "<br>" +
 //    "断面二次モーメントIx: " + Ix;
+  document.getElementById("A_val").textContent = A;
+  document.getElementById("Ix_val").textContent = Ix;
+
   
   // 重心Yのライン描画
   let yLine = svgSize - (Yc * scale + offsetY);
