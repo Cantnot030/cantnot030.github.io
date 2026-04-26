@@ -92,10 +92,15 @@
     <span id="Ix_unit"> mm⁴</span>
     <button onclick="copyText('Ix_val')">コピー</button><br>
 
-<!--    <label>Zx = </label>
-    <span id="Zx_val">-</span>
+    <label>ZxTop = </label>
+    <span id="ZxTop_val">-</span>
     <span id="Zx_unit"> mm³</span>
-    <button onclick="copyText('Zx_val')">コピー</button> -->
+    <button onclick="copyText('ZxTop_val')">コピー</button>
+    
+    <label>ZxBottom = </label>
+    <span id="ZxBottom_val">-</span>
+    <span id="Zx_unit"> mm³</span>
+    <button onclick="copyText('ZxBottom_val')">コピー</button>
    </p>
 
    <!-- <h4 id="result"></h4> -->
@@ -216,13 +221,16 @@ function draw() {
   let Yc = YCsum / A / 6;
   let Ix = IX0sum / 12 - A * Yc * Yc;
   
-  //document.getElementById("result").innerHTML =
-//    "面積: " + A + "<br>" +
-//    "重心Y: " + Yc + "<br>" +
-//    "断面二次モーメントIx: " + Ix;
+  let yTop = maxY - Yc;
+  let yBottom = Yc - minY;
+  
+  let ZxTop = Ix / yTop;
+  let ZxBottom = Ix / yBottom;
+  
   document.getElementById("A_val").textContent = A;
   document.getElementById("Ix_val").textContent = Ix;
-
+  document.getElementById("ZxTop_val").textContent = ZxTop;
+  document.getElementById("ZxBottom_val").textContent = ZxBottom;
   
   // 重心Yのライン描画
   let yLine = svgSize - (Yc * scale + offsetY);
