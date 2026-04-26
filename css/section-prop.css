@@ -1,4 +1,4 @@
-#A_val, #Ix_val, #Zx_val {
+#A_val, #Ix_val, #Zx_val, #ZxTop_val, #ZxBottom_val {
   display: inline-block;
   width: 200px;   /* 好きな幅に調整 */
   text-align: right;
