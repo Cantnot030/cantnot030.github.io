@@ -7,7 +7,7 @@
   margin-left: 10px;
 }
 
-#A_unit, #Ix_unit, #Zx_unit {
+#A_unit, #Ix_unit, #Zx_unit, #ZxTop_unit, #ZxBottom_unit {
   display: inline-block;
   width: 40px;   /* 好きな幅に調整 */
   text-align: left;
