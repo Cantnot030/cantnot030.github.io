@@ -5,6 +5,21 @@ function setUnits() {
     document.getElementById("A_unit").textContent = " mm²";
     document.getElementById("Ix_unit").textContent = " mm⁴";
     document.getElementById("Zx_unit").textContent = " mm³";
+  }
+
+  if (unit === "m") {
+    document.getElementById("A_unit").textContent = " m²";
+    document.getElementById("Ix_unit").textContent = " m⁴";
+    document.getElementById("Zx_unit").textContent = " m³";
+  }
+}
+
+function setUnits2() {
+  const unit = document.getElementById("unit").value;
+
+  if (unit === "mm") {
+    document.getElementById("A_unit").textContent = " mm²";
+    document.getElementById("Ix_unit").textContent = " mm⁴";
     document.getElementById("ZxTop_unit").textContent = " mm³";
     document.getElementById("ZxBottom_unit").textContent = " mm³";
   }
@@ -12,7 +27,6 @@ function setUnits() {
   if (unit === "m") {
     document.getElementById("A_unit").textContent = " m²";
     document.getElementById("Ix_unit").textContent = " m⁴";
-    document.getElementById("Zx_unit").textContent = " m³";
     document.getElementById("ZxTop_unit").textContent = " m³";
     document.getElementById("ZxBottom_unit").textContent = " m³";
   }
