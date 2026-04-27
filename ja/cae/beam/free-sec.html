@@ -275,11 +275,15 @@ function draw() {
   svg.appendChild(line2);
   
   const polyline1 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-  polyline1.setAttribute("points", "cLengthLine-5,CLLy1+10 cLengthLine,CLLy1 cLengthLine+5,CLLy1+10");
+  
+  polyline1.setAttribute(
+    "points",
+    `${cLengthLine-5},${CLLy1+10} ${cLengthLine},${CLLy1} ${cLengthLine+5},${CLLy1+10}`
+  );
   polyline1.setAttribute("stroke", "black");
   polyline1.setAttribute("fill", "none");
 
-  svg.appendChild(polyline);
+  svg.appendChild(polyline1);
   
 }
   </script>
