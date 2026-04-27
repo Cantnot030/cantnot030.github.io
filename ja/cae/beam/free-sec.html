@@ -285,6 +285,26 @@ function draw() {
 
   svg.appendChild(polyline1);
   
+  const polyline2 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+  
+  polyline2.setAttribute(
+    "points",
+    `${cLengthLine-5},${yLine-10} ${cLengthLine},${yLine} ${cLengthLine+5},${yLine-10}`
+  );
+  polyline2.setAttribute("stroke", "blue");
+  polyline2.setAttribute("fill", "none");
+
+  svg.appendChild(polyline2);
+  
+  polyline3.setAttribute(
+    "points",
+    `${cLengthLine-5},${yLine+10} ${cLengthLine},${yLine} ${cLengthLine+5},${yLine+10}`
+  );
+  polyline3.setAttribute("stroke", "blue");
+  polyline3.setAttribute("fill", "none");
+
+  svg.appendChild(polyline3);
+  
 }
   </script>
 
