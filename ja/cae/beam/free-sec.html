@@ -258,6 +258,15 @@ function draw() {
 
   svg.appendChild(label);
   
+  // 重心Yのラインまでの距離
+  let cLengthLine = svgSize - 10;
+
+  const line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  line2.setAttribute("x1", cLengthLine);
+  line2.setAttribute("x2", cLengthLine);
+  line2.setAttribute("y1", minY);
+  line2.setAttribute("y2", maxY);
+  
 }
   </script>
 
