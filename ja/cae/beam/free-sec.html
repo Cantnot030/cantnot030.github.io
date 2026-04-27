@@ -296,6 +296,8 @@ function draw() {
 
   svg.appendChild(polyline2);
   
+  const polyline3 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+  
   polyline3.setAttribute(
     "points",
     `${cLengthLine-5},${yLine+10} ${cLengthLine},${yLine} ${cLengthLine+5},${yLine+10}`
