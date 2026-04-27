@@ -218,8 +218,8 @@ function draw() {
   }
   
   let A = Math.abs(Asum) / 2;
-  let Yc = YCsum / A / 6;
-  let Ix = IX0sum / 12 - A * Yc * Yc;
+  let Yc = YCsum / Asum / 6;
+  let Ix = IX0sum / 12 - Asum * Yc * Yc;
   
   let yTop = maxY - Yc;
   let yBottom = Yc - minY;
