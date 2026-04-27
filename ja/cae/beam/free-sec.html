@@ -270,9 +270,16 @@ function draw() {
   line2.setAttribute("y2", CLLy2);
   
   line2.setAttribute("stroke", "blue");
-  line2.setAttribute("stroke-width", "2");
+  line2.setAttribute("stroke-width", "1");
   
   svg.appendChild(line2);
+  
+  const polyline1 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+  polyline1.setAttribute("points", "cLengthLine-5,CLLy1+10 cLengthLine,CLLy1 cLengthLine+5,CLLy1+10");
+  polyline1.setAttribute("stroke", "black");
+  polyline1.setAttribute("fill", "none");
+
+  svg.appendChild(polyline);
   
 }
   </script>
