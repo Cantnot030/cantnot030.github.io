@@ -307,6 +307,17 @@ function draw() {
 
   svg.appendChild(polyline3);
   
+  const polyline4 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+  
+  polyline4.setAttribute(
+    "points",
+    `${cLengthLine-5},${CLLy1-10} ${cLengthLine},${CLLy1} ${cLengthLine+5},${CLLy1-10}`
+  );
+  polyline4.setAttribute("stroke", "blue");
+  polyline4.setAttribute("fill", "none");
+
+  svg.appendChild(polyline4);
+  
 }
   </script>
 
