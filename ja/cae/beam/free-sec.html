@@ -241,8 +241,8 @@ function draw() {
   document.getElementById("Ix_val").textContent = Ix;
   document.getElementById("ZxTop_val").textContent = ZxTop;
   document.getElementById("ZxBottom_val").textContent = ZxBottom;
-  document.getElementById("C1_val").textContent = (maxY - Yc)/2;
-  document.getElementById("C2_val").textContent = (Yc - minY)/2;
+  document.getElementById("C1_val").textContent = maxY - Yc;
+  document.getElementById("C2_val").textContent = Yc - minY;
   
   // 重心Yのライン描画
   let yLine = svgSize - (Yc * scale + offsetY);
