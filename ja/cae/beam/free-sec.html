@@ -248,7 +248,7 @@ function draw() {
 
   svg.appendChild(line);
   
-  //中立軸
+  //中立軸　文字
   const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
   label.setAttribute("x", 2);                 // 左から少し右
   label.setAttribute("y", yLine - 5);          // 線よりちょい上
@@ -317,6 +317,16 @@ function draw() {
   polyline4.setAttribute("fill", "none");
 
   svg.appendChild(polyline4);
+  
+  //重心距離　文字
+  const labelC1 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  labelC1.setAttribute("x", cLengthLine+5);                 // 左から少し右
+  labelC1.setAttribute("y", (yLine + CLLy2)/2 );          // 線よりちょい上
+  labelC1.setAttribute("fill", "red");
+  labelC1.setAttribute("font-size", "12");
+  labelC1.textContent = "C1";
+
+  svg.appendChild(labelC1);
   
 }
   </script>
