@@ -241,6 +241,8 @@ function draw() {
   document.getElementById("Ix_val").textContent = Ix;
   document.getElementById("ZxTop_val").textContent = ZxTop;
   document.getElementById("ZxBottom_val").textContent = ZxBottom;
+  document.getElementById("C1_val").textContent = (maxY - Yc)/2;
+  document.getElementById("C2_val").textContent = (Yc - minY)/2;
   
   // 重心Yのライン描画
   let yLine = svgSize - (Yc * scale + offsetY);
@@ -272,9 +274,6 @@ function draw() {
   let cLengthLine = svgSize - 30;
   let CLLy1 = svgSize - (minY * scale + offsetY);
   let CLLy2 = svgSize - (maxY * scale + offsetY);
-
-  document.getElementById("C1_val").textContent = (yLine - CLLy1)/2
-  document.getElementById("C2_val").textContent = (CLLy2 - yLine)/2
 
   const line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
   line2.setAttribute("x1", cLengthLine);
